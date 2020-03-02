@@ -39,7 +39,7 @@ external_links = [
 nav = [
     {
         "name": "首页",
-        "url": "${/}",
+        "url": "/",
         "target": "_self"
     },
     {
@@ -64,11 +64,6 @@ social_links = [
         "name": "GitHub",
         "url": "https://github.com/lexinhu",
         "icon": "gi gi-github"
-    },
-    {
-        "name": "Weibo",
-        "url": "https://weibo.com/5245109677/",
-        "icon": "gi gi-weibo"
     }
 ]
 
