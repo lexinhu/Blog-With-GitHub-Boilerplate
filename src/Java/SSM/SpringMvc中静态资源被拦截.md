@@ -16,29 +16,29 @@ tags:
 ---
 
 
-## 第一种：在web.xml中配置
-    ```xml
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.css</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.gif</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.png</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.js</url-pattern>
-    </servlet-mapping>
-    ```
+## 第一种：在web.xml中配置中添加
+```xml
+<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.css</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.gif</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.png</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.js</url-pattern>
+</servlet-mapping>
+```
 
 
 
-## 第二种：在SpringMVC配置文件
+## 第二种：在SpringMVC配置文件中添加
 
 ```xml
 <mvc:resources mapping="/js/**" location="/js/"/>
@@ -48,7 +48,7 @@ tags:
 
 
 
-## 第三种(推荐)：在SpringMVC配置文件
+## 第三种(推荐)：在SpringMVC配置文件中添加
 
 ```xml
 <mvc:default-servlet-handler/>
