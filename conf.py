@@ -3,7 +3,7 @@
 """
 
 # For Maverick
-site_prefix = "/site-Wiki/"
+site_prefix = "/"
 source_dir = "../src/"
 build_dir = "../dist/"
 index_page_size = 10
@@ -25,20 +25,15 @@ site_logo = "${static_prefix}logo.png"
 site_build_date = "2019-12-18T16:51+08:00"
 author = "乐心湖"
 email = "jialna@qq.com"
-author_homepage = "https://www.imalan.cn"
-description = "乐心湖的个人维基站"
+author_homepage = "https://www.xn2001.com"
+description = "愿此地一片净土,个人维基站"
 key_words = ['乐心湖', '维基', '心湖维基', 'blog','技术']
 language = 'zh-CN'
 external_links = [
     {
-        "name": "Maverick",
-        "url": "https://github.com/AlanDecode/Maverick",
-        "brief": "🏄‍ Go My Own Way."
-    },
-    {
-        "name": "三無計劃",
-        "url": "https://www.imalan.cn",
-        "brief": "熊猫小A的主页。"
+        "name": "乐心湖",
+        "url": "https://www.xn2001.com",
+        "brief": "乐心湖的主页。"
     }
 ]
 nav = [
