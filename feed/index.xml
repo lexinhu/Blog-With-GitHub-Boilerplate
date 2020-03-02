@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 02 Mar 2020 13:39:42 +0806</lastBuildDate><pubDate>Mon, 02 Mar 2020 13:39:42 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 02 Mar 2020 13:49:56 +0806</lastBuildDate><pubDate>Mon, 02 Mar 2020 13:49:56 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
 &lt;h3&gt;L3 Heading&lt;/h3&gt;
 &lt;h4&gt;L4 Heading&lt;/h4&gt;
 &lt;h5&gt;L5 Heading&lt;/h5&gt;
@@ -93,11 +93,11 @@
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="1715" data-height="890" src="https://cdn.xn2001.com/2020/02/29/20200229214050.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
 </description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/devtools-SpringBoot/</guid><pubDate>Sun, 01 Mar 2020 15:34:00 +0806</pubDate></item><item><title>我的第一篇文章</title><link>/archives/my-first-awesome-post/</link><description>&lt;p&gt;这是我的第一篇维基。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！
 &lt;figure&gt;&lt;img data-width="836" data-height="450" src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/archives/assets/e0affbc80ccb2d596c87b520e37e7071.jpg" alt="幽灵公主剧照" /&gt;&lt;figcaption&gt;幽灵公主剧照&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/my-first-awesome-post/</guid><pubDate>Mon, 02 Mar 2020 15:34:00 +0806</pubDate></item><item><title>记-维基站的搭建</title><link>/archives/Wike-Building/</link><description>&lt;h1&gt;记-维基站的搭建&lt;/h1&gt;
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/my-first-awesome-post/</guid><pubDate>Mon, 02 Mar 2020 15:34:00 +0806</pubDate></item><item><title>记-维基站的搭建</title><link>/archives/wike-Building/</link><description>&lt;h1&gt;记-维基站的搭建&lt;/h1&gt;
 &lt;p&gt;我自认为个人Wiki两大核心：分类整理，搜索查漏&lt;/p&gt;
 &lt;p&gt;这与个人博客相辅相成，也是在定位上的不同带来了本质的差异。&lt;/p&gt;
 &lt;p&gt;本记内容主要围绕维基站搭建而谈，就不再展开细说其他了。&lt;/p&gt;
-&lt;p&gt;原本我是打算使用hexo这种生成器搭建一个知识库并托管于Gitee，本地运营半个月后的hexo最终在我心目中失去的地位。后来我看到了一位老朋友的文章 &lt;a href="https://blog.imalan.cn/archives/blog-with-github/"&gt;完全使用 GitHub 写博客&lt;/a&gt;  给了我很大的科普。我放弃了使用Gitee的托管静态博客的想法。&lt;/p&gt;
+&lt;p&gt;原本我是打算使用hexo这种生成器搭建一个知识库并托管于Gitee，本地运营半个月后的hexo最终在我心目中失去了地位。后来我看到了一位老朋友的文章 &lt;a href="https://blog.imalan.cn/archives/blog-with-github/"&gt;完全使用 GitHub 写博客&lt;/a&gt;  给了我很大的科普。我放弃了使用Gitee的托管静态博客的想法。&lt;/p&gt;
 &lt;p&gt;于是我们看到的&lt;strong&gt;心湖维基&lt;/strong&gt;就诞生了，使用Github托管源码和静态页面，这是两个不同的分支来实现。基于 GitHub Actions 的自动构建，能够全自动的更新博客。使用高效快速的js­De­livr来加速资源访问，如果当当使用Github那速度必是惨不忍睹。采用本地Typora和VsCode书写博客，自己写了一套自动Git的处理，使用PigGo截图自动上传又拍云并复制markdown格式的图片。几乎覆盖了所有需要操作的地方。&lt;/p&gt;
 &lt;p&gt;如果你想拥有本地的生成器，我是极力推荐Hexo&lt;/p&gt;
 &lt;p&gt;另外&lt;strong&gt;&lt;a href="https://github.com/AlanDecode/Maverick"&gt; Maverick&lt;/a&gt;&lt;/strong&gt; 这个使用是Python开发的静态页面生成器也绝对不会让你失望。&lt;/p&gt;
@@ -210,4 +210,4 @@ git push&lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;第八步：绑定自定义域名&lt;/h2&gt;
 &lt;p&gt;如果你有自己的域名，请在域名解析商那里将域名 CNAME 设置为 &lt;code&gt;&amp;lt;用户名&amp;gt;.github.io&lt;/code&gt;，然后回到仓库，在 &lt;code&gt;src/static&lt;/code&gt; 文件夹中添加一个名叫 CNAME 的文件，内容填写你自己的域名。然后在 conf.py 中修改 &lt;code&gt;site_prefix&lt;/code&gt; 为 &lt;code&gt;"/"&lt;/code&gt;。稍等片刻，你的网站就能通过你的域名访问了。&lt;/p&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/Wike-Building/</guid><pubDate>Mon, 02 Mar 2020 21:20:00 +0806</pubDate></item></channel></rss>
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/wike-Building/</guid><pubDate>Mon, 02 Mar 2020 21:20:00 +0806</pubDate></item></channel></rss>
