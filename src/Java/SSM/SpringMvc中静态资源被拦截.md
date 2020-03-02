@@ -16,7 +16,7 @@ tags:
 ---
 
 
-## 第一种：在web.xml中配置名为default的servlet-mapping
+## 第一种：在web.xml中配置
     ```xml
     <servlet-mapping>
         <servlet-name>default</servlet-name>
@@ -37,7 +37,8 @@ tags:
     ```
 
 
-## 第二种：在SpringMVC配置文件中添加<mvc:resource>标签
+
+## 第二种：在SpringMVC配置文件
 
 ```xml
 <mvc:resources mapping="/js/**" location="/js/"/>
@@ -46,14 +47,18 @@ tags:
 ```
 
 
-## 第三种(推荐)：在SpringMVC配置文件中添加<mvc:default-servlet-handler/>标签
+
+## 第三种(推荐)：在SpringMVC配置文件
 
 ```xml
 <mvc:default-servlet-handler/>
 ```
 
 
-## 第四种：修改SpringMVC的拦截路径，我这里使用的是/，也就是说所有的链接的拦截，
+
+## 第四种：修改SpringMVC的拦截路径
+
+我这里使用的是/，也就是说所有的链接的拦截，
 
 可以修改成*.do或者*.action或者其他，这样静态资源就不会拦截了
 ```xml
