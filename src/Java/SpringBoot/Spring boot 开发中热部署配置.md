@@ -7,9 +7,10 @@ status: publish
 author: 乐心湖
 categories: 
   - Java
+  - SpringBoot
 tags: 
   - SpringBoot
-  - 笔记
+  - 技术笔记
 ---
 
 
