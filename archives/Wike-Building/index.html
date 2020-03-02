@@ -19,7 +19,7 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/f84e0e5450e29c6159ff0dbfbc286010.json"
+            api: "https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/2d082efab3304950b25885eb7c5bcfe1.json"
         }
     </script>
     <script>
@@ -39,7 +39,7 @@
 <meta property="og:description" content="记-维基站的搭建" />
 <meta property="og:site_name" content="心湖维基" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/archives/Wike—Building/" />
+<meta property="og:url" content="/archives/Wike-Building/" />
 <meta property="og:image" content="" />
 <meta property="article:published_time" content="2020-03-02T21:20:00-00.00" />
 <meta name="twitter:title" content="记-维基站的搭建 - 心湖维基" />
@@ -94,7 +94,7 @@
                     
                     <section>
                         
-    <div class="open "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class="current"><a href="/archives/Wike—Building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div><div class=" "><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/devtools-SpringBoot/">Springboot 开发中热部署配置</a></li></ul></div></ul></div>
+    <div class="open "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class="current"><a href="/archives/Wike-Building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div><div class=" "><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/devtools-SpringBoot/">Springboot 开发中热部署配置</a></li></ul></div></ul></div>
 
                     </section>
                     <section hidden class="sidebar-external-link">
@@ -134,40 +134,40 @@
 <p>另外<strong><a href="https://github.com/AlanDecode/Maverick"> Maverick</a></strong> 这个使用是Python开发的静态页面生成器也绝对不会让你失望。</p>
 <p>当然我说了一大堆，你可能还是没明白，简单说除了域名外搭建这样的一个维基站没有任何成本。而且这样的域名Github也会提供给你，完全就是0成本搭建。</p>
 <hr>
-<p>相关教程  <a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate">示例仓库 </a> （务必前往示例仓库）</p>
+<p>相关教程 <strong><a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate">示例仓库 </a></strong>（务必前往示例仓库）</p>
 <p>你可以将这个仓库 fork 到自己的账户下（点击右上角的 Fork 按钮），然后按照本文档余下的内容操作一遍，就知道该如何使用了。</p>
 <blockquote><p>Fork 之后暂时不要修改仓库名称，保持 Blog-With-GitHub-Boilerplate</p>
 </blockquote>
 <h2>第一步：为仓库开启 Pages 服务</h2>
-<p>进入 Fork 的仓库，点击右上角这个 Settings 按钮，找到 GitHub Pages 相关设置：</p>
-<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218153736217.png" alt="" /></figure></p>
-<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218153908353.png" alt="" /></figure></p>
+<p>进入 Fork 的仓库，点击右上角这个 Settings 按钮，找到 GitHub Pages 相关设置：
+<figure><img data-width="536" data-height="58" src="https://cdn.xn2001.com/2020/03/02/20200302213027-1.png" alt="" /></figure></p>
+<p><figure><img data-width="749" data-height="526" src="https://cdn.xn2001.com/2020/03/02/20200302213027.png" alt="" /></figure></p>
 <p>设置发布来源为 gh-pages branch，稍等片刻你就可以通过类似 <code>https://&lt;用户名&gt;.github.io/Blog-With-GitHub-Boilerplate</code> 这样的链接访问你的网站了。</p>
 <h2>第二步：为仓库添加一个 token</h2>
-<p>为了让 GitHub Actions 可以自动更新你的网站，需要添加一个 Token。点击<a href="https://github.com/settings/tokens">这个网址</a>，点击右上角的 Generate new token，起个名字并勾选 repo 复选框：</p>
-<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218154358592.png" alt="" /></figure></p>
+<p>为了让 GitHub Actions 可以自动更新你的网站，需要添加一个 Token。点击<strong><a href="https://github.com/settings/tokens">这个网址</a></strong>，点击右上角的 Generate new token，起个名字并勾选 repo 复选框：</p>
+<p><figure><img data-width="801" data-height="484" src="https://cdn.xn2001.com/2020/03/02/20200302213600.png" alt="" /></figure></p>
 <p>点击页脚的 Generate Token，新的 token 会显示出来，把它复制下来，保存好。关了这个页面你就永远也看不到它了。</p>
-<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218154525529.png" alt="" /></figure></p>
+<p><figure><img data-width="760" data-height="220" src="https://cdn.xn2001.com/2020/03/02/20200302213610.png" alt="" /></figure></p>
 <p>回到仓库中，进入 Setting，坐标找到 Secrets 选项卡，新建一个名叫 PERSONAL_TOKEN 的 secret：</p>
-<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218154724925.png" alt="" /></figure></p>
+<p><figure><img data-width="1024" data-height="675" src="https://cdn.xn2001.com/2020/03/02/20200302213619.png" alt="" /></figure></p>
 <p><strong>💡 从这里开始我们会对仓库的文件做一些修改，如果你电脑上有安装 Git，可以把仓库 clone 到本地，完成修改后提交并 push 回去；如果没有安装，可以直接在浏览器中编辑文件。</strong></p>
 <h2>第三步：尝试修改一下网站设置</h2>
 <blockquote><p>新 fork 的仓库可能需要手动打开 Actions。点击仓库顶部的 Actions 按钮：</p>
-<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191219104540016-1583154893603.png" alt="" /></figure></p>
+<p><figure><img data-width="249" data-height="134" src="https://cdn.xn2001.com/2020/03/02/20200302213629.png" alt="" /></figure></p>
 <p>如果出现了以下提示，点击 "I understand my workflows, go ahead and run them".</p>
-<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\enable-action-1583154897115.png" alt="" /></figure></p>
+<p><figure><img data-width="885" data-height="376" src="https://cdn.xn2001.com/2020/03/02/20200302213654.png" alt="" /></figure></p>
 </blockquote>
 <p>回到仓库首页，点击 conf.py 文件，然后点击编辑按钮：</p>
-<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218155128999.png" alt="" /></figure></p>
+<p><figure><img data-width="1033" data-height="286" src="https://cdn.xn2001.com/2020/03/02/20200302213705.png" alt="" /></figure></p>
 <ol>
 <li>为你的网站起个名字，填写到 <code>site_name</code> 这里</li>
 <li>修改 <code>author</code>，<code>email</code>，<code>description</code> 等选项为你的内容</li>
 <li>其它选项也可以随意修改（暂时不要修改 <code>site_prefix</code> 选项）</li>
 </ol>
 <p>点击页脚的 Commit changes，稍等片刻再访问 <code>https://&lt;用户名&gt;.github.io/Blog-With-GitHub-Boilerplate</code> 看是不是已经更新了。如果没有，请点击仓库标题下方的 Actions 按钮，在里面查看自动构建状态。</p>
-<h3>第四步：尝试发布新的内容</h3>
+<h2>第四步：尝试发布新的内容</h2>
 <p>点击进入仓库的 src 文件夹，并点击 Create new file</p>
-<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218155835654.png" alt="" /></figure></p>
+<p><figure><img data-width="1069" data-height="160" src="https://cdn.xn2001.com/2020/03/02/20200302213718.png" alt="" /></figure></p>
 <p>填写文件名以及内容。文件名可以起 <code>我的第一篇文章.md</code>，内容可以参考这样的：</p>
 
 <pre><code>---
@@ -226,7 +226,7 @@ excerpt: Hello World!
 git config --global user.email "你的GitHub邮箱"
 git config --global credential.helper store</code></pre>
 <p>之后到仓库右上角的 Clone or download 那里，复制仓库链接（建议使用 HTTPS）：</p>
-<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218201359204.png" alt="" /></figure></p>
+<p><figure><img data-width="496" data-height="299" src="https://cdn.xn2001.com/2020/03/02/20200302213733.png" alt="" /></figure></p>
 <p>在命令行中输入：</p>
 
 <pre><code>git clone &lt;仓库链接&gt;</code></pre>
