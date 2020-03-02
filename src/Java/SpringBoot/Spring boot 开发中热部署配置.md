@@ -6,7 +6,7 @@ date: 2020-03-01 15:34
 status: publish
 author: 乐心湖
 categories: 
-  - SpringBoot
+  - Java
 tags: 
   - SpringBoot
   - 笔记
@@ -25,10 +25,12 @@ tags:
         </dependency>
 ```
 
-**要确保依赖成功导入**
+#### **要确保依赖成功导入**
 
-![img](https://cdn.xn2001.com/2020/02/29/20200229214431.png)
+![](https://cdn.xn2001.com/2020/02/29/20200229214431.png)
 
-## 第二步，打开设置（ctrl+alt+s），搜索 Compiler 勾选上 Build project automatically
+## 第二步，打开设置（ctrl+alt+s）
 
-![img](https://cdn.xn2001.com/2020/02/29/20200229214050.png)
+#### 搜索 Compiler 勾选上 Build project automatically
+
+![](https://cdn.xn2001.com/2020/02/29/20200229214050.png)
