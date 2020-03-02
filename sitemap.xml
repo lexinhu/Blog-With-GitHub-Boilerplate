@@ -12,6 +12,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+    <loc>/Blog-With-GitHub-Boilerplate/archives/my-first-awesome-post/</loc>
+    <lastmod>2020-03-02</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
     <loc>/Blog-With-GitHub-Boilerplate/archives/typography/</loc>
     <lastmod>2019-12-18</lastmod>
     <changefreq>always</changefreq>
