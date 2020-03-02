@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 02 Mar 2020 10:50:08 +0806</lastBuildDate><pubDate>Mon, 02 Mar 2020 10:50:08 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 02 Mar 2020 13:23:46 +0806</lastBuildDate><pubDate>Mon, 02 Mar 2020 13:23:46 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
 &lt;h3&gt;L3 Heading&lt;/h3&gt;
 &lt;h4&gt;L4 Heading&lt;/h4&gt;
 &lt;h5&gt;L5 Heading&lt;/h5&gt;
@@ -93,4 +93,121 @@
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="1715" data-height="890" src="https://cdn.xn2001.com/2020/02/29/20200229214050.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
 </description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/devtools-SpringBoot/</guid><pubDate>Sun, 01 Mar 2020 15:34:00 +0806</pubDate></item><item><title>我的第一篇文章</title><link>/archives/my-first-awesome-post/</link><description>&lt;p&gt;这是我的第一篇维基。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！
 &lt;figure&gt;&lt;img data-width="836" data-height="450" src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/archives/assets/e0affbc80ccb2d596c87b520e37e7071.jpg" alt="幽灵公主剧照" /&gt;&lt;figcaption&gt;幽灵公主剧照&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/my-first-awesome-post/</guid><pubDate>Mon, 02 Mar 2020 15:34:00 +0806</pubDate></item></channel></rss>
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/my-first-awesome-post/</guid><pubDate>Mon, 02 Mar 2020 15:34:00 +0806</pubDate></item><item><title>记-维基站的搭建</title><link>/archives/Wike—Building/</link><description>&lt;h1&gt;记-维基站的搭建&lt;/h1&gt;
+&lt;p&gt;我自认为个人Wiki两大核心：分类整理，搜索查漏&lt;/p&gt;
+&lt;p&gt;这与个人博客相辅相成，也是在定位上的不同带来了本质的差异。&lt;/p&gt;
+&lt;p&gt;本记内容主要围绕维基站搭建而谈，就不再展开细说其他了。&lt;/p&gt;
+&lt;p&gt;原本我是打算使用hexo这种生成器搭建一个知识库并托管于Gitee，本地运营半个月后的hexo最终在我心目中失去的地位。后来我看到了一位老朋友的文章 &lt;a href="https://blog.imalan.cn/archives/blog-with-github/"&gt;完全使用 GitHub 写博客&lt;/a&gt;  给了我很大的科普。我放弃了使用Gitee的托管静态博客的想法。&lt;/p&gt;
+&lt;p&gt;于是我们看到的&lt;strong&gt;心湖维基&lt;/strong&gt;就诞生了，使用Github托管源码和静态页面，这是两个不同的分支来实现。基于 GitHub Actions 的自动构建，能够全自动的更新博客。使用高效快速的js­De­livr来加速资源访问，如果当当使用Github那速度必是惨不忍睹。采用本地Typora和VsCode书写博客，自己写了一套自动Git的处理，使用PigGo截图自动上传又拍云并复制markdown格式的图片。几乎覆盖了所有需要操作的地方。&lt;/p&gt;
+&lt;p&gt;如果你想拥有本地的生成器，我是极力推荐Hexo&lt;/p&gt;
+&lt;p&gt;另外&lt;strong&gt;&lt;a href="https://github.com/AlanDecode/Maverick"&gt; Maverick&lt;/a&gt;&lt;/strong&gt; 这个使用是Python开发的静态页面生成器也绝对不会让你失望。&lt;/p&gt;
+&lt;p&gt;当然我说了一大堆，你可能还是没明白，简单说除了域名外搭建这样的一个维基站没有任何成本。而且这样的域名Github也会提供给你，完全就是0成本搭建。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;相关教程  &lt;a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate"&gt;示例仓库 &lt;/a&gt; （务必前往示例仓库）&lt;/p&gt;
+&lt;p&gt;你可以将这个仓库 fork 到自己的账户下（点击右上角的 Fork 按钮），然后按照本文档余下的内容操作一遍，就知道该如何使用了。&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Fork 之后暂时不要修改仓库名称，保持 Blog-With-GitHub-Boilerplate&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;第一步：为仓库开启 Pages 服务&lt;/h2&gt;
+&lt;p&gt;进入 Fork 的仓库，点击右上角这个 Settings 按钮，找到 GitHub Pages 相关设置：&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218153736217.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218153908353.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;设置发布来源为 gh-pages branch，稍等片刻你就可以通过类似 &lt;code&gt;https://&amp;lt;用户名&amp;gt;.github.io/Blog-With-GitHub-Boilerplate&lt;/code&gt; 这样的链接访问你的网站了。&lt;/p&gt;
+&lt;h2&gt;第二步：为仓库添加一个 token&lt;/h2&gt;
+&lt;p&gt;为了让 GitHub Actions 可以自动更新你的网站，需要添加一个 Token。点击&lt;a href="https://github.com/settings/tokens"&gt;这个网址&lt;/a&gt;，点击右上角的 Generate new token，起个名字并勾选 repo 复选框：&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218154358592.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;点击页脚的 Generate Token，新的 token 会显示出来，把它复制下来，保存好。关了这个页面你就永远也看不到它了。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218154525529.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;回到仓库中，进入 Setting，坐标找到 Secrets 选项卡，新建一个名叫 PERSONAL_TOKEN 的 secret：&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218154724925.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;💡 从这里开始我们会对仓库的文件做一些修改，如果你电脑上有安装 Git，可以把仓库 clone 到本地，完成修改后提交并 push 回去；如果没有安装，可以直接在浏览器中编辑文件。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;第三步：尝试修改一下网站设置&lt;/h2&gt;
+&lt;blockquote&gt;&lt;p&gt;新 fork 的仓库可能需要手动打开 Actions。点击仓库顶部的 Actions 按钮：&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191219104540016-1583154893603.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果出现了以下提示，点击 "I understand my workflows, go ahead and run them".&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\enable-action-1583154897115.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;回到仓库首页，点击 conf.py 文件，然后点击编辑按钮：&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218155128999.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;为你的网站起个名字，填写到 &lt;code&gt;site_name&lt;/code&gt; 这里&lt;/li&gt;
+&lt;li&gt;修改 &lt;code&gt;author&lt;/code&gt;，&lt;code&gt;email&lt;/code&gt;，&lt;code&gt;description&lt;/code&gt; 等选项为你的内容&lt;/li&gt;
+&lt;li&gt;其它选项也可以随意修改（暂时不要修改 &lt;code&gt;site_prefix&lt;/code&gt; 选项）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;点击页脚的 Commit changes，稍等片刻再访问 &lt;code&gt;https://&amp;lt;用户名&amp;gt;.github.io/Blog-With-GitHub-Boilerplate&lt;/code&gt; 看是不是已经更新了。如果没有，请点击仓库标题下方的 Actions 按钮，在里面查看自动构建状态。&lt;/p&gt;
+&lt;h3&gt;第四步：尝试发布新的内容&lt;/h3&gt;
+&lt;p&gt;点击进入仓库的 src 文件夹，并点击 Create new file&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218155835654.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;填写文件名以及内容。文件名可以起 &lt;code&gt;我的第一篇文章.md&lt;/code&gt;，内容可以参考这样的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+layout: post
+title: 我的第一篇文章
+slug: my-first-awesome-post
+date: 2019-12-17 20:34
+status: publish
+author: &amp;lt;填写你的名字&amp;gt;
+categories: 
+  - 默认分类
+tags: 
+  - 博客
+  - GitHub
+excerpt: Hello World!
+---
+
+这是我的第一篇文章。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;点击页脚的 Commit new file，稍等片刻再访问 &lt;code&gt;https://&amp;lt;用户名&amp;gt;.github.io/Blog-With-GitHub-Boilerplate&lt;/code&gt;，可见新文章已经发布了！&lt;/p&gt;
+&lt;h2&gt;第五步：使用 jsDelivr 作为博客的 CDN 服务&lt;/h2&gt;
+&lt;p&gt;回到仓库首页，点击 conf.py 文件，然后点击编辑按钮。修改 &lt;code&gt;enable_jsdelivr&lt;/code&gt; 如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;enable_jsdelivr = {
+    "enabled": True,
+    "repo": "&amp;lt;你的用户名&amp;gt;/Blog-With-GitHub-Boilerplate@gh-pages"
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;点击 Commit changes。然后修改你刚才添加的文章，在里面插入一张仓库中的图片：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;这是我的第一篇文章。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！
+
+![幽灵公主剧照](./images/Mononoke_Hime.jpg)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;发布后稍等片刻再访问你的网站，此时网站的图片都通过 jsDelivr 传输的。不信的话在图片上右键选择「在新标签页中打开图片」，看链接是否以 &lt;code&gt;cdn.jsdelivr.net&lt;/code&gt; 开头。&lt;/p&gt;
+&lt;p&gt;要插入你自己的图片，请把图片上传到 &lt;code&gt;src/images&lt;/code&gt; 文件夹里，然后在文章中使用 Markdown 语法引用即可。&lt;/p&gt;
+&lt;h2&gt;第六步：进行更多的自定义与创作&lt;/h2&gt;
+&lt;p&gt;经过以上的步骤你已经学会了自定义网站、添加文章与修改文章。接下来就该你自由发挥了。仓库中 conf.py 里面的内容都可以自定义修改，特别要注意格式，比如引号要使用英文引号之类的。针对网站的设置项请参考 &lt;a href="https://github.com/AlanDecode/Maverick/blob/master/README.md"&gt;Maverick/README.md&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;仓库自带的 about.md 与 Typography 都可改可删，全看你。&lt;/p&gt;
+&lt;p&gt;仓库&lt;code&gt;src/static&lt;/code&gt; 文件夹中有一个 logo.png，这是示例 logo。你可以在这个文件夹中上传新的 logo 图片，最好是方形的图片，然后在 conf.py 中修改 &lt;code&gt;site_logo&lt;/code&gt; 为 &lt;code&gt;"${static_prefix}新的logo.png"&lt;/code&gt; 即可。&lt;/p&gt;
+&lt;p&gt;现在可以把仓库名称改成你想要的名字了。改了之后，记得将 conf.py 中的 &lt;code&gt;site_prefix&lt;/code&gt; 设置为 &lt;code&gt;"/&amp;lt;新的仓库名&amp;gt;/"&lt;/code&gt;，并且对应修改 &lt;code&gt;enable_jsdelivr&lt;/code&gt;选项的内容。&lt;/p&gt;
+&lt;p&gt;如果要将仓库名修改为 &lt;code&gt;&amp;lt;用户名&amp;gt;.github.io&lt;/code&gt; 的形式，请看 &lt;a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate/blob/source/About-User-Pages.md"&gt;About-User-Pages&lt;/a&gt;。&lt;/p&gt;
+&lt;h2&gt;第七步：在本地进行创作&lt;/h2&gt;
+&lt;p&gt;你可以把仓库 clone 到电脑上，修改后再将修改 push 回去。如果你的电脑上有安装 &lt;code&gt;make&lt;/code&gt;，则这个过程可以方便一些：&lt;/p&gt;
+&lt;p&gt;升级 Maverick：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;make mvrk&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;升级主题：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;make theme&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改站点：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;make msg="Add some change" site&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;关于如何在电脑上使用 Git&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果你之前没有使用过 GitHub，那么需要进行一定的设置。如果你的电脑是 macOS 或者 Linux，git 可能是默认安装在电脑上的；如果是 Windows，则需要到&lt;a href="https://git-scm.com/downloads"&gt;这里&lt;/a&gt;下载合适的 Git 安装到电脑上。记得安装时选中将 git 添加到 PATH。&lt;/p&gt;
+&lt;p&gt;文件管理器中右键，点击 Git Bash Here，在弹出的窗口中输入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global user.name "你的GitHub用户名"
+git config --global user.email "你的GitHub邮箱"
+git config --global credential.helper store&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;之后到仓库右上角的 Clone or download 那里，复制仓库链接（建议使用 HTTPS）：&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218201359204.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在命令行中输入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone &amp;lt;仓库链接&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;若需要输入用户名密码则输入就行。这样仓库就克隆到了本地。在仓库中进行修改后，这样提交文件：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# cd 到仓库文件夹后
+
+git add .
+git commit -m "添加修改"
+git push&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样本地的修改就推送到了 GitHub。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;第八步：绑定自定义域名&lt;/h2&gt;
+&lt;p&gt;如果你有自己的域名，请在域名解析商那里将域名 CNAME 设置为 &lt;code&gt;&amp;lt;用户名&amp;gt;.github.io&lt;/code&gt;，然后回到仓库，在 &lt;code&gt;src/static&lt;/code&gt; 文件夹中添加一个名叫 CNAME 的文件，内容填写你自己的域名。然后在 conf.py 中修改 &lt;code&gt;site_prefix&lt;/code&gt; 为 &lt;code&gt;"/"&lt;/code&gt;。稍等片刻，你的网站就能通过你的域名访问了。&lt;/p&gt;
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/Wike—Building/</guid><pubDate>Mon, 02 Mar 2020 21:20:00 +0806</pubDate></item></channel></rss>

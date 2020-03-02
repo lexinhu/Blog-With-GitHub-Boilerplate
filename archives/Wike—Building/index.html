@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="乐心湖,维基,心湖维基,blog,技术" />
+    <meta name="generator" content="Maverick 1.1" />
+    <meta name="template" content="Kepler" />
+    <link rel="alternate" type="application/rss+xml" title="心湖维基 &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="心湖维基 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/kepler-8f1c36e1cd.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.10.0/dist/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/f84e0e5450e29c6159ff0dbfbc286010.json"
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            if(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)){
+                document.body.classList.add('safari')
+            }else{
+                document.body.classList.remove('safari')
+            }
+        });
+    </script>
+    
+<title>记-维基站的搭建 - 心湖维基</title>
+<meta name="author" content="乐心湖" />
+<meta name="description" content="记-维基站的搭建" />
+<meta property="og:title" content="记-维基站的搭建 - 心湖维基" />
+<meta property="og:description" content="记-维基站的搭建" />
+<meta property="og:site_name" content="心湖维基" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/Wike—Building/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-03-02T21:20:00-00.00" />
+<meta name="twitter:title" content="记-维基站的搭建 - 心湖维基" />
+<meta name="twitter:description" content="记-维基站的搭建" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+
+    </head>
+    
+    <body class="content">
+        <header>
+            <div class="container">
+                <section>
+                    <a href="/"><img src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png">心湖维基</a>
+                </section>
+                <section>
+                    <nav>
+                        <ul>
+                            
+                                <li><a href="https://www.xn2001.com" target="_blank">乐心湖</a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+    
+                <section>
+                    <a hidden class="toggle-toc" target="_self" href="javascript:void(0)" onclick="$(body).toggleClass('toc-open')"><i class="fa fa-align-right"></i></a>
+                    <a hidden class="toggle-navbar" target="_self" href="javascript:void(0)" onclick="$(body).toggleClass('navbar-open')"><i class="fa fa-indent"></i></a>
+                    <button class="search-form-input"><i class="fa fa-search"></i></button>
+                </section>
+            </div>
+        </header>
+
+        <main>
+            <div id="pjax-container" class="container">
+                <aside id="navbar" class="no-scrollbar">
+                    
+                    <section class="sidebar-nav">
+                        
+                            <div class="None" ><span><a href="/">首页</a></span></div>
+                        
+                            <div class="None" ><span><a href="/archives/">归档</a></span></div>
+                        
+                            <div class="None" ><span><a href="/about/">关于</a></span></div>
+                        
+                    </section>
+                    
+                    <section>
+                        
+    <div class="open "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class="current"><a href="/archives/Wike—Building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div><div class=" "><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/devtools-SpringBoot/">Springboot 开发中热部署配置</a></li></ul></div></ul></div>
+
+                    </section>
+                    <section hidden class="sidebar-external-link">
+                        
+                            <div class="external"><span><a href="https://www.xn2001.com">乐心湖</a><button class="go-external"><i class="fa fa-external-link"></i></button></span></div>
+                        
+                    </section>
+                    <section class="maverick">
+                        <div><span style="border: 1px solid #d4dadf;"><a href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Kepler</a></span></div>
+                    </section>
+                </aside>
+                <div id="content-wrapper">
+                    <div id="content">
+    <section>
+        <h1 class="post-title">记-维基站的搭建</h1>
+        <p class="post-meta">
+            <time>March 02 2020</time>
+            <span class="tags">
+                
+                <span>
+                    <a href="/tag/Wiki/">#Wiki</a>
+                </span>
+                
+                <span>
+                    <a href="/tag/建站笔记/">#建站笔记</a>
+                </span>
+                
+            </span>
+        </p>
+        <article class="yue"><h1>记-维基站的搭建</h1>
+<p>我自认为个人Wiki两大核心：分类整理，搜索查漏</p>
+<p>这与个人博客相辅相成，也是在定位上的不同带来了本质的差异。</p>
+<p>本记内容主要围绕维基站搭建而谈，就不再展开细说其他了。</p>
+<p>原本我是打算使用hexo这种生成器搭建一个知识库并托管于Gitee，本地运营半个月后的hexo最终在我心目中失去的地位。后来我看到了一位老朋友的文章 <a href="https://blog.imalan.cn/archives/blog-with-github/">完全使用 GitHub 写博客</a>  给了我很大的科普。我放弃了使用Gitee的托管静态博客的想法。</p>
+<p>于是我们看到的<strong>心湖维基</strong>就诞生了，使用Github托管源码和静态页面，这是两个不同的分支来实现。基于 GitHub Actions 的自动构建，能够全自动的更新博客。使用高效快速的js­De­livr来加速资源访问，如果当当使用Github那速度必是惨不忍睹。采用本地Typora和VsCode书写博客，自己写了一套自动Git的处理，使用PigGo截图自动上传又拍云并复制markdown格式的图片。几乎覆盖了所有需要操作的地方。</p>
+<p>如果你想拥有本地的生成器，我是极力推荐Hexo</p>
+<p>另外<strong><a href="https://github.com/AlanDecode/Maverick"> Maverick</a></strong> 这个使用是Python开发的静态页面生成器也绝对不会让你失望。</p>
+<p>当然我说了一大堆，你可能还是没明白，简单说除了域名外搭建这样的一个维基站没有任何成本。而且这样的域名Github也会提供给你，完全就是0成本搭建。</p>
+<hr>
+<p>相关教程  <a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate">示例仓库 </a> （务必前往示例仓库）</p>
+<p>你可以将这个仓库 fork 到自己的账户下（点击右上角的 Fork 按钮），然后按照本文档余下的内容操作一遍，就知道该如何使用了。</p>
+<blockquote><p>Fork 之后暂时不要修改仓库名称，保持 Blog-With-GitHub-Boilerplate</p>
+</blockquote>
+<h2>第一步：为仓库开启 Pages 服务</h2>
+<p>进入 Fork 的仓库，点击右上角这个 Settings 按钮，找到 GitHub Pages 相关设置：</p>
+<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218153736217.png" alt="" /></figure></p>
+<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218153908353.png" alt="" /></figure></p>
+<p>设置发布来源为 gh-pages branch，稍等片刻你就可以通过类似 <code>https://&lt;用户名&gt;.github.io/Blog-With-GitHub-Boilerplate</code> 这样的链接访问你的网站了。</p>
+<h2>第二步：为仓库添加一个 token</h2>
+<p>为了让 GitHub Actions 可以自动更新你的网站，需要添加一个 Token。点击<a href="https://github.com/settings/tokens">这个网址</a>，点击右上角的 Generate new token，起个名字并勾选 repo 复选框：</p>
+<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218154358592.png" alt="" /></figure></p>
+<p>点击页脚的 Generate Token，新的 token 会显示出来，把它复制下来，保存好。关了这个页面你就永远也看不到它了。</p>
+<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218154525529.png" alt="" /></figure></p>
+<p>回到仓库中，进入 Setting，坐标找到 Secrets 选项卡，新建一个名叫 PERSONAL_TOKEN 的 secret：</p>
+<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218154724925.png" alt="" /></figure></p>
+<p><strong>💡 从这里开始我们会对仓库的文件做一些修改，如果你电脑上有安装 Git，可以把仓库 clone 到本地，完成修改后提交并 push 回去；如果没有安装，可以直接在浏览器中编辑文件。</strong></p>
+<h2>第三步：尝试修改一下网站设置</h2>
+<blockquote><p>新 fork 的仓库可能需要手动打开 Actions。点击仓库顶部的 Actions 按钮：</p>
+<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191219104540016-1583154893603.png" alt="" /></figure></p>
+<p>如果出现了以下提示，点击 "I understand my workflows, go ahead and run them".</p>
+<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\enable-action-1583154897115.png" alt="" /></figure></p>
+</blockquote>
+<p>回到仓库首页，点击 conf.py 文件，然后点击编辑按钮：</p>
+<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218155128999.png" alt="" /></figure></p>
+<ol>
+<li>为你的网站起个名字，填写到 <code>site_name</code> 这里</li>
+<li>修改 <code>author</code>，<code>email</code>，<code>description</code> 等选项为你的内容</li>
+<li>其它选项也可以随意修改（暂时不要修改 <code>site_prefix</code> 选项）</li>
+</ol>
+<p>点击页脚的 Commit changes，稍等片刻再访问 <code>https://&lt;用户名&gt;.github.io/Blog-With-GitHub-Boilerplate</code> 看是不是已经更新了。如果没有，请点击仓库标题下方的 Actions 按钮，在里面查看自动构建状态。</p>
+<h3>第四步：尝试发布新的内容</h3>
+<p>点击进入仓库的 src 文件夹，并点击 Create new file</p>
+<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218155835654.png" alt="" /></figure></p>
+<p>填写文件名以及内容。文件名可以起 <code>我的第一篇文章.md</code>，内容可以参考这样的：</p>
+
+<pre><code>---
+layout: post
+title: 我的第一篇文章
+slug: my-first-awesome-post
+date: 2019-12-17 20:34
+status: publish
+author: &lt;填写你的名字&gt;
+categories: 
+  - 默认分类
+tags: 
+  - 博客
+  - GitHub
+excerpt: Hello World!
+---
+
+这是我的第一篇文章。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！</code></pre>
+<p>点击页脚的 Commit new file，稍等片刻再访问 <code>https://&lt;用户名&gt;.github.io/Blog-With-GitHub-Boilerplate</code>，可见新文章已经发布了！</p>
+<h2>第五步：使用 jsDelivr 作为博客的 CDN 服务</h2>
+<p>回到仓库首页，点击 conf.py 文件，然后点击编辑按钮。修改 <code>enable_jsdelivr</code> 如下：</p>
+
+<pre><code>enable_jsdelivr = {
+    "enabled": True,
+    "repo": "&lt;你的用户名&gt;/Blog-With-GitHub-Boilerplate@gh-pages"
+}</code></pre>
+<p>点击 Commit changes。然后修改你刚才添加的文章，在里面插入一张仓库中的图片：</p>
+
+<pre><code>这是我的第一篇文章。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！
+
+![幽灵公主剧照](./images/Mononoke_Hime.jpg)</code></pre>
+<p>发布后稍等片刻再访问你的网站，此时网站的图片都通过 jsDelivr 传输的。不信的话在图片上右键选择「在新标签页中打开图片」，看链接是否以 <code>cdn.jsdelivr.net</code> 开头。</p>
+<p>要插入你自己的图片，请把图片上传到 <code>src/images</code> 文件夹里，然后在文章中使用 Markdown 语法引用即可。</p>
+<h2>第六步：进行更多的自定义与创作</h2>
+<p>经过以上的步骤你已经学会了自定义网站、添加文章与修改文章。接下来就该你自由发挥了。仓库中 conf.py 里面的内容都可以自定义修改，特别要注意格式，比如引号要使用英文引号之类的。针对网站的设置项请参考 <a href="https://github.com/AlanDecode/Maverick/blob/master/README.md">Maverick/README.md</a>。</p>
+<p>仓库自带的 about.md 与 Typography 都可改可删，全看你。</p>
+<p>仓库<code>src/static</code> 文件夹中有一个 logo.png，这是示例 logo。你可以在这个文件夹中上传新的 logo 图片，最好是方形的图片，然后在 conf.py 中修改 <code>site_logo</code> 为 <code>"${static_prefix}新的logo.png"</code> 即可。</p>
+<p>现在可以把仓库名称改成你想要的名字了。改了之后，记得将 conf.py 中的 <code>site_prefix</code> 设置为 <code>"/&lt;新的仓库名&gt;/"</code>，并且对应修改 <code>enable_jsdelivr</code>选项的内容。</p>
+<p>如果要将仓库名修改为 <code>&lt;用户名&gt;.github.io</code> 的形式，请看 <a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate/blob/source/About-User-Pages.md">About-User-Pages</a>。</p>
+<h2>第七步：在本地进行创作</h2>
+<p>你可以把仓库 clone 到电脑上，修改后再将修改 push 回去。如果你的电脑上有安装 <code>make</code>，则这个过程可以方便一些：</p>
+<p>升级 Maverick：</p>
+
+<pre><code>make mvrk</code></pre>
+<p>升级主题：</p>
+
+<pre><code>make theme</code></pre>
+<p>修改站点：</p>
+
+<pre><code>make msg="Add some change" site</code></pre>
+<blockquote><p><strong>关于如何在电脑上使用 Git</strong></p>
+<p>如果你之前没有使用过 GitHub，那么需要进行一定的设置。如果你的电脑是 macOS 或者 Linux，git 可能是默认安装在电脑上的；如果是 Windows，则需要到<a href="https://git-scm.com/downloads">这里</a>下载合适的 Git 安装到电脑上。记得安装时选中将 git 添加到 PATH。</p>
+<p>文件管理器中右键，点击 Git Bash Here，在弹出的窗口中输入：</p>
+
+<pre><code>git config --global user.name "你的GitHub用户名"
+git config --global user.email "你的GitHub邮箱"
+git config --global credential.helper store</code></pre>
+<p>之后到仓库右上角的 Clone or download 那里，复制仓库链接（建议使用 HTTPS）：</p>
+<p><figure><img data-width="-1" data-height="-1" src="E:\维基Wiki\site-Wiki\src\建站\记-维基站的搭建.assets\image-20191218201359204.png" alt="" /></figure></p>
+<p>在命令行中输入：</p>
+
+<pre><code>git clone &lt;仓库链接&gt;</code></pre>
+<p>若需要输入用户名密码则输入就行。这样仓库就克隆到了本地。在仓库中进行修改后，这样提交文件：</p>
+
+<pre><code># cd 到仓库文件夹后
+
+git add .
+git commit -m "添加修改"
+git push</code></pre>
+<p>这样本地的修改就推送到了 GitHub。</p>
+</blockquote>
+<h2>第八步：绑定自定义域名</h2>
+<p>如果你有自己的域名，请在域名解析商那里将域名 CNAME 设置为 <code>&lt;用户名&gt;.github.io</code>，然后回到仓库，在 <code>src/static</code> 文件夹中添加一个名叫 CNAME 的文件，内容填写你自己的域名。然后在 conf.py 中修改 <code>site_prefix</code> 为 <code>"/"</code>。稍等片刻，你的网站就能通过你的域名访问了。</p>
+</article>
+    </section>
+
+    
+    <section id="content-pager">
+        
+        
+            <div class="prev">
+                <a class="card" href="/archives/my-first-awesome-post/">
+                    <time>March 02 2020</time>
+                    <span>我的第一篇文章</span>
+                </a>
+            </div>
+        
+    </section>
+    
+
+    
+
+    <script>
+        document.body.classList.add('content');
+        document.body.classList.remove('archive');
+    </script>
+</div>
+                    <footer>
+                        <span>Copyright © 2020 乐心湖</span>
+                        
+    
+
+                        
+                    </footer>
+                </div>
+                
+<aside id="toc-container" class="no-scrollbar">
+    <span><i class="fa fa-align-right"></i> CONTENTS</span>
+    <div id="toc"></div>
+</aside>
+
+            </div>
+        </main>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tocbot@4.10.0/dist/tocbot.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/kepler-ef161b04d5.js"></script>
+        <script>
+            function ExSearchCall(item){
+                if (item && item.length) {
+                    $('.ins-close').click(); // 关闭搜索框
+                    $('input.ins-search-input').val(''); // 清空
+                    let url = item.attr('data-url'); // 获取目标页面 URL
+                    $.pjax({url: url, 
+                        container: '#pjax-container',
+                        fragment: '#pjax-container',
+                        timeout: 8000, }); // 发起一次 PJAX 请求
+                }
+            }
+        </script>
+
+        <!--Valine-->
+        
+
+        <!--ExSearch-->
+        <script src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+        
+        <!--katex-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/katex.min.js"></script>
+        <script>
+        mathOpts = {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ]
+        };
+        </script>
+        <script defer src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+        
+    </body>
+</html>
