@@ -4,12 +4,11 @@ title: Hello World!
 slug: typography
 date: 2019-12-18 16:50
 status: publish
-author: AlanDecode
+author: lexinhu
 categories: 
-  - Maverick
+  - 默认分类
 tags:
   - Design
-  - Typography
 excerpt: 这是一篇示例文章，在这里你可以看到常用页面元素的显示效果。
 ---
 
@@ -112,6 +111,3 @@ cell 3 | cell 4
 [links]
 [AlanDecode](https://www.imalan.cn)+(https://secure.gravatar.com/avatar/1741a6eef5c824899e347e4afcbaa75d?s=200&r=G&d=)
 [/links]
-
-
-[1]: ./images/1463017562.jpg
