@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>心湖维基</title><updated>2020-03-02T14:32:37.944229+08:06</updated><author><name>乐心湖</name><email>jialna@qq.com</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</logo><subtitle>愿此地一片净土,个人维基站</subtitle><entry><id>/archives/typography/</id><title>Hello World!</title><updated>2020-03-02T14:32:37.944446+00:00</updated><author><name>lexinhu</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>心湖维基</title><updated>2020-03-02T15:11:26.698183+08:06</updated><author><name>乐心湖</name><email>jialna@qq.com</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</logo><subtitle>愿此地一片净土,个人维基站</subtitle><entry><id>/archives/typography/</id><title>Hello World!</title><updated>2020-03-02T15:11:26.698405+00:00</updated><author><name>lexinhu</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
 &lt;h3&gt;L3 Heading&lt;/h3&gt;
 &lt;h4&gt;L4 Heading&lt;/h4&gt;
 &lt;h5&gt;L5 Heading&lt;/h5&gt;
@@ -78,7 +78,7 @@
 &lt;/table&gt;
 &lt;h2&gt;Link Card&lt;/h2&gt;
 &lt;div class="links"&gt;
-&lt;a style="display:block" target="_blank" href="https://www.imalan.cn" class="board-item"&gt;                 &lt;div class="board-thumb"&gt;&lt;img src="https://secure.gravatar.com/avatar/1741a6eef5c824899e347e4afcbaa75d?s=200&amp;r=G&amp;d="&gt;&lt;/div&gt;                 &lt;div class="board-title"&gt;AlanDecode&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;&lt;hr&gt;&lt;div class="footnotes"&gt;&lt;ol&gt;&lt;li id="fn_1"&gt;Home page for AlanDecode &lt;a no-style href="#fn_ref_1"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content><link href="/archives/typography/" rel="alternate"/><published>2019-12-18T16:50:00+08:06</published></entry><entry><id>/archives/mvc-Default/</id><title>SpringMvc中静态资源被拦截</title><updated>2020-03-02T14:32:37.944420+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;第一种：在web.xml中配置名为default的servlet-mapping&lt;/h2&gt;
+&lt;a style="display:block" target="_blank" href="https://www.imalan.cn" class="board-item"&gt;                 &lt;div class="board-thumb"&gt;&lt;img src="https://secure.gravatar.com/avatar/1741a6eef5c824899e347e4afcbaa75d?s=200&amp;r=G&amp;d="&gt;&lt;/div&gt;                 &lt;div class="board-title"&gt;AlanDecode&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;&lt;hr&gt;&lt;div class="footnotes"&gt;&lt;ol&gt;&lt;li id="fn_1"&gt;Home page for AlanDecode &lt;a no-style href="#fn_ref_1"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content><link href="/archives/typography/" rel="alternate"/><published>2019-12-18T16:50:00+08:06</published></entry><entry><id>/archives/mvc-Default/</id><title>SpringMvc中静态资源被拦截</title><updated>2020-03-02T15:11:26.698377+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;第一种：在web.xml中配置&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;```xml
 &amp;lt;servlet-mapping&amp;gt;
@@ -100,23 +100,25 @@
 ```
 
 
+
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;第二种：在SpringMVC配置文件中添加&lt;a href="mvc:resource"&gt;mvc:resource&lt;/a&gt;标签&lt;/h2&gt;
+&lt;h2&gt;第二种：在SpringMVC配置文件&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;mvc:resources&lt;/span&gt; &lt;span class="na"&gt;mapping=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/js/**&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;location=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/js/&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;mvc:resources&lt;/span&gt; &lt;span class="na"&gt;mapping=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/css/**&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;location=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/css/&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;mvc:resources&lt;/span&gt; &lt;span class="na"&gt;mapping=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/img/**&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;location=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/img/&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;第三种(推荐)：在SpringMVC配置文件中添加&lt;a href="mvc:default-servlet-handler/"&gt;mvc:default-servlet-handler/&lt;/a&gt;标签&lt;/h2&gt;
+&lt;h2&gt;第三种(推荐)：在SpringMVC配置文件&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;mvc:default-servlet-handler/&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;第四种：修改SpringMVC的拦截路径，我这里使用的是/，也就是说所有的链接的拦截，&lt;/h2&gt;
+&lt;h2&gt;第四种：修改SpringMVC的拦截路径&lt;/h2&gt;
+&lt;p&gt;我这里使用的是/，也就是说所有的链接的拦截，&lt;/p&gt;
 &lt;p&gt;可以修改成&lt;em&gt;.do或者&lt;/em&gt;.action或者其他，这样静态资源就不会拦截了&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;servlet-mapping&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;spring-mvc&lt;span class="nt"&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;url-pattern&amp;gt;&lt;/span&gt;/&lt;span class="nt"&gt;&amp;lt;/url-pattern&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;/servlet-mapping&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-</content><link href="/archives/mvc-Default/" rel="alternate"/><published>2020-02-13T21:02:00+08:06</published></entry><entry><id>/archives/devtools-SpringBoot/</id><title>Springboot 开发中热部署配置</title><updated>2020-03-02T14:32:37.944393+00:00</updated><author><name>乐心湖</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;第一步：添加 devtools 依赖&lt;/h2&gt;
+</content><link href="/archives/mvc-Default/" rel="alternate"/><published>2020-02-13T21:02:00+08:06</published></entry><entry><id>/archives/devtools-SpringBoot/</id><title>Springboot 开发中热部署配置</title><updated>2020-03-02T15:11:26.698346+00:00</updated><author><name>乐心湖</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;第一步：添加 devtools 依赖&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;        &amp;lt;dependency&amp;gt;
             &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
@@ -129,17 +131,17 @@
 &lt;h2&gt;第二步，打开设置（ctrl+alt+s）&lt;/h2&gt;
 &lt;h4&gt;搜索 Compiler 勾选上 Build project automatically&lt;/h4&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="1715" data-height="890" src="https://cdn.xn2001.com/2020/02/29/20200229214050.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/devtools-SpringBoot/" rel="alternate"/><published>2020-03-01T15:34:00+08:06</published></entry><entry><id>/archives/my-first-awesome-post/</id><title>我的第一篇文章</title><updated>2020-03-02T14:32:37.944362+00:00</updated><author><name>乐心湖</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;p&gt;这是我的第一篇维基。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！
+</content><link href="/archives/devtools-SpringBoot/" rel="alternate"/><published>2020-03-01T15:34:00+08:06</published></entry><entry><id>/archives/my-first-awesome-post/</id><title>我的第一篇文章</title><updated>2020-03-02T15:11:26.698312+00:00</updated><author><name>乐心湖</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;p&gt;这是我的第一篇维基。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！
 &lt;figure&gt;&lt;img data-width="836" data-height="450" src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/archives/assets/e0affbc80ccb2d596c87b520e37e7071.jpg" alt="幽灵公主剧照" /&gt;&lt;figcaption&gt;幽灵公主剧照&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/my-first-awesome-post/" rel="alternate"/><published>2020-03-02T15:34:00+08:06</published></entry><entry><id>/archives/wike-Building/</id><title>记-维基站的搭建</title><updated>2020-03-02T14:32:37.944309+00:00</updated><author><name>乐心湖</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h1&gt;记-维基站的搭建&lt;/h1&gt;
+</content><link href="/archives/my-first-awesome-post/" rel="alternate"/><published>2020-03-02T15:34:00+08:06</published></entry><entry><id>/archives/wike-Building/</id><title>记-维基站的搭建</title><updated>2020-03-02T15:11:26.698255+00:00</updated><author><name>乐心湖</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h1&gt;记-维基站的搭建&lt;/h1&gt;
 &lt;p&gt;我自认为个人Wiki两大核心：分类整理，搜索查漏&lt;/p&gt;
 &lt;p&gt;这与个人博客相辅相成，也是在定位上的不同带来了本质的差异。&lt;/p&gt;
-&lt;p&gt;本记内容主要围绕维基站搭建而谈，就不再展开细说其他了。&lt;/p&gt;
-&lt;p&gt;原本我是打算使用hexo这种生成器搭建一个知识库并托管于Gitee，本地运营半个月后的hexo最终在我心目中失去了地位。后来我看到了一位老朋友的文章 &lt;a href="https://blog.imalan.cn/archives/blog-with-github/"&gt;完全使用 GitHub 写博客&lt;/a&gt;  给了我很大的科普。我放弃了使用Gitee的托管静态博客的想法。&lt;/p&gt;
-&lt;p&gt;于是我们看到的&lt;strong&gt;心湖维基&lt;/strong&gt;就诞生了，使用Github托管源码和静态页面，这是两个不同的分支来实现。基于 GitHub Actions 的自动构建，能够全自动的更新博客。使用高效快速的js­De­livr来加速资源访问。自由采用本地Typora和VsCode书写博客，一套完整的Git的自动处理，使用PigGo截图自动上传又拍云并复制markdown格式的图片。几乎覆盖了所有需要人为操作的地方。&lt;/p&gt;
-&lt;p&gt;如果你想拥有本地的生成器，我是极力推荐Hexo&lt;/p&gt;
-&lt;p&gt;另外&lt;strong&gt;&lt;a href="https://github.com/AlanDecode/Maverick"&gt; Maverick&lt;/a&gt;&lt;/strong&gt; 这个使用是Python开发的静态页面生成器也绝对不会让你失望。&lt;/p&gt;
-&lt;p&gt;当然我说了一大堆，你可能还是没明白，简单说除了域名外搭建这样的一个维基站没有任何成本。而且这样的域名Github也会提供给你，完全就是0成本搭建。&lt;/p&gt;
+&lt;p&gt;本记内容主要围绕维基站搭建而谈，不再展开细说其他了。&lt;/p&gt;
+&lt;p&gt;原本我是打算使用hexo这种生成器搭建一个知识库并托管于Gitee，本地运作半个月的hexo最终在我心目中失去了地位。因为种种原因，我也放弃了使用Gitee托管静态博客的想法。后来我看到了一位老朋友的文章 &lt;a href="https://blog.imalan.cn/archives/blog-with-github/"&gt;完全使用 GitHub 写博客&lt;/a&gt;  给了我很大的科普。&lt;/p&gt;
+&lt;p&gt;于是我们看到的&lt;strong&gt;心湖维基&lt;/strong&gt;就诞生了，使用Github托管源码和静态页面，这是两个不同的分支来实现。基于 GitHub Actions 的自动构建，能够全自动的更新博客。使用高效快速的js­De­livr来加速资源访问。自由采用本地Typora和VsCode书写博客，一套完整的Git自动处理，使用PigGo截图自动上传又拍云并复制为Markdown格式，几乎不需要人工的操作与维护。&lt;/p&gt;
+&lt;p&gt;如果你想拥有本地的博客生成器，我是非常推荐hexo的。&lt;/p&gt;
+&lt;p&gt;另外&lt;strong&gt;&lt;a href="https://github.com/AlanDecode/Maverick"&gt; Maverick&lt;/a&gt;&lt;/strong&gt; 这个使用了Python开发的静态页面生成器也绝不会让你失望。&lt;/p&gt;
+&lt;p&gt;当然我说了一大堆，你可能还是没明白，简单说搭建这样的一个维基站除了域名外几乎没有任何成本，当然这样的域名Github也会提供给你，所以你不凡大胆一试。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;相关教程 &lt;strong&gt;&lt;a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate"&gt;示例仓库 &lt;/a&gt;&lt;/strong&gt;（务必前往示例仓库，几乎做到了开箱即用）&lt;/p&gt;
 &lt;p&gt;你可以将这个仓库 fork 到自己的账户下（点击右上角的 Fork 按钮），然后按照本文档余下的内容操作一遍，就知道该如何使用了。&lt;/p&gt;
