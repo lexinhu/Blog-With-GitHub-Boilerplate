@@ -43,7 +43,7 @@ external_links = [
 nav = [
     {
         "name": "首页",
-        "url": "${site_prefix}",
+        "url": "${/}",
         "target": "_self"
     },
     {
