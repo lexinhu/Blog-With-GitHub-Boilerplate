@@ -12,7 +12,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-    <loc>/archives/wike-Building/</loc>
+    <loc>/archives/encoding-javaweb/</loc>
+    <lastmod>2020-03-03</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>/archives/wike-building/</loc>
     <lastmod>2020-03-02</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -26,7 +33,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-    <loc>/archives/devtools-SpringBoot/</loc>
+    <loc>/archives/devtools-springboot/</loc>
     <lastmod>2020-03-01</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>

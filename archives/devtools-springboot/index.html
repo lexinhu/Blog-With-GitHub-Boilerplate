@@ -32,19 +32,20 @@
         });
     </script>
     
-<title>Category: Java - 心湖维基</title>
+<title>SpringBoot开发中热部署配置 - 心湖维基</title>
 <meta name="author" content="乐心湖" />
-<meta name="description" content="愿此地一片净土,个人维基站" />
-<meta property="og:title" content="Category: Java - 心湖维基" />
-<meta property="og:description" content="愿此地一片净土,个人维基站" />
+<meta name="description" content="第一步：添加 devtools 依赖" />
+<meta property="og:title" content="SpringBoot开发中热部署配置 - 心湖维基" />
+<meta property="og:description" content="第一步：添加 devtools 依赖" />
 <meta property="og:site_name" content="心湖维基" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/category/Java/" />
-<meta property="og:image" content="心湖维基" />
-<meta name="twitter:title" content="Category: Java - 心湖维基" />
-<meta name="twitter:description" content="愿此地一片净土,个人维基站" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/devtools-springboot/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-03-01T15:34:00-00.00" />
+<meta name="twitter:title" content="SpringBoot开发中热部署配置 - 心湖维基" />
+<meta name="twitter:description" content="第一步：添加 devtools 依赖" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png" />
+<meta name="twitter:image" content="" />
 
 
     
@@ -53,7 +54,7 @@
 
     </head>
     
-    <body class="archive">
+    <body class="content">
         <header>
             <div class="container">
                 <section>
@@ -93,7 +94,7 @@
                     
                     <section>
                         
-    <div class="open current"><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/JavaWeb/">JavaWeb</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/encoding-javaweb/">JavaWeb使用response的中文乱码问题</a></li></ul></div><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/devtools-springboot/">SpringBoot开发中热部署配置</a></li></ul></div><div class=" "><span><a href="/category/SSM/">SSM</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/mvc-Default/">SpringMvc中静态资源被拦截</a></li></ul></div></ul></div><div class=" "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/wike-building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div>
+    <div class="open "><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/JavaWeb/">JavaWeb</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/encoding-javaweb/">JavaWeb使用response的中文乱码问题</a></li></ul></div><div class="open "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class="current"><a href="/archives/devtools-springboot/">SpringBoot开发中热部署配置</a></li></ul></div><div class=" "><span><a href="/category/SSM/">SSM</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/mvc-Default/">SpringMvc中静态资源被拦截</a></li></ul></div></ul></div><div class=" "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/wike-building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div>
 
                     </section>
                     <section hidden class="sidebar-external-link">
@@ -107,54 +108,79 @@
                 </aside>
                 <div id="content-wrapper">
                     <div id="content">
-
     <section>
-        <h1 class="page-title">CATEGORY: Java</h1>
-        <div id="content-list">
-            
-
-    <section class="sub-cates card-list">
-        
-        <a class="card" href="/category/SSM/">
-            <span class="meta">CATEGORY</span>
-            <span>SSM</span>
-        </a>
-        
-        <a class="card" href="/category/SpringBoot/">
-            <span class="meta">CATEGORY</span>
-            <span>SpringBoot</span>
-        </a>
-        
-        <a class="card" href="/category/JavaWeb/">
-            <span class="meta">CATEGORY</span>
-            <span>JavaWeb</span>
-        </a>
-        
-    </section>
-
-
-            <section class="card-list">
+        <h1 class="post-title">SpringBoot开发中热部署配置</h1>
+        <p class="post-meta">
+            <time>March 01 2020</time>
+            <span class="tags">
                 
-            </section>
-        </div>
+                <span>
+                    <a href="/tag/SpringBoot/">#SpringBoot</a>
+                </span>
+                
+                <span>
+                    <a href="/tag/技术笔记/">#技术笔记</a>
+                </span>
+                
+            </span>
+        </p>
+        <article class="yue"><h2>第一步：添加 devtools 依赖</h2>
+
+<pre><code>        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+            &lt;optional&gt;true&lt;/optional&gt;
+        &lt;/dependency&gt;</code></pre>
+<h4><strong>要确保依赖成功导入</strong></h4>
+<p><figure><img data-width="737" data-height="389" src="https://cdn.xn2001.com/2020/02/29/20200229214431.png" alt="" /></figure></p>
+<h2>第二步，打开设置（ctrl+alt+s）</h2>
+<h4>搜索 Compiler 勾选上 Build project automatically</h4>
+<p><figure><img data-width="1715" data-height="890" src="https://cdn.xn2001.com/2020/02/29/20200229214050.png" alt="" /></figure></p>
+</article>
     </section>
+
+    
+    <section id="content-pager">
+        
+            <div class="next">
+                <a class="card" href="/archives/my-first-awesome-post/">
+                    <time>March 02 2020</time>
+                    <span>我的第一篇文章</span>
+                </a>
+            </div>
+        
+        
+            <div class="prev">
+                <a class="card" href="/archives/mvc-Default/">
+                    <time>February 13 2020</time>
+                    <span>SpringMvc中静态资源被拦截</span>
+                </a>
+            </div>
+        
+    </section>
+    
 
     
 
     <script>
-        document.body.classList.add('archive');
-        document.body.classList.remove('content');
+        document.body.classList.add('content');
+        document.body.classList.remove('archive');
     </script>
-
 </div>
                     <footer>
                         <span>Copyright © 2020 乐心湖</span>
                         
+    
+
                         
                     </footer>
                 </div>
                 
-<aside id="toc-container" class="no-scrollbar no-bg"></aside>
+<aside id="toc-container" class="no-scrollbar">
+    <span><i class="fa fa-align-right"></i> CONTENTS</span>
+    <div id="toc"></div>
+</aside>
 
             </div>
         </main>

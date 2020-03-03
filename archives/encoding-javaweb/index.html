@@ -32,19 +32,20 @@
         });
     </script>
     
-<title>Category: Java - 心湖维基</title>
+<title>JavaWeb使用response的中文乱码问题 - 心湖维基</title>
 <meta name="author" content="乐心湖" />
-<meta name="description" content="愿此地一片净土,个人维基站" />
-<meta property="og:title" content="Category: Java - 心湖维基" />
-<meta property="og:description" content="愿此地一片净土,个人维基站" />
+<meta name="description" content="原生JavaWeb使用response的中文乱码问题" />
+<meta property="og:title" content="JavaWeb使用response的中文乱码问题 - 心湖维基" />
+<meta property="og:description" content="原生JavaWeb使用response的中文乱码问题" />
 <meta property="og:site_name" content="心湖维基" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/category/Java/" />
-<meta property="og:image" content="心湖维基" />
-<meta name="twitter:title" content="Category: Java - 心湖维基" />
-<meta name="twitter:description" content="愿此地一片净土,个人维基站" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/encoding-javaweb/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-03-03T15:34:00-00.00" />
+<meta name="twitter:title" content="JavaWeb使用response的中文乱码问题 - 心湖维基" />
+<meta name="twitter:description" content="原生JavaWeb使用response的中文乱码问题" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png" />
+<meta name="twitter:image" content="" />
 
 
     
@@ -53,7 +54,7 @@
 
     </head>
     
-    <body class="archive">
+    <body class="content">
         <header>
             <div class="container">
                 <section>
@@ -93,7 +94,7 @@
                     
                     <section>
                         
-    <div class="open current"><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/JavaWeb/">JavaWeb</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/encoding-javaweb/">JavaWeb使用response的中文乱码问题</a></li></ul></div><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/devtools-springboot/">SpringBoot开发中热部署配置</a></li></ul></div><div class=" "><span><a href="/category/SSM/">SSM</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/mvc-Default/">SpringMvc中静态资源被拦截</a></li></ul></div></ul></div><div class=" "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/wike-building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div>
+    <div class="open "><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class="open "><span><a href="/category/JavaWeb/">JavaWeb</a><button class="toggle_sidebar fa"></button></span><ul><li class="current"><a href="/archives/encoding-javaweb/">JavaWeb使用response的中文乱码问题</a></li></ul></div><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/devtools-springboot/">SpringBoot开发中热部署配置</a></li></ul></div><div class=" "><span><a href="/category/SSM/">SSM</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/mvc-Default/">SpringMvc中静态资源被拦截</a></li></ul></div></ul></div><div class=" "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/wike-building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div>
 
                     </section>
                     <section hidden class="sidebar-external-link">
@@ -107,54 +108,82 @@
                 </aside>
                 <div id="content-wrapper">
                     <div id="content">
-
     <section>
-        <h1 class="page-title">CATEGORY: Java</h1>
-        <div id="content-list">
-            
-
-    <section class="sub-cates card-list">
-        
-        <a class="card" href="/category/SSM/">
-            <span class="meta">CATEGORY</span>
-            <span>SSM</span>
-        </a>
-        
-        <a class="card" href="/category/SpringBoot/">
-            <span class="meta">CATEGORY</span>
-            <span>SpringBoot</span>
-        </a>
-        
-        <a class="card" href="/category/JavaWeb/">
-            <span class="meta">CATEGORY</span>
-            <span>JavaWeb</span>
-        </a>
-        
-    </section>
-
-
-            <section class="card-list">
+        <h1 class="post-title">JavaWeb使用response的中文乱码问题</h1>
+        <p class="post-meta">
+            <time>March 03 2020</time>
+            <span class="tags">
                 
-            </section>
-        </div>
+                <span>
+                    <a href="/tag/JavaWeb/">#JavaWeb</a>
+                </span>
+                
+                <span>
+                    <a href="/tag/踩坑/">#踩坑</a>
+                </span>
+                
+                <span>
+                    <a href="/tag/技术笔记/">#技术笔记</a>
+                </span>
+                
+            </span>
+        </p>
+        <article class="yue"><p>原生JavaWeb使用response的中文乱码问题</p>
+<p>继承HttpServlet后重写方法时加入两行代码设置utf-8编码</p>
+<div class="highlight"><pre><span></span><span class="n">resp</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">&quot;application/json;charset=utf-8&quot;</span><span class="p">);</span>
+        <span class="n">resp</span><span class="p">.</span><span class="na">setCharacterEncoding</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">);</span>
+        <span class="c1">//需要加上方法的最上面,也就是在方法内容的首位.</span>
+</pre></div>
+<p>完整示例：</p>
+<div class="highlight"><pre><span></span><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span> <span class="n">req</span><span class="p">,</span> <span class="n">HttpServletResponse</span> <span class="n">resp</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="p">,</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">resp</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">&quot;application/json;charset=utf-8&quot;</span><span class="p">);</span>
+        <span class="n">resp</span><span class="p">.</span><span class="na">setCharacterEncoding</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">);</span>
+        <span class="n">response</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">&quot;text/html&quot;</span><span class="p">);</span>
+        <span class="n">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="na">getWriter</span><span class="p">();</span>
+        <span class="n">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;&lt;HTML&gt;&quot;</span><span class="p">);</span>
+        <span class="n">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;&lt;HEAD&gt;&lt;TITLE&gt;Hello World&lt;/TITLE&gt;&lt;/HEAD&gt;&quot;</span><span class="p">);</span>
+        <span class="n">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;&lt;BODY&gt;&quot;</span><span class="p">);</span>
+        <span class="n">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;关键就是最上面两行代码,用于设置编号&quot;</span><span class="p">);</span>
+        <span class="n">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;&lt;/BODY&gt;&lt;/HTML&gt;&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+</article>
     </section>
+
+    
+    <section id="content-pager">
+        
+        
+            <div class="prev">
+                <a class="card" href="/archives/wike-building/">
+                    <time>March 02 2020</time>
+                    <span>记-维基站的搭建</span>
+                </a>
+            </div>
+        
+    </section>
+    
 
     
 
     <script>
-        document.body.classList.add('archive');
-        document.body.classList.remove('content');
+        document.body.classList.add('content');
+        document.body.classList.remove('archive');
     </script>
-
 </div>
                     <footer>
                         <span>Copyright © 2020 乐心湖</span>
                         
+    
+
                         
                     </footer>
                 </div>
                 
-<aside id="toc-container" class="no-scrollbar no-bg"></aside>
+<aside id="toc-container" class="no-scrollbar">
+    <span><i class="fa fa-align-right"></i> CONTENTS</span>
+    <div id="toc"></div>
+</aside>
 
             </div>
         </main>

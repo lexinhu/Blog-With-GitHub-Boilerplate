@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 02 Mar 2020 15:16:28 +0806</lastBuildDate><pubDate>Mon, 02 Mar 2020 15:16:28 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Tue, 03 Mar 2020 07:55:21 +0806</lastBuildDate><pubDate>Tue, 03 Mar 2020 07:55:21 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
 &lt;h3&gt;L3 Heading&lt;/h3&gt;
 &lt;h4&gt;L4 Heading&lt;/h4&gt;
 &lt;h5&gt;L5 Heading&lt;/h5&gt;
@@ -112,7 +112,7 @@
 &lt;span class="nt"&gt;&amp;lt;url-pattern&amp;gt;&lt;/span&gt;/&lt;span class="nt"&gt;&amp;lt;/url-pattern&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;/servlet-mapping&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-</description><author>jialna@qq.com (心有所向)</author><guid isPermaLink="true">/archives/mvc-Default/</guid><pubDate>Thu, 13 Feb 2020 21:02:00 +0806</pubDate></item><item><title>Springboot 开发中热部署配置</title><link>/archives/devtools-SpringBoot/</link><description>&lt;h2&gt;第一步：添加 devtools 依赖&lt;/h2&gt;
+</description><author>jialna@qq.com (心有所向)</author><guid isPermaLink="true">/archives/mvc-Default/</guid><pubDate>Thu, 13 Feb 2020 21:02:00 +0806</pubDate></item><item><title>SpringBoot开发中热部署配置</title><link>/archives/devtools-springboot/</link><description>&lt;h2&gt;第一步：添加 devtools 依赖&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;        &amp;lt;dependency&amp;gt;
             &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
@@ -125,9 +125,9 @@
 &lt;h2&gt;第二步，打开设置（ctrl+alt+s）&lt;/h2&gt;
 &lt;h4&gt;搜索 Compiler 勾选上 Build project automatically&lt;/h4&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="1715" data-height="890" src="https://cdn.xn2001.com/2020/02/29/20200229214050.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/devtools-SpringBoot/</guid><pubDate>Sun, 01 Mar 2020 15:34:00 +0806</pubDate></item><item><title>我的第一篇文章</title><link>/archives/my-first-awesome-post/</link><description>&lt;p&gt;这是我的第一篇维基。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/devtools-springboot/</guid><pubDate>Sun, 01 Mar 2020 15:34:00 +0806</pubDate></item><item><title>我的第一篇文章</title><link>/archives/my-first-awesome-post/</link><description>&lt;p&gt;这是我的第一篇维基。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！
 &lt;figure&gt;&lt;img data-width="836" data-height="450" src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/archives/assets/e0affbc80ccb2d596c87b520e37e7071.jpg" alt="幽灵公主剧照" /&gt;&lt;figcaption&gt;幽灵公主剧照&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/my-first-awesome-post/</guid><pubDate>Mon, 02 Mar 2020 15:34:00 +0806</pubDate></item><item><title>记-维基站的搭建</title><link>/archives/wike-Building/</link><description>&lt;h1&gt;记-维基站的搭建&lt;/h1&gt;
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/my-first-awesome-post/</guid><pubDate>Mon, 02 Mar 2020 15:34:00 +0806</pubDate></item><item><title>记-维基站的搭建</title><link>/archives/wike-building/</link><description>&lt;h1&gt;记-维基站的搭建&lt;/h1&gt;
 &lt;p&gt;我自认为个人Wiki两大核心：分类整理，搜索查漏&lt;/p&gt;
 &lt;p&gt;这与个人博客相辅相成，也是在定位上的不同带来了本质的差异。&lt;/p&gt;
 &lt;p&gt;本记内容主要围绕维基站搭建而谈，不再展开细说其他了。&lt;/p&gt;
@@ -244,4 +244,23 @@ git push&lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;第八步：绑定自定义域名&lt;/h2&gt;
 &lt;p&gt;如果你有自己的域名，请在域名解析商那里将域名 CNAME 设置为 &lt;code&gt;&amp;lt;用户名&amp;gt;.github.io&lt;/code&gt;，然后回到仓库，在 &lt;code&gt;src/static&lt;/code&gt; 文件夹中添加一个名叫 CNAME 的文件，内容填写你自己的域名。然后在 conf.py 中修改 &lt;code&gt;site_prefix&lt;/code&gt; 为 &lt;code&gt;"/"&lt;/code&gt;。稍等片刻，你的网站就能通过你的域名访问了。&lt;/p&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/wike-Building/</guid><pubDate>Mon, 02 Mar 2020 21:20:00 +0806</pubDate></item></channel></rss>
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/wike-building/</guid><pubDate>Mon, 02 Mar 2020 21:20:00 +0806</pubDate></item><item><title>JavaWeb使用response的中文乱码问题</title><link>/archives/encoding-javaweb/</link><description>&lt;p&gt;原生JavaWeb使用response的中文乱码问题&lt;/p&gt;
+&lt;p&gt;继承HttpServlet后重写方法时加入两行代码设置utf-8编码&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;resp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setContentType&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;application/json;charset=utf-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;resp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setCharacterEncoding&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="c1"&gt;//需要加上方法的最上面,也就是在方法内容的首位.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;完整示例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;doGet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;HttpServletRequest&lt;/span&gt; &lt;span class="n"&gt;req&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HttpServletResponse&lt;/span&gt; &lt;span class="n"&gt;resp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kd"&gt;throws&lt;/span&gt; &lt;span class="n"&gt;ServletException&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;IOException&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;resp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setContentType&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;application/json;charset=utf-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;resp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setCharacterEncoding&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setContentType&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;PrintWriter&lt;/span&gt; &lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getWriter&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;lt;HTML&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;lt;HEAD&amp;gt;&amp;lt;TITLE&amp;gt;Hello World&amp;lt;/TITLE&amp;gt;&amp;lt;/HEAD&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;关键就是最上面两行代码,用于设置编号&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;lt;/BODY&amp;gt;&amp;lt;/HTML&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/encoding-javaweb/</guid><pubDate>Tue, 03 Mar 2020 15:34:00 +0806</pubDate></item></channel></rss>
