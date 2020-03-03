@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Javaweb项目Tomcat（idea）
+title: javaweb项目使用Tomcat（idea）
 slug: tomcat-javaweb
 date: 2020-03-03 18:09
 status: publish
@@ -15,7 +15,7 @@ tags:
 
 ---
 
-# Javaweb项目Tomcat（idea）
+# javaweb项目使用Tomcat（idea）
 
 ## 1. 点击Add Configuration
 
@@ -31,7 +31,7 @@ tags:
 
 ## 4. 添加入war包
 
-![image-20200303180322256](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200303180322256.png)
+![](https://cdn.xn2001.com/2020/03/03/20200303184853.png)
 
 ## 5. 修改路径
 
