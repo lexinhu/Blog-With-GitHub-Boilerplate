@@ -19,7 +19,7 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/e148b9f1d7e3cbd8241dc18bb801cc19.json"
+            api: "https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/8adc55afe4ca20bd23f05eeb61626d10.json"
         }
     </script>
     <script>
@@ -94,7 +94,7 @@
                     
                     <section>
                         
-    <div class="open "><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class="open "><span><a href="/category/JavaWeb/">JavaWeb</a><button class="toggle_sidebar fa"></button></span><ul><li class="current"><a href="/archives/encoding-javaweb/">JavaWeb使用response的中文乱码问题</a></li></ul></div><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/devtools-springboot/">SpringBoot开发中热部署配置</a></li></ul></div><div class=" "><span><a href="/category/SSM/">SSM</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/mvc-Default/">SpringMvc中静态资源被拦截</a></li></ul></div></ul></div><div class=" "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/wike-building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div>
+    <div class="open "><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class="open "><span><a href="/category/JavaWeb/">JavaWeb</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/tomcat-javaweb/">Javaweb项目Tomcat（idea）</a></li><li class="current"><a href="/archives/encoding-javaweb/">JavaWeb使用response的中文乱码问题</a></li></ul></div><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/devtools-springboot/">SpringBoot开发中热部署配置</a></li></ul></div><div class=" "><span><a href="/category/SSM/">SSM</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/mvc-Default/">SpringMvc中静态资源被拦截</a></li></ul></div></ul></div><div class=" "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/wike-building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div>
 
                     </section>
                     <section hidden class="sidebar-external-link">
@@ -131,8 +131,8 @@
         <article class="yue"><p>原生JavaWeb使用response的中文乱码问题</p>
 <p>继承HttpServlet后重写方法时加入两行代码设置utf-8编码</p>
 <div class="highlight"><pre><span></span><span class="n">resp</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">&quot;application/json;charset=utf-8&quot;</span><span class="p">);</span>
-        <span class="n">resp</span><span class="p">.</span><span class="na">setCharacterEncoding</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">);</span>
-        <span class="c1">//需要加上方法的最上面,也就是在方法内容的首位.</span>
+<span class="n">resp</span><span class="p">.</span><span class="na">setCharacterEncoding</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">);</span>
+<span class="c1">//需要加上方法的最上面,也就是在方法内容的首位.</span>
 </pre></div>
 <p>完整示例：</p>
 <div class="highlight"><pre><span></span><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span> <span class="n">req</span><span class="p">,</span> <span class="n">HttpServletResponse</span> <span class="n">resp</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="p">,</span> <span class="n">IOException</span> <span class="p">{</span>
@@ -152,6 +152,13 @@
 
     
     <section id="content-pager">
+        
+            <div class="next">
+                <a class="card" href="/archives/tomcat-javaweb/">
+                    <time>March 03 2020</time>
+                    <span>Javaweb项目Tomcat（idea）</span>
+                </a>
+            </div>
         
         
             <div class="prev">

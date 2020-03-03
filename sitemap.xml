@@ -12,6 +12,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+    <loc>/archives/tomcat-javaweb/</loc>
+    <lastmod>2020-03-03</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
     <loc>/archives/encoding-javaweb/</loc>
     <lastmod>2020-03-03</lastmod>
     <changefreq>always</changefreq>

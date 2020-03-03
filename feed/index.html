@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Tue, 03 Mar 2020 07:55:21 +0806</lastBuildDate><pubDate>Tue, 03 Mar 2020 07:55:21 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Tue, 03 Mar 2020 10:11:39 +0806</lastBuildDate><pubDate>Tue, 03 Mar 2020 10:11:39 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
 &lt;h3&gt;L3 Heading&lt;/h3&gt;
 &lt;h4&gt;L4 Heading&lt;/h4&gt;
 &lt;h5&gt;L5 Heading&lt;/h5&gt;
@@ -247,8 +247,8 @@ git push&lt;/code&gt;&lt;/pre&gt;
 </description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/wike-building/</guid><pubDate>Mon, 02 Mar 2020 21:20:00 +0806</pubDate></item><item><title>JavaWeb使用response的中文乱码问题</title><link>/archives/encoding-javaweb/</link><description>&lt;p&gt;原生JavaWeb使用response的中文乱码问题&lt;/p&gt;
 &lt;p&gt;继承HttpServlet后重写方法时加入两行代码设置utf-8编码&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;resp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setContentType&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;application/json;charset=utf-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="n"&gt;resp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setCharacterEncoding&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="c1"&gt;//需要加上方法的最上面,也就是在方法内容的首位.&lt;/span&gt;
+&lt;span class="n"&gt;resp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setCharacterEncoding&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="c1"&gt;//需要加上方法的最上面,也就是在方法内容的首位.&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;完整示例：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;doGet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;HttpServletRequest&lt;/span&gt; &lt;span class="n"&gt;req&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HttpServletResponse&lt;/span&gt; &lt;span class="n"&gt;resp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kd"&gt;throws&lt;/span&gt; &lt;span class="n"&gt;ServletException&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;IOException&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
@@ -263,4 +263,17 @@ git push&lt;/code&gt;&lt;/pre&gt;
         &lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;lt;/BODY&amp;gt;&amp;lt;/HTML&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
     &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/encoding-javaweb/</guid><pubDate>Tue, 03 Mar 2020 15:34:00 +0806</pubDate></item></channel></rss>
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/encoding-javaweb/</guid><pubDate>Tue, 03 Mar 2020 15:34:00 +0806</pubDate></item><item><title>Javaweb项目Tomcat（idea）</title><link>/archives/tomcat-javaweb/</link><description>&lt;h1&gt;Javaweb项目Tomcat（idea）&lt;/h1&gt;
+&lt;h2&gt;1. 点击Add Configuration&lt;/h2&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1161" data-height="305" src="https://cdn.xn2001.com/2020/03/03/20200303174858.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;2. 点击+号&lt;/h2&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1448" data-height="859" src="https://cdn.xn2001.com/2020/03/03/20200303175104.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;3. 选择Tomcat的本地位置&lt;/h2&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1448" data-height="859" src="https://cdn.xn2001.com/2020/03/03/20200303180227.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;4. 添加入war包&lt;/h2&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="-1" data-height="-1" src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200303180322256.png" alt="image-20200303180322256" /&gt;&lt;figcaption&gt;image-20200303180322256&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;5. 修改路径&lt;/h2&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="964" data-height="666" src="https://cdn.xn2001.com/2020/03/03/20200303180606.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;6. 点击OK，运行项目&lt;/h2&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="443" data-height="86" src="https://cdn.xn2001.com/2020/03/03/20200303180648.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/tomcat-javaweb/</guid><pubDate>Tue, 03 Mar 2020 18:09:00 +0806</pubDate></item></channel></rss>
