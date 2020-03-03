@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Springboot 开发中热部署配置
-slug: devtools-SpringBoot
+title: SpringBoot开发中热部署配置
+slug: devtools-springboot
 date: 2020-03-01 15:34
 status: publish
 author: 乐心湖
