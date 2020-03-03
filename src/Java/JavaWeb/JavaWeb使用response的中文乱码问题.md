@@ -21,9 +21,9 @@ tags:
 继承HttpServlet后重写方法时加入两行代码设置utf-8编码
 
 ```java
-		resp.setContentType("application/json;charset=utf-8");
-		resp.setCharacterEncoding("utf-8");
-        //需要加上方法的最上面,也就是在方法内容的首位.
+resp.setContentType("application/json;charset=utf-8");
+resp.setCharacterEncoding("utf-8");
+//需要加上方法的最上面,也就是在方法内容的首位.
 ```
 
 完整示例：
