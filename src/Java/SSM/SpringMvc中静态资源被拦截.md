@@ -1,17 +1,16 @@
 ---
 layout: post
-cid: 365
 title: SpringMvc中静态资源被拦截
 slug: mvc-Default
 date: 2020/02/13 21:02:00
 updated: 2020/02/26 13:51:11
 status: publish
-author: 心有所向
+author: 心中有湖
 categories: 
   - Java
   - SSM
 tags: 
-  - SpringMvc
+  - SpringMVC
   - 技术笔记
 ---
 
