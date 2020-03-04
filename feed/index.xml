@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Tue, 03 Mar 2020 10:52:20 +0806</lastBuildDate><pubDate>Tue, 03 Mar 2020 10:52:20 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Wed, 04 Mar 2020 10:26:23 +0806</lastBuildDate><pubDate>Wed, 04 Mar 2020 10:26:23 +0806</pubDate><item><title>Hello World!</title><link>/archives/typography/</link><description>&lt;div class="notice"&gt;这是一篇示例文章，在这里你可以看到常用页面元素的显示效果，同时也是 Markdown 语法的参考文章。保留或者删除本文，开始自己的创作吧！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
 &lt;h3&gt;L3 Heading&lt;/h3&gt;
 &lt;h4&gt;L4 Heading&lt;/h4&gt;
 &lt;h5&gt;L5 Heading&lt;/h5&gt;
@@ -112,7 +112,7 @@
 &lt;span class="nt"&gt;&amp;lt;url-pattern&amp;gt;&lt;/span&gt;/&lt;span class="nt"&gt;&amp;lt;/url-pattern&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;/servlet-mapping&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-</description><author>jialna@qq.com (心有所向)</author><guid isPermaLink="true">/archives/mvc-Default/</guid><pubDate>Thu, 13 Feb 2020 21:02:00 +0806</pubDate></item><item><title>SpringBoot开发中热部署配置</title><link>/archives/devtools-springboot/</link><description>&lt;h2&gt;第一步：添加 devtools 依赖&lt;/h2&gt;
+</description><author>jialna@qq.com (心中有湖)</author><guid isPermaLink="true">/archives/mvc-Default/</guid><pubDate>Thu, 13 Feb 2020 21:02:00 +0806</pubDate></item><item><title>SpringBoot开发中热部署配置</title><link>/archives/devtools-springboot/</link><description>&lt;h2&gt;第一步：添加 devtools 依赖&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;        &amp;lt;dependency&amp;gt;
             &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
@@ -276,4 +276,77 @@ git push&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="964" data-height="666" src="https://cdn.xn2001.com/2020/03/03/20200303180606.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h2&gt;6. 点击OK，运行项目&lt;/h2&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="443" data-height="86" src="https://cdn.xn2001.com/2020/03/03/20200303180648.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/tomcat-javaweb/</guid><pubDate>Tue, 03 Mar 2020 18:09:00 +0806</pubDate></item></channel></rss>
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/tomcat-javaweb/</guid><pubDate>Tue, 03 Mar 2020 18:09:00 +0806</pubDate></item><item><title>纯Java搭建SpringMVC项目</title><link>/archives/mvc-Java/</link><description>&lt;h1&gt;纯Java搭建SpringMVC项目&lt;/h1&gt;
+&lt;h2&gt;1. 创建工程&lt;/h2&gt;
+&lt;p&gt;这里我们创建一个普通Maven工程，并添加 SpringMVC 的依赖，这里环境的搭建需要用到 Servlet ，所以我们还需要引入 Servlet 的依赖，最终pom.xml 添加的内容如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;dependencies&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.springframework&lt;span class="nt"&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;spring-webmvc&lt;span class="nt"&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;version&amp;gt;&lt;/span&gt;5.2.2.RELEASE&lt;span class="nt"&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;javax.servlet&lt;span class="nt"&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;javax.servlet-api&lt;span class="nt"&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;version&amp;gt;&lt;/span&gt;4.0.1&lt;span class="nt"&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;scope&amp;gt;&lt;/span&gt;provided&lt;span class="nt"&gt;&amp;lt;/scope&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/dependencies&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;2. 添加SpringMVC配置类&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@Configuration&lt;/span&gt;
+&lt;span class="nd"&gt;@ComponentScan&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;com.xn2001&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;SpringMVCConfig&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;@Configuration标注这个类为配置类&lt;/p&gt;
+&lt;p&gt;@ComponentScan("com.xn2001")，扫描这个包下里面的Bean。&lt;/p&gt;
+&lt;p&gt;这里如果不需要在 SpringMVC 中添加其他的额外配置，这样就可以了。&lt;/p&gt;
+&lt;h2&gt;3. 添加web.xml配置类&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;WebInit&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;WebApplicationInitializer&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;onStartup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ServletContext&lt;/span&gt; &lt;span class="n"&gt;servletContext&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kd"&gt;throws&lt;/span&gt; &lt;span class="n"&gt;ServletException&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;AnnotationConfigWebApplicationContext&lt;/span&gt; &lt;span class="n"&gt;applicationContext&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;AnnotationConfigWebApplicationContext&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="n"&gt;applicationContext&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;register&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SpringMVCConfig&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;ServletRegistration&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Dynamic&lt;/span&gt; &lt;span class="n"&gt;springmvc&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;servletContext&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addServlet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;springmvc&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;DispatcherServlet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;applicationContext&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+        &lt;span class="n"&gt;springmvc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addMapping&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;springmvc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setLoadOnStartup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;对比使用web.xml&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;servlet&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;SpringMVC&lt;span class="nt"&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;servlet-class&amp;gt;&lt;/span&gt;org.springframework.web.servlet.DispatcherServlet&lt;span class="nt"&gt;&amp;lt;/servlet-class&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;init-param&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;param-name&amp;gt;&lt;/span&gt;contextConfigLocation&lt;span class="nt"&gt;&amp;lt;/param-name&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;param-value&amp;gt;&lt;/span&gt;classpath:springmvc.xml&lt;span class="nt"&gt;&amp;lt;/param-value&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;/init-param&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;load-on-startup&amp;gt;&lt;/span&gt;1&lt;span class="nt"&gt;&amp;lt;/load-on-startup&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/servlet&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;servlet-mapping&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;servlet-name&amp;gt;&lt;/span&gt;SpringMVC&lt;span class="nt"&gt;&amp;lt;/servlet-name&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;url-pattern&amp;gt;&lt;/span&gt;/&lt;span class="nt"&gt;&amp;lt;/url-pattern&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/servlet-mapping&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;对比我们不难看出，使用xml或者类的方式，其本质都是一样的，添加入一个SpringMVC中央处理器，设置配置文件和初始化启动优先级，最后进行mapping。关于里面更深层的东西，我并不觉得自己多懂，也不想在这里长篇大论。&lt;/p&gt;
+&lt;p&gt;这里为什么没有写Spring配置类，如果你简单开发过SSM整合的项目，你不难发现其实直接将所有配置放到 SpringMVC 的配置中来完成是没有问题的。&lt;/p&gt;
+&lt;h2&gt;4. 添加HelloController&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@RestController&lt;/span&gt;
+&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;HelloController&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nd"&gt;@GetMapping&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/hello&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Hello,World&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;@RestController是@ResponseBody+@Controller的组合，&lt;/p&gt;
+&lt;p&gt;声明为控制类&lt;/p&gt;
+&lt;p&gt;且类下的所有方法的返回值(return)由Java对象转为json格式输出，这样我们在浏览器直接看到了内容了。&lt;/p&gt;
+&lt;h2&gt;5. 启动项目&lt;/h2&gt;
+&lt;p&gt;我们需要前往pom.xml中加入下面一行代码，设置打包方式。之后放入Tomcat容器启动项目即可，关于如何在idea中加入Tomcat项目，这里推荐自己之前写过的一篇非常&lt;a href="https://www.xn2001.com/archives/386.html"&gt;详细的演示&lt;/a&gt;。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果你启动时首页是404说明已经成功了，这时候在网址后加入hello就看到我们输出的 Hello，World 了。&lt;/p&gt;
+</description><author>jialna@qq.com (心中有湖)</author><guid isPermaLink="true">/archives/mvc-Java/</guid><pubDate>Wed, 04 Mar 2020 15:00:11 +0806</pubDate></item></channel></rss>
