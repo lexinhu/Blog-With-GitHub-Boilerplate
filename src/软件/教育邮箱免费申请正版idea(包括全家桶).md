@@ -12,10 +12,6 @@ tags:
   - 免费申请
 ---
 
-
-
-# 教育邮箱免费申请正版idea(包括全家桶)
-
 进入申请界面：
 
 https://www.jetbrains.com/shop/eform/students  填写相关信息。
