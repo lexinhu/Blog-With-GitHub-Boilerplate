@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="乐心湖,维基,心湖维基,blog,技术" />
+    <meta name="generator" content="Maverick 1.1" />
+    <meta name="template" content="Kepler" />
+    <link rel="alternate" type="application/rss+xml" title="心湖维基 &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="心湖维基 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/kepler-8f1c36e1cd.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.10.0/dist/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/a3c661798724a50eac1badbdac50279a.json"
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            if(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)){
+                document.body.classList.add('safari')
+            }else{
+                document.body.classList.remove('safari')
+            }
+        });
+    </script>
+    
+<title>思-关于maven的dependencyManagement - 心湖维基</title>
+<meta name="author" content="乐心湖" />
+<meta name="description" content="Dependency Management" />
+<meta property="og:title" content="思-关于maven的dependencyManagement - 心湖维基" />
+<meta property="og:description" content="Dependency Management" />
+<meta property="og:site_name" content="心湖维基" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/dependencyManagement-maven/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-03-06T12:10:00-00.00" />
+<meta name="twitter:title" content="思-关于maven的dependencyManagement - 心湖维基" />
+<meta name="twitter:description" content="Dependency Management" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+
+    </head>
+    
+    <body class="content">
+        <header>
+            <div class="container">
+                <section>
+                    <a href="/"><img src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png">心湖维基</a>
+                </section>
+                <section>
+                    <nav>
+                        <ul>
+                            
+                                <li><a href="https://www.xn2001.com" target="_blank">乐心湖</a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+    
+                <section>
+                    <a hidden class="toggle-toc" target="_self" href="javascript:void(0)" onclick="$(body).toggleClass('toc-open')"><i class="fa fa-align-right"></i></a>
+                    <a hidden class="toggle-navbar" target="_self" href="javascript:void(0)" onclick="$(body).toggleClass('navbar-open')"><i class="fa fa-indent"></i></a>
+                    <button class="search-form-input"><i class="fa fa-search"></i></button>
+                </section>
+            </div>
+        </header>
+
+        <main>
+            <div id="pjax-container" class="container">
+                <aside id="navbar" class="no-scrollbar">
+                    
+                    <section class="sidebar-nav">
+                        
+                            <div class="None" ><span><a href="/">首页</a></span></div>
+                        
+                            <div class="None" ><span><a href="/archives/">归档</a></span></div>
+                        
+                            <div class="None" ><span><a href="/about/">关于</a></span></div>
+                        
+                    </section>
+                    
+                    <section>
+                        
+    <div class="open "><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class="open "><span><a href="/category/JavaWeb/">JavaWeb</a><button class="toggle_sidebar fa"></button></span><ul><li class="current"><a href="/archives/dependencyManagement-maven/">思-关于maven的dependencyManagement</a></li><li class=""><a href="/archives/tomcat-javaweb/">javaweb项目使用Tomcat（idea）</a></li><li class=""><a href="/archives/encoding-javaweb/">JavaWeb使用response的中文乱码问题</a></li></ul></div><div class=" "><span><a href="/category/SSM/">SSM</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/mvc-Java/">纯Java搭建SpringMVC项目</a></li><li class=""><a href="/archives/mvc-Default/">SpringMvc中静态资源被拦截</a></li></ul></div><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/devtools-springboot/">SpringBoot开发中热部署配置</a></li></ul></div></ul></div><div class=" "><span><a href="/category/软件/">软件</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/jetbrains-edu/">教育邮箱免费申请正版idea(包括全家桶)</a></li></ul></div><div class=" "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/wike-building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div>
+
+                    </section>
+                    <section hidden class="sidebar-external-link">
+                        
+                            <div class="external"><span><a href="https://www.xn2001.com">乐心湖</a><button class="go-external"><i class="fa fa-external-link"></i></button></span></div>
+                        
+                    </section>
+                    <section class="maverick">
+                        <div><span style="border: 1px solid #d4dadf;"><a href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Kepler</a></span></div>
+                    </section>
+                </aside>
+                <div id="content-wrapper">
+                    <div id="content">
+    <section>
+        <h1 class="post-title">思-关于maven的dependencyManagement</h1>
+        <p class="post-meta">
+            <time>March 06 2020</time>
+            <span class="tags">
+                
+                <span>
+                    <a href="/tag/JavaWeb/">#JavaWeb</a>
+                </span>
+                
+                <span>
+                    <a href="/tag/maven/">#maven</a>
+                </span>
+                
+                <span>
+                    <a href="/tag/技术笔记/">#技术笔记</a>
+                </span>
+                
+            </span>
+        </p>
+        <article class="yue"><h2>Dependency Management</h2>
+<p>我们不妨先去看看官方的文档。</p>
+<blockquote><p>Besides inheriting certain top-level elements, parents have elements to configure values for child <code>POMs</code> and transitive dependencies. One of those elements is <code>dependencyManagement</code>.</p>
+<p><strong>dependencyManagement</strong>: is used by a POM to help manage dependency information across all of its children. If the <code>my-parent</code> project uses <code>dependencyManagement</code> to define a dependency on <code>junit:junit:4.12</code>, then POMs inheriting from this one can set their dependency giving the <code>groupId</code>=<code>junit</code> and <code>artifactId</code>=<code>junit</code> only and Maven will fill in the <code>version</code> set by the parent. The benefits of this method are obvious. Dependency details can be set in one central location, which propagates to all inheriting POMs.
+Note that the version and scope of artifacts which are incorporated from transitive dependencies are also controlled by version specifications in a dependency management section. This can lead to unexpected consequences. Consider a case in which your project uses two dependences, <code>dep1</code> and <code>dep2</code>. <code>dep2</code> in turn also uses <code>dep1</code>, and requires a particular minimum version to function. If you then use <code>dependencyManagement</code> to specify an older version, <code>dep2</code> will be forced to use the older version, and fail. So, you must be careful to check the entire dependency tree to avoid this problem; <code>mvn dependency:tree</code> is helpful.</p>
+</blockquote>
+<p>我简单用大白话说一下他在讲什么，这个东西是用来管理依赖统一的，当你在父级依赖中拥有一个依赖，他就可以替你在子模块中搞定他的版本，只要你的子模块<code>groupId</code>和<code>artifactId</code>跟父级模块名字一样即可。很明显的好处就是版本规范统一控制。之后他说了可能发生的错误，叫你小心管理好依赖树，这方面我们也不用担心太多，因为我们有idea。大家看看官方原话，看英语文档确实很难，好在程序员写技术文档都会用通俗易懂的词汇（这里我说的也包括中文文档）。</p>
+<p>我们了解了这个东西之后，我寻思着为何没有例子，我把整个官方文档看了一遍也没找到，显然这不是Maven必需的，这样的版本规范控制，如果不是超大型项目又怎会用得到，大部分项目不过单模块业务处理，哪怕你是个多模块项目，也不外乎是三层提取，我们可以直接在父模块依赖中引入共有的，在子模块中引入自需的，我做项目便会如此。那么我为什么要写这个东西呢，因为我想将所有的学习源码都托管于Github，而不仅限于项目。这就导致我需要大量模块来进行分布，Maven就解决了我这一难题。</p>
+<p>回到上面，官方没有给例子，我们就自己来，毕竟编程容错率是非常高的。</p>
+<p>首先我们新建一个Maven的空项目，由于我们要用到多模块，我们将自带的src删除。</p>
+<p><figure><img data-width="1475" data-height="745" src="https://cdn.xn2001.com/2020/03/06/20200306063055.png" alt="" /></figure></p>
+<p>我们来到项目下)的pom.xml，既然用到<code>dependencyManagement</code>，我们就直接上代码。这里直接使用mysql和Lombok这两个依赖作为演示。（考虑到使用一个依赖可能不具备说服力，三个又搞得像在科研，因此二个为最佳）</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;dependencyManagement&gt;</span>
+        <span class="nt">&lt;dependencies&gt;</span>
+            <span class="nt">&lt;dependency&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>8.0.18<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;/dependency&gt;</span>
+            <span class="nt">&lt;dependency&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>1.18.10<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+            <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;/dependencies&gt;</span>
+    <span class="nt">&lt;/dependencyManagement&gt;</span>
+</pre></div>
+<p>上面的写法使得版本号也在其中，依赖较多时不方便管理，我们养成习惯提取出来。</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;properties&gt;</span>
+        <span class="nt">&lt;mysql.connector.version&gt;</span>8.0.18<span class="nt">&lt;/mysql.connector.version&gt;</span>
+        <span class="nt">&lt;lombok.version&gt;</span>1.18.10<span class="nt">&lt;/lombok.version&gt;</span>
+    <span class="nt">&lt;/properties&gt;</span>
+</pre></div>
+<p>将原本的</p>
+<p><code>&lt;version&gt;8.0.18&lt;/version&gt;</code>修改为<code>&lt;version&gt;${mysql.connector.version}&lt;/version&gt;</code></p>
+<p><code>&lt;version&gt;1.18.10&lt;/version&gt;</code>修改为 <code>&lt;version&gt;${lombok.version}&lt;/version&gt;</code></p>
+<p>我们更新一下Maven，会发现项目中并没有引入依赖，这就很好的说明了<code>dependencyManagement</code>和<code>dependencies</code>的区别，也展示出它的优越之处，子模块只需要放心使用依赖而无需考虑版本冲突问题。同时很好的解决了新手打包项目时优化不佳导致体积过大。</p>
+<p><figure><img data-width="1026" data-height="401" src="https://cdn.xn2001.com/2020/03/06/20200306065552.png" alt="" /></figure></p>
+<p>接下来我们去新建一个Module(模块)，进入模块下的pom.xml</p>
+<p><figure><img data-width="898" data-height="312" src="https://cdn.xn2001.com/2020/03/06/20200306071252.png" alt="" /></figure></p>
+<p>我们加入在父模块中的两个依赖，看看是否能在子模块中引入。按照官方文档，你只要<code>groupId</code>和<code>artifactId</code>跟父模块一一对应，也就是名字相同即可。</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;dependencies&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;/dependencies&gt;</span>
+</pre></div>
+<p><figure><img data-width="704" data-height="389" src="https://cdn.xn2001.com/2020/03/06/20200306072453.png" alt="" /></figure></p>
+<p>结果跟预期的一样，我们再去新建一个模块，试着只引入mysql。</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;dependencies&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;/dependencies&gt;</span>
+</pre></div>
+<p><figure><img data-width="547" data-height="507" src="https://cdn.xn2001.com/2020/03/06/20200306072750.png" alt="" /></figure></p>
+<p>到这里我们的测试就已经完成了，我们不难发现版本管理这思想与SpringBoot有异曲同工之妙，但却比SpringBoot要灵活得多。</p>
+<blockquote><p>想来自己也是很用心写下这篇博客，与其说它是教程，不如说是对一个东西的思考与实践。所以我认为这篇博客不存在长篇大论，这也是我更愿意看到的技术博客。它面对的是新学习的人，如果你已经了解过这个东西，单单是因为忘记了一个知识点想通过百度来获取使用方法，那我更提倡你学习时为自己记录笔记，一方面提升你的知识索引速度，也增强你的知识掌握。所以我会将这篇博客再分离出一篇较简短的使用方法，来方便自己日后查阅。</p>
+</blockquote>
+</article>
+    </section>
+
+    
+    <section id="content-pager">
+        
+        
+            <div class="prev">
+                <a class="card" href="/archives/jetbrains-edu/">
+                    <time>March 05 2020</time>
+                    <span>教育邮箱免费申请正版idea(包括全家桶)</span>
+                </a>
+            </div>
+        
+    </section>
+    
+
+    
+
+    <script>
+        document.body.classList.add('content');
+        document.body.classList.remove('archive');
+    </script>
+</div>
+                    <footer>
+                        <span>Copyright © 2020 乐心湖</span>
+                        
+    
+
+                        
+                    </footer>
+                </div>
+                
+<aside id="toc-container" class="no-scrollbar">
+    <span><i class="fa fa-align-right"></i> CONTENTS</span>
+    <div id="toc"></div>
+</aside>
+
+            </div>
+        </main>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tocbot@4.10.0/dist/tocbot.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/kepler-ef161b04d5.js"></script>
+        <script>
+            function ExSearchCall(item){
+                if (item && item.length) {
+                    $('.ins-close').click(); // 关闭搜索框
+                    $('input.ins-search-input').val(''); // 清空
+                    let url = item.attr('data-url'); // 获取目标页面 URL
+                    $.pjax({url: url, 
+                        container: '#pjax-container',
+                        fragment: '#pjax-container',
+                        timeout: 8000, }); // 发起一次 PJAX 请求
+                }
+            }
+        </script>
+
+        <!--Valine-->
+        
+
+        <!--ExSearch-->
+        <script src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+        
+        <!--katex-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/katex.min.js"></script>
+        <script>
+        mathOpts = {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ]
+        };
+        </script>
+        <script defer src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+        
+    </body>
+</html>
