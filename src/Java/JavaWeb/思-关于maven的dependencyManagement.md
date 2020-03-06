@@ -1,4 +1,4 @@
-```
+---
 layout: post
 title: 思-关于maven的dependencyManagement
 slug: dependencyManagement-maven
@@ -11,7 +11,9 @@ tags:
   - JavaWeb
   - maven
   - 技术笔记
-```
+---
+
+
 
 ## Dependency Management
 
