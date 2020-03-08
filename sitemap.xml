@@ -12,6 +12,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+    <loc>/archives/head-circular/</loc>
+    <lastmod>2020-03-08</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
     <loc>/archives/dependencyManagement-maven/</loc>
     <lastmod>2020-03-06</lastmod>
     <changefreq>always</changefreq>
