@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 思-关于maven的dependencyManagement
+title: 思-maven的dependencyManagement
 slug: dependencyManagement-maven
 date: 2020-03-06 12:10
 status: publish
