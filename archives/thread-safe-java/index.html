@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="乐心湖,维基,心湖维基,blog,技术" />
+    <meta name="generator" content="Maverick 1.1" />
+    <meta name="template" content="Kepler" />
+    <link rel="alternate" type="application/rss+xml" title="心湖维基 &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="心湖维基 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/kepler-8f1c36e1cd.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.10.0/dist/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/531918625952774c0beb49660ad0ad2b.json"
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            if(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)){
+                document.body.classList.add('safari')
+            }else{
+                document.body.classList.remove('safari')
+            }
+        });
+    </script>
+    
+<title>Java多线程的安全问题 - 心湖维基</title>
+<meta name="author" content="乐心湖" />
+<meta name="description" content="线程的安全问题" />
+<meta property="og:title" content="Java多线程的安全问题 - 心湖维基" />
+<meta property="og:description" content="线程的安全问题" />
+<meta property="og:site_name" content="心湖维基" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/thread-safe-java/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-03-09T12:10:00-00.00" />
+<meta name="twitter:title" content="Java多线程的安全问题 - 心湖维基" />
+<meta name="twitter:description" content="线程的安全问题" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+
+    </head>
+    
+    <body class="content">
+        <header>
+            <div class="container">
+                <section>
+                    <a href="/"><img src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png">心湖维基</a>
+                </section>
+                <section>
+                    <nav>
+                        <ul>
+                            
+                                <li><a href="https://www.xn2001.com" target="_blank">乐心湖</a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+    
+                <section>
+                    <a hidden class="toggle-toc" target="_self" href="javascript:void(0)" onclick="$(body).toggleClass('toc-open')"><i class="fa fa-align-right"></i></a>
+                    <a hidden class="toggle-navbar" target="_self" href="javascript:void(0)" onclick="$(body).toggleClass('navbar-open')"><i class="fa fa-indent"></i></a>
+                    <button class="search-form-input"><i class="fa fa-search"></i></button>
+                </section>
+            </div>
+        </header>
+
+        <main>
+            <div id="pjax-container" class="container">
+                <aside id="navbar" class="no-scrollbar">
+                    
+                    <section class="sidebar-nav">
+                        
+                            <div class="None" ><span><a href="/">首页</a></span></div>
+                        
+                            <div class="None" ><span><a href="/archives/">归档</a></span></div>
+                        
+                            <div class="None" ><span><a href="/about/">关于</a></span></div>
+                        
+                    </section>
+                    
+                    <section>
+                        
+    <div class="open "><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class="open "><span><a href="/category/Java基础/">Java基础</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/thread-void-java/">Java多线程的常见方法</a></li><li class="current"><a href="/archives/thread-safe-java/">Java多线程的安全问题</a></li><li class=""><a href="/archives/thread-know-java/">Java多线程的实现方式</a></li></ul></div><div class=" "><span><a href="/category/JavaWeb/">JavaWeb</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/dependencyManagement-maven/">思-关于maven的dependencyManagement</a></li><li class=""><a href="/archives/tomcat-javaweb/">javaweb项目使用Tomcat（idea）</a></li><li class=""><a href="/archives/encoding-javaweb/">JavaWeb使用response的中文乱码问题</a></li></ul></div><div class=" "><span><a href="/category/SSM/">SSM</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/mvc-Java/">纯Java搭建SpringMVC项目</a></li><li class=""><a href="/archives/mvc-Default/">SpringMvc中静态资源被拦截</a></li></ul></div><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/devtools-springboot/">SpringBoot开发中热部署配置</a></li></ul></div></ul></div><div class=" "><span><a href="/category/业余/">业余</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/Photoshop/">Photoshop</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/head-circular/">如何制作圆形头像或图片</a></li></ul></div></ul></div><div class=" "><span><a href="/category/软件/">软件</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/jetbrains-edu/">教育邮箱免费申请正版idea(包括全家桶)</a></li></ul></div><div class=" "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/wike-building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div>
+
+                    </section>
+                    <section hidden class="sidebar-external-link">
+                        
+                            <div class="external"><span><a href="https://www.xn2001.com">乐心湖</a><button class="go-external"><i class="fa fa-external-link"></i></button></span></div>
+                        
+                    </section>
+                    <section class="maverick">
+                        <div><span style="border: 1px solid #d4dadf;"><a href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Kepler</a></span></div>
+                    </section>
+                </aside>
+                <div id="content-wrapper">
+                    <div id="content">
+    <section>
+        <h1 class="post-title">Java多线程的安全问题</h1>
+        <p class="post-meta">
+            <time>March 09 2020</time>
+            <span class="tags">
+                
+                <span>
+                    <a href="/tag/Java基础/">#Java基础</a>
+                </span>
+                
+                <span>
+                    <a href="/tag/多线程/">#多线程</a>
+                </span>
+                
+                <span>
+                    <a href="/tag/学习笔记/">#学习笔记</a>
+                </span>
+                
+            </span>
+        </p>
+        <article class="yue"><h1>线程的安全问题</h1>
+<h2>案例</h2>
+<p><strong>需求</strong> ：某电影院目前正在上映国产大片，共有100张票，而他有3个窗口卖票，请设计一个程序模拟该电影院卖票</p>
+<p><strong>思路</strong> ：</p>
+<ol>
+<li><p>定义一个类Ticket实现Runnable接口，里面定义一个成员变量：
+<code>private int ticketCount = 100;</code></p>
+</li>
+<li><p>在Ticket类中重写run()方法实现卖票，步骤如下：</p>
+<ul>
+<li>判断票数如果大于0，就卖票，并告知哪个窗口购买</li>
+<li>票数自动减一</li>
+<li>卖光之后，线程停止</li>
+</ul>
+</li>
+<li><p>定义一个测试类TicketDemo，步骤如下：</p>
+<ul>
+<li>创建Ticket类的对象</li>
+<li>创建三个Thread类的对象，把Ticket对象作为构造方法的参数，并给出对应的窗口名称</li>
+<li>启动线程</li>
+</ul>
+</li>
+</ol>
+<h2>代码实现</h2>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ticket</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">ticketCount</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">ticketCount</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">){</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="na">ticketCount</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;正在卖票,还剩有&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="na">ticketCount</span><span class="o">+</span><span class="s">&quot;张&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Demo</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Ticket</span> <span class="n">ticket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ticket</span><span class="p">();</span>
+        <span class="n">Thread</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="p">(</span><span class="n">ticket</span><span class="p">,</span><span class="s">&quot;一号窗口&quot;</span><span class="p">);</span>
+        <span class="n">Thread</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="p">(</span><span class="n">ticket</span><span class="p">,</span><span class="s">&quot;二号窗口&quot;</span><span class="p">);</span>
+        <span class="n">Thread</span> <span class="n">t3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="p">(</span><span class="n">ticket</span><span class="p">,</span><span class="s">&quot;三号窗口&quot;</span><span class="p">);</span>
+        <span class="n">t1</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+        <span class="n">t2</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+        <span class="n">t3</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h2>卖票案例的思考</h2>
+<p>看似这个案例没有什么问题,但是在实际生活中,售票时候出票是需要一定的时间的,所以在出售一张票的时候需要一点时间的延迟,接下来就修改卖票程序中的动作,每次出票时间为100毫秒,用sleep()方法实现。</p>
+<p>此时出现了问题</p>
+<ul>
+<li>相同的票出现了多次</li>
+<li>出现的负数的票</li>
+</ul>
+<p>为什么出现这个问题（这也是我们判断多线程程序是否会有数据安全问题的标准）</p>
+<ul>
+<li>多线程操作共享数据</li>
+</ul>
+<p>如果解决多线程安全问题？</p>
+<ul>
+<li>基本思想：让程序没有安全问题的环境</li>
+</ul>
+<p>实现方法</p>
+<ul>
+<li>把多条语句操作共享数据的代码<strong>锁</strong>起来，让任意时刻只能有一个先吃执行。</li>
+</ul>
+<h2>同步代码块</h2>
+<p>锁多条语句操作共享数据，可以使用同步代码块实现</p>
+<ul>
+<li><p>格式：</p>
+<p>synchronized(任意对象){ 多条语句操作共享数据的代码 }</p>
+</li>
+<li><p>默认情况是打开的，只要有一个线程进去执行代码了，锁就会关闭。</p>
+</li>
+<li><p>当线程执行完了之后，锁就会自动打开。</p>
+</li>
+</ul>
+<p>同步的好处和弊端</p>
+<ul>
+<li>好处：解决了多线程的数据安全问题</li>
+<li>弊端：当线程很多时，因为每个线程都会去<strong>判断</strong>同步上的锁，这是非常浪费资源的，无形中降低了程序的运行效率</li>
+</ul>
+<p>下面我们更新一下Ticket类。</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ticket</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">ticketCount</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="p">();</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
+
+            <span class="c1">//锁对象,任意对象就可以.</span>
+            <span class="c1">//多个线程必须使用同一把锁</span>
+            <span class="kd">synchronized</span> <span class="p">(</span><span class="n">o</span><span class="p">){</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">ticketCount</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                    <span class="k">try</span> <span class="p">{</span>
+                        <span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+                    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+                    <span class="p">}</span>
+                    <span class="k">this</span><span class="p">.</span><span class="na">ticketCount</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;正在卖票,还剩有&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="na">ticketCount</span><span class="o">+</span><span class="s">&quot;张&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><figure><img data-width="546" data-height="352" src="https://cdn.xn2001.com/2020/02/05/20200205011342.png" alt="" /></figure></p>
+<p>此时的运行结果变得非常自然。</p>
+<h3>synchronized的锁对象必须是唯一的</h3>
+<h2>同步方法</h2>
+<p>同步方法：就是把<code>synchronized</code>关键字加到方法上。</p>
+<ul>
+<li><p>格式：</p>
+<p>修饰符 synchronized 返回值类型 方法名(方法参数){ }</p>
+</li>
+</ul>
+<p>同步静态方法：就是把synchronized关键词加到静态方法上</p>
+<ul>
+<li><p>格式：</p>
+<p>修饰符 static synchronized 返回值类型 方法名(方法参数){ }</p>
+</li>
+</ul>
+<p>主要记住：</p>
+<ol>
+<li><p>同步方法到底锁对象是什么？ <strong>this</strong></p>
+</li>
+<li><p>同步静态方法的锁对象是什么？ <strong>类名.class</strong></p>
+</li>
+</ol>
+<h2>同步代码块和同步方法的区别</h2>
+<ul>
+<li>同步代码块可以锁住指定代码，同步方法是锁住方法中所有代码。</li>
+<li>同步代码块可以指定锁对象，同步方法不能<strong>指定</strong>锁对象。</li>
+</ul>
+<h2>★Lock锁</h2>
+<p>虽然我们可以理解同步代码块和同步方法的锁对象，但是我们并没有直接看到在哪里加上了锁，在哪里释放了锁，为了更加清晰的表达如何加锁和释放锁，JDK5以后提供了一个新的锁对象Lock</p>
+<p>Lock实现提供比使用synchronized方法和语句可以获得更广泛的锁定操作</p>
+<p>Lock中提供了获得锁和释放锁的方法</p>
+<ul>
+<li>void lock()             获得锁</li>
+<li>void unlock()        释放锁</li>
+</ul>
+<p>Lock是接口不能直接实例化，可以采用它的实现类<code>ReentrantLock</code>来实例化</p>
+<p>ReentrantLock的构造方法</p>
+<ul>
+<li>ReentrantLock()  创建一个ReentrantLock的实例</li>
+</ul>
+<h4><strong>注意</strong>：一般释放锁unlock要放入<strong>finally</strong>中。</h4>
+<p>下面我们使用Lock来更新一下Ticket类</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ticket</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">ticketCount</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+    <span class="c1">//锁对象Lock</span>
+    <span class="kd">private</span> <span class="n">Lock</span> <span class="n">lock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ReentrantLock</span><span class="p">();</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//开启Lock锁</span>
+            <span class="n">lock</span><span class="p">.</span><span class="na">lock</span><span class="p">();</span>
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">ticketCount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+                    <span class="k">this</span><span class="p">.</span><span class="na">ticketCount</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;正在卖票,还剩有&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">ticketCount</span> <span class="o">+</span> <span class="s">&quot;张&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+            <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+                <span class="c1">//释放Lock锁</span>
+                <span class="n">lock</span><span class="p">.</span><span class="na">unlock</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h1>死锁</h1>
+<p>线程死锁是指由于两个或者多个线程互相持有对方所需要的资源，导致这些线程处于等待状态，无法前往执行。</p>
+<p>建议：不要写锁的嵌套。</p>
+</article>
+    </section>
+
+    
+    <section id="content-pager">
+        
+            <div class="next">
+                <a class="card" href="/archives/thread-void-java/">
+                    <time>March 09 2020</time>
+                    <span>Java多线程的常见方法</span>
+                </a>
+            </div>
+        
+        
+            <div class="prev">
+                <a class="card" href="/archives/thread-know-java/">
+                    <time>March 09 2020</time>
+                    <span>Java多线程的实现方式</span>
+                </a>
+            </div>
+        
+    </section>
+    
+
+    
+
+    <script>
+        document.body.classList.add('content');
+        document.body.classList.remove('archive');
+    </script>
+</div>
+                    <footer>
+                        <span>Copyright © 2020 乐心湖</span>
+                        
+    
+
+                        
+                    </footer>
+                </div>
+                
+<aside id="toc-container" class="no-scrollbar">
+    <span><i class="fa fa-align-right"></i> CONTENTS</span>
+    <div id="toc"></div>
+</aside>
+
+            </div>
+        </main>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tocbot@4.10.0/dist/tocbot.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/kepler-ef161b04d5.js"></script>
+        <script>
+            function ExSearchCall(item){
+                if (item && item.length) {
+                    $('.ins-close').click(); // 关闭搜索框
+                    $('input.ins-search-input').val(''); // 清空
+                    let url = item.attr('data-url'); // 获取目标页面 URL
+                    $.pjax({url: url, 
+                        container: '#pjax-container',
+                        fragment: '#pjax-container',
+                        timeout: 8000, }); // 发起一次 PJAX 请求
+                }
+            }
+        </script>
+
+        <!--Valine-->
+        
+
+        <!--ExSearch-->
+        <script src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+        
+        <!--katex-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/katex.min.js"></script>
+        <script>
+        mathOpts = {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ]
+        };
+        </script>
+        <script defer src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+        
+    </body>
+</html>
