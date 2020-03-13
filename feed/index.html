@@ -1,122 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 09 Mar 2020 07:56:18 +0806</lastBuildDate><pubDate>Mon, 09 Mar 2020 07:56:18 +0806</pubDate><item><title>记-维基站的搭建</title><link>/archives/wike-building/</link><description>&lt;h1&gt;记-维基站的搭建&lt;/h1&gt;
-&lt;p&gt;我自认为个人Wiki两大核心：分类整理，搜索查漏&lt;/p&gt;
-&lt;p&gt;这与个人博客相辅相成，也是在定位上的不同带来了本质的差异。&lt;/p&gt;
-&lt;p&gt;本记内容主要围绕维基站搭建而谈，不再展开细说其他了。&lt;/p&gt;
-&lt;p&gt;原本我是打算使用hexo这种生成器搭建一个知识库并托管于Gitee，本地运作半个月的hexo最终在我心目中失去了地位。因为种种原因，我也放弃了使用Gitee托管静态博客的想法。后来我看到了一位老朋友的文章 &lt;a href="https://blog.imalan.cn/archives/blog-with-github/"&gt;完全使用 GitHub 写博客&lt;/a&gt;  给了我很大的科普。&lt;/p&gt;
-&lt;p&gt;于是我们看到的&lt;strong&gt;心湖维基&lt;/strong&gt;就诞生了，使用Github托管源码和静态页面，这是两个不同的分支来实现。基于 GitHub Actions 的自动构建，能够全自动的更新博客。使用高效快速的js­De­livr来加速资源访问。自由采用本地Typora和VsCode书写博客，一套完整的Git自动处理，使用PigGo截图自动上传又拍云并复制为Markdown格式，几乎不需要人工的操作与维护。&lt;/p&gt;
-&lt;p&gt;如果你想拥有本地的博客生成器，我是非常推荐hexo的。&lt;/p&gt;
-&lt;p&gt;另外&lt;strong&gt;&lt;a href="https://github.com/AlanDecode/Maverick"&gt; Maverick&lt;/a&gt;&lt;/strong&gt; 这个使用了Python开发的静态页面生成器也绝不会让你失望。&lt;/p&gt;
-&lt;p&gt;当然我说了一大堆，你可能还是没明白，简单说搭建这样的一个维基站除了域名外几乎没有任何成本，当然这样的域名Github也会提供给你，所以你不凡大胆一试。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;相关教程 &lt;strong&gt;&lt;a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate"&gt;示例仓库 &lt;/a&gt;&lt;/strong&gt;（务必前往示例仓库，几乎做到了开箱即用）&lt;/p&gt;
-&lt;p&gt;你可以将这个仓库 fork 到自己的账户下（点击右上角的 Fork 按钮），然后按照本文档余下的内容操作一遍，就知道该如何使用了。&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;Fork 之后暂时不要修改仓库名称，保持 Blog-With-GitHub-Boilerplate&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;第一步：为仓库开启 Pages 服务&lt;/h2&gt;
-&lt;p&gt;进入 Fork 的仓库，点击右上角这个 Settings 按钮，找到 GitHub Pages 相关设置：
-&lt;figure&gt;&lt;img data-width="536" data-height="58" src="https://cdn.xn2001.com/2020/03/02/20200302213027-1.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;&lt;img data-width="749" data-height="526" src="https://cdn.xn2001.com/2020/03/02/20200302213027.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;设置发布来源为 gh-pages branch，稍等片刻你就可以通过类似 &lt;code&gt;https://&amp;lt;用户名&amp;gt;.github.io/Blog-With-GitHub-Boilerplate&lt;/code&gt; 这样的链接访问你的网站了。&lt;/p&gt;
-&lt;h2&gt;第二步：为仓库添加一个 token&lt;/h2&gt;
-&lt;p&gt;为了让 GitHub Actions 可以自动更新你的网站，需要添加一个 Token。点击&lt;strong&gt;&lt;a href="https://github.com/settings/tokens"&gt;这个网址&lt;/a&gt;&lt;/strong&gt;，点击右上角的 Generate new token，起个名字并勾选 repo 复选框：&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;&lt;img data-width="801" data-height="484" src="https://cdn.xn2001.com/2020/03/02/20200302213600.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;点击页脚的 Generate Token，新的 token 会显示出来，把它复制下来，保存好。关了这个页面你就永远也看不到它了。&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;&lt;img data-width="760" data-height="220" src="https://cdn.xn2001.com/2020/03/02/20200302213610.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;回到仓库中，进入 Setting，坐标找到 Secrets 选项卡，新建一个名叫 PERSONAL_TOKEN 的 secret：&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;&lt;img data-width="1024" data-height="675" src="https://cdn.xn2001.com/2020/03/02/20200302213619.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;💡 从这里开始我们会对仓库的文件做一些修改，如果你电脑上有安装 Git，可以把仓库 clone 到本地，完成修改后提交并 push 回去；如果没有安装，可以直接在浏览器中编辑文件。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;第三步：尝试修改一下网站设置&lt;/h2&gt;
-&lt;blockquote&gt;&lt;p&gt;新 fork 的仓库可能需要手动打开 Actions。点击仓库顶部的 Actions 按钮：&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;&lt;img data-width="249" data-height="134" src="https://cdn.xn2001.com/2020/03/02/20200302213629.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;如果出现了以下提示，点击 "I understand my workflows, go ahead and run them".&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;&lt;img data-width="885" data-height="376" src="https://cdn.xn2001.com/2020/03/02/20200302213654.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;回到仓库首页，点击 conf.py 文件，然后点击编辑按钮：&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;&lt;img data-width="1033" data-height="286" src="https://cdn.xn2001.com/2020/03/02/20200302213705.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;为你的网站起个名字，填写到 &lt;code&gt;site_name&lt;/code&gt; 这里&lt;/li&gt;
-&lt;li&gt;修改 &lt;code&gt;author&lt;/code&gt;，&lt;code&gt;email&lt;/code&gt;，&lt;code&gt;description&lt;/code&gt; 等选项为你的内容&lt;/li&gt;
-&lt;li&gt;其它选项也可以随意修改（暂时不要修改 &lt;code&gt;site_prefix&lt;/code&gt; 选项）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;点击页脚的 Commit changes，稍等片刻再访问 &lt;code&gt;https://&amp;lt;用户名&amp;gt;.github.io/Blog-With-GitHub-Boilerplate&lt;/code&gt; 看是不是已经更新了。如果没有，请点击仓库标题下方的 Actions 按钮，在里面查看自动构建状态。&lt;/p&gt;
-&lt;h2&gt;第四步：尝试发布新的内容&lt;/h2&gt;
-&lt;p&gt;点击进入仓库的 src 文件夹，并点击 Create new file&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;&lt;img data-width="1069" data-height="160" src="https://cdn.xn2001.com/2020/03/02/20200302213718.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;填写文件名以及内容。文件名可以起 &lt;code&gt;我的第一篇文章.md&lt;/code&gt;，内容可以参考这样的：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;---
-layout: post
-title: 我的第一篇文章
-slug: my-first-awesome-post
-date: 2019-12-17 20:34
-status: publish
-author: &amp;lt;填写你的名字&amp;gt;
-categories: 
-  - 默认分类
-tags: 
-  - 博客
-  - GitHub
-excerpt: Hello World!
----
-
-这是我的第一篇文章。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;点击页脚的 Commit new file，稍等片刻再访问 &lt;code&gt;https://&amp;lt;用户名&amp;gt;.github.io/Blog-With-GitHub-Boilerplate&lt;/code&gt;，可见新文章已经发布了！&lt;/p&gt;
-&lt;h2&gt;第五步：使用 jsDelivr 作为博客的 CDN 服务&lt;/h2&gt;
-&lt;p&gt;回到仓库首页，点击 conf.py 文件，然后点击编辑按钮。修改 &lt;code&gt;enable_jsdelivr&lt;/code&gt; 如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;enable_jsdelivr = {
-    "enabled": True,
-    "repo": "&amp;lt;你的用户名&amp;gt;/Blog-With-GitHub-Boilerplate@gh-pages"
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;点击 Commit changes。然后修改你刚才添加的文章，在里面插入一张仓库中的图片：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;这是我的第一篇文章。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！
-
-![幽灵公主剧照](./images/Mononoke_Hime.jpg)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;发布后稍等片刻再访问你的网站，此时网站的图片都通过 jsDelivr 传输的。不信的话在图片上右键选择「在新标签页中打开图片」，看链接是否以 &lt;code&gt;cdn.jsdelivr.net&lt;/code&gt; 开头。&lt;/p&gt;
-&lt;p&gt;要插入你自己的图片，请把图片上传到 &lt;code&gt;src/images&lt;/code&gt; 文件夹里，然后在文章中使用 Markdown 语法引用即可。&lt;/p&gt;
-&lt;h2&gt;第六步：进行更多的自定义与创作&lt;/h2&gt;
-&lt;p&gt;经过以上的步骤你已经学会了自定义网站、添加文章与修改文章。接下来就该你自由发挥了。仓库中 conf.py 里面的内容都可以自定义修改，特别要注意格式，比如引号要使用英文引号之类的。针对网站的设置项请参考 &lt;a href="https://github.com/AlanDecode/Maverick/blob/master/README.md"&gt;Maverick/README.md&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;仓库自带的 about.md 与 Typography 都可改可删，全看你。&lt;/p&gt;
-&lt;p&gt;仓库&lt;code&gt;src/static&lt;/code&gt; 文件夹中有一个 logo.png，这是示例 logo。你可以在这个文件夹中上传新的 logo 图片，最好是方形的图片，然后在 conf.py 中修改 &lt;code&gt;site_logo&lt;/code&gt; 为 &lt;code&gt;"${static_prefix}新的logo.png"&lt;/code&gt; 即可。&lt;/p&gt;
-&lt;p&gt;现在可以把仓库名称改成你想要的名字了。改了之后，记得将 conf.py 中的 &lt;code&gt;site_prefix&lt;/code&gt; 设置为 &lt;code&gt;"/&amp;lt;新的仓库名&amp;gt;/"&lt;/code&gt;，并且对应修改 &lt;code&gt;enable_jsdelivr&lt;/code&gt;选项的内容。&lt;/p&gt;
-&lt;p&gt;如果要将仓库名修改为 &lt;code&gt;&amp;lt;用户名&amp;gt;.github.io&lt;/code&gt; 的形式，请看 &lt;a href="https://github.com/AlanDecode/Blog-With-GitHub-Boilerplate/blob/source/About-User-Pages.md"&gt;About-User-Pages&lt;/a&gt;。&lt;/p&gt;
-&lt;h2&gt;第七步：在本地进行创作&lt;/h2&gt;
-&lt;p&gt;你可以把仓库 clone 到电脑上，修改后再将修改 push 回去。如果你的电脑上有安装 &lt;code&gt;make&lt;/code&gt;，则这个过程可以方便一些：&lt;/p&gt;
-&lt;p&gt;升级 Maverick：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;make mvrk&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;升级主题：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;make theme&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;修改站点：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;make msg="Add some change" site&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;关于如何在电脑上使用 Git&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;如果你之前没有使用过 GitHub，那么需要进行一定的设置。如果你的电脑是 macOS 或者 Linux，git 可能是默认安装在电脑上的；如果是 Windows，则需要到&lt;a href="https://git-scm.com/downloads"&gt;这里&lt;/a&gt;下载合适的 Git 安装到电脑上。记得安装时选中将 git 添加到 PATH。&lt;/p&gt;
-&lt;p&gt;文件管理器中右键，点击 Git Bash Here，在弹出的窗口中输入：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git config --global user.name "你的GitHub用户名"
-git config --global user.email "你的GitHub邮箱"
-git config --global credential.helper store&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;之后到仓库右上角的 Clone or download 那里，复制仓库链接（建议使用 HTTPS）：&lt;/p&gt;
-&lt;p&gt;&lt;figure&gt;&lt;img data-width="496" data-height="299" src="https://cdn.xn2001.com/2020/03/02/20200302213733.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;在命令行中输入：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone &amp;lt;仓库链接&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;若需要输入用户名密码则输入就行。这样仓库就克隆到了本地。在仓库中进行修改后，这样提交文件：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# cd 到仓库文件夹后
-
-git add .
-git commit -m "添加修改"
-git push&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这样本地的修改就推送到了 GitHub。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;第八步：绑定自定义域名&lt;/h2&gt;
-&lt;p&gt;如果你有自己的域名，请在域名解析商那里将域名 CNAME 设置为 &lt;code&gt;&amp;lt;用户名&amp;gt;.github.io&lt;/code&gt;，然后回到仓库，在 &lt;code&gt;src/static&lt;/code&gt; 文件夹中添加一个名叫 CNAME 的文件，内容填写你自己的域名。然后在 conf.py 中修改 &lt;code&gt;site_prefix&lt;/code&gt; 为 &lt;code&gt;"/"&lt;/code&gt;。稍等片刻，你的网站就能通过你的域名访问了。&lt;/p&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/wike-building/</guid><pubDate>Mon, 02 Mar 2020 21:20:00 +0806</pubDate></item><item><title>JavaWeb使用response的中文乱码问题</title><link>/archives/encoding-javaweb/</link><description>&lt;p&gt;原生JavaWeb使用response的中文乱码问题&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>心湖维基</title><link>/</link><description>愿此地一片净土,个人维基站</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/logo.png</url><title>心湖维基</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Fri, 13 Mar 2020 02:17:49 +0806</lastBuildDate><pubDate>Fri, 13 Mar 2020 02:17:49 +0806</pubDate><item><title>JavaWeb使用response的中文乱码问题</title><link>/archives/encoding-javaweb/</link><description>&lt;p&gt;原生JavaWeb使用response的中文乱码问题&lt;/p&gt;
 &lt;p&gt;继承HttpServlet后重写方法时(如doGet)加入两行代码设置utf-8编码&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;resp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setContentType&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;application/json;charset=utf-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="n"&gt;resp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;setCharacterEncoding&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
@@ -303,7 +186,51 @@ Note that the version and scope of artifacts which are incorporated from transit
 &lt;p&gt;到这里我们的测试就已经完成了，我们不难发现版本管理这思想与SpringBoot有异曲同工之妙，但却比SpringBoot要灵活得多。&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;想来自己也是很用心写下这篇博客，与其说它是教程，不如说是对一个东西的思考与实践。所以我认为这篇博客不存在长篇大论，这也是我更愿意看到的技术博客。它面对的是新学习的人，如果你已经了解过这个东西，单单是因为忘记了一个知识点想通过百度来获取使用方法，那我更提倡你学习时为自己记录笔记，一方面提升你的知识索引速度，也增强你的知识掌握。所以我会将这篇博客再分离出一篇较简短的使用方法，来方便自己日后查阅。&lt;/p&gt;
 &lt;/blockquote&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/dependencyManagement-maven/</guid><pubDate>Fri, 06 Mar 2020 12:10:00 +0806</pubDate></item><item><title>如何制作圆形头像或图片</title><link>/archives/head-circular/</link><description>&lt;blockquote&gt;&lt;p&gt;有时候我们为了效果展示，需要把头像或者图片转化为圆形。&lt;/p&gt;
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/dependencyManagement-maven/</guid><pubDate>Fri, 06 Mar 2020 12:10:00 +0806</pubDate></item><item><title>线性代数粗暴解题</title><link>/archives/math-1/</link><description>&lt;h1&gt;线性代数粗暴解题&lt;/h1&gt;
+&lt;h3&gt;二阶行列式&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1301" data-height="654" src="https://cdn.xn2001.com/2020/03/11/20200311214150.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3&gt;三阶行列式及多阶&lt;/h3&gt;
+&lt;p&gt;计算：将对角线的一边的数全部变为0，对角线各个相乘。&lt;/p&gt;
+&lt;p&gt;第一行的作用是使从第二行开始每一行的第一位数变成0，以此类推。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1216" data-height="722" src="https://cdn.xn2001.com/2020/03/11/20200311223839.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1619" data-height="970" src="https://cdn.xn2001.com/2020/03/11/20200311221232.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3&gt;计算技巧&lt;/h3&gt;
+&lt;h4&gt;某行（列）乘以K，等于K乘此行列式&lt;/h4&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="857" data-height="506" src="https://cdn.xn2001.com/2020/03/12/20200312005609.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="889" data-height="432" src="https://cdn.xn2001.com/2020/03/12/20200312010357.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;互换两行（列），行列式变号&lt;/h4&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="843" data-height="425" src="https://cdn.xn2001.com/2020/03/12/20200312010913.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;鄙人自拍丑照一张。换行记得取反。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1878" data-height="1080" src="https://cdn.xn2001.com/2020/03/12/20200312012314.jpg" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3&gt;计算取巧&lt;/h3&gt;
+&lt;h4&gt;1. 对角线x一样,其他数字a一样 且n行n列&lt;/h4&gt;
+&lt;p&gt;公式：&lt;figure&gt;&lt;img data-width="393" data-height="78" src="https://cdn.xn2001.com/2020/03/12/20200312114702.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1054" data-height="712" src="https://cdn.xn2001.com/2020/03/12/20200312114350.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;2. n次方&lt;/h4&gt;
+&lt;p&gt;大的数减掉每一个小的，减到不能减了，相乘。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1325" data-height="740" src="https://cdn.xn2001.com/2020/03/12/20200312125000.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;3. 两个特性&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;两行（列）相同或成比例时，行列式为&lt;strong&gt;0&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;某行（列）为两项相加减时，行列式可拆成两个行列式相加减&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1281" data-height="776" src="https://cdn.xn2001.com/2020/03/12/20200312125644.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;4. 余子数，代数余子数&lt;/h4&gt;
+&lt;p&gt;rc，r代表行，c代表列&lt;/p&gt;
+&lt;p&gt;23指的是第二行第三列的数&lt;/p&gt;
+&lt;p&gt;12值的是第一行第二列的数&lt;/p&gt;
+&lt;p&gt;求余子数 M ：除了那一行那一列，将其余的数拿出来计算值。&lt;/p&gt;
+&lt;p&gt;求代数余子数 A ：&lt;img src="https://cdn.xn2001.com/2020/03/12/20200312181021.jpg" style="zoom: 15%;" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="951" data-height="568" src="https://cdn.xn2001.com/2020/03/12/20200312175349.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1050" data-height="728" src="https://cdn.xn2001.com/2020/03/12/20200312175306.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;5. 当行或列0较多时&lt;/h4&gt;
+&lt;p&gt;可以采用下面两公式，即每个数分别乘上它的代数余子式，最后求和&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1281" data-height="605" src="https://cdn.xn2001.com/2020/03/12/20200312233222.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;6. 多个A或M相加减&lt;/h4&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1164" data-height="732" src="https://cdn.xn2001.com/2020/03/13/20200313100801.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;7. 给一方程组，判断其解的情况&lt;/h4&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="1347" data-height="691" src="https://cdn.xn2001.com/2020/03/13/20200313101156.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/math-1/</guid><pubDate>Sun, 08 Mar 2020 12:10:00 +0806</pubDate></item><item><title>如何制作圆形头像或图片</title><link>/archives/head-circular/</link><description>&lt;blockquote&gt;&lt;p&gt;有时候我们为了效果展示，需要把头像或者图片转化为圆形。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;原理：我们利用Photoshop的椭圆选区工具，将未选择的区域删除，就得到了我们想要的效果啦。&lt;/strong&gt;&lt;/p&gt;
 &lt;h3&gt;实现：&lt;/h3&gt;
@@ -447,200 +374,7 @@ Note that the version and scope of artifacts which are incorporated from transit
     &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/thread-know-java/</guid><pubDate>Mon, 09 Mar 2020 12:10:00 +0806</pubDate></item><item><title>Java多线程的安全问题</title><link>/archives/thread-safe-java/</link><description>&lt;h1&gt;线程的安全问题&lt;/h1&gt;
-&lt;h2&gt;案例&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;需求&lt;/strong&gt; ：某电影院目前正在上映国产大片，共有100张票，而他有3个窗口卖票，请设计一个程序模拟该电影院卖票&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt; ：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;定义一个类Ticket实现Runnable接口，里面定义一个成员变量：
-&lt;code&gt;private int ticketCount = 100;&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在Ticket类中重写run()方法实现卖票，步骤如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;判断票数如果大于0，就卖票，并告知哪个窗口购买&lt;/li&gt;
-&lt;li&gt;票数自动减一&lt;/li&gt;
-&lt;li&gt;卖光之后，线程停止&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;定义一个测试类TicketDemo，步骤如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;创建Ticket类的对象&lt;/li&gt;
-&lt;li&gt;创建三个Thread类的对象，把Ticket对象作为构造方法的参数，并给出对应的窗口名称&lt;/li&gt;
-&lt;li&gt;启动线程&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;代码实现&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Ticket&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;Runnable&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-
-    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-    &lt;span class="nd"&gt;@Override&lt;/span&gt;
-    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
-            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticketCount&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
-                &lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-            &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-                &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;-=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-                &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;currentThread&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;正在卖票,还剩有&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;张&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-            &lt;span class="p"&gt;}&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Demo&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="n"&gt;Ticket&lt;/span&gt; &lt;span class="n"&gt;ticket&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Ticket&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-        &lt;span class="n"&gt;Thread&lt;/span&gt; &lt;span class="n"&gt;t1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticket&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;一号窗口&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="n"&gt;Thread&lt;/span&gt; &lt;span class="n"&gt;t2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticket&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;二号窗口&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="n"&gt;Thread&lt;/span&gt; &lt;span class="n"&gt;t3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticket&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;三号窗口&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-        &lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;start&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-        &lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;start&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-        &lt;span class="n"&gt;t3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;start&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;卖票案例的思考&lt;/h2&gt;
-&lt;p&gt;看似这个案例没有什么问题,但是在实际生活中,售票时候出票是需要一定的时间的,所以在出售一张票的时候需要一点时间的延迟,接下来就修改卖票程序中的动作,每次出票时间为100毫秒,用sleep()方法实现。&lt;/p&gt;
-&lt;p&gt;此时出现了问题&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;相同的票出现了多次&lt;/li&gt;
-&lt;li&gt;出现的负数的票&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;为什么出现这个问题（这也是我们判断多线程程序是否会有数据安全问题的标准）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;多线程操作共享数据&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果解决多线程安全问题？&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;基本思想：让程序没有安全问题的环境&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;实现方法&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;把多条语句操作共享数据的代码&lt;strong&gt;锁&lt;/strong&gt;起来，让任意时刻只能有一个先吃执行。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;同步代码块&lt;/h2&gt;
-&lt;p&gt;锁多条语句操作共享数据，可以使用同步代码块实现&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;格式：&lt;/p&gt;
-&lt;p&gt;synchronized(任意对象){ 多条语句操作共享数据的代码 }&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;默认情况是打开的，只要有一个线程进去执行代码了，锁就会关闭。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;当线程执行完了之后，锁就会自动打开。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;同步的好处和弊端&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;好处：解决了多线程的数据安全问题&lt;/li&gt;
-&lt;li&gt;弊端：当线程很多时，因为每个线程都会去&lt;strong&gt;判断&lt;/strong&gt;同步上的锁，这是非常浪费资源的，无形中降低了程序的运行效率&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面我们更新一下Ticket类。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Ticket&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;Runnable&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-
-    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Object&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-
-    &lt;span class="nd"&gt;@Override&lt;/span&gt;
-    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
-
-            &lt;span class="c1"&gt;//锁对象,任意对象就可以.&lt;/span&gt;
-            &lt;span class="c1"&gt;//多个线程必须使用同一把锁&lt;/span&gt;
-            &lt;span class="kd"&gt;synchronized&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
-                &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticketCount&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
-                    &lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-                &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-                    &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-                        &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-                    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;InterruptedException&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-                        &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;printStackTrace&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-                    &lt;span class="p"&gt;}&lt;/span&gt;
-                    &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;-=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-                    &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;currentThread&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;正在卖票,还剩有&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;张&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-                &lt;span class="p"&gt;}&lt;/span&gt;
-            &lt;span class="p"&gt;}&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;figure&gt;&lt;img data-width="546" data-height="352" src="https://cdn.xn2001.com/2020/02/05/20200205011342.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;此时的运行结果变得非常自然。&lt;/p&gt;
-&lt;h3&gt;synchronized的锁对象必须是唯一的&lt;/h3&gt;
-&lt;h2&gt;同步方法&lt;/h2&gt;
-&lt;p&gt;同步方法：就是把&lt;code&gt;synchronized&lt;/code&gt;关键字加到方法上。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;格式：&lt;/p&gt;
-&lt;p&gt;修饰符 synchronized 返回值类型 方法名(方法参数){ }&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;同步静态方法：就是把synchronized关键词加到静态方法上&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;格式：&lt;/p&gt;
-&lt;p&gt;修饰符 static synchronized 返回值类型 方法名(方法参数){ }&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;主要记住：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;同步方法到底锁对象是什么？ &lt;strong&gt;this&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;同步静态方法的锁对象是什么？ &lt;strong&gt;类名.class&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;同步代码块和同步方法的区别&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;同步代码块可以锁住指定代码，同步方法是锁住方法中所有代码。&lt;/li&gt;
-&lt;li&gt;同步代码块可以指定锁对象，同步方法不能&lt;strong&gt;指定&lt;/strong&gt;锁对象。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;★Lock锁&lt;/h2&gt;
-&lt;p&gt;虽然我们可以理解同步代码块和同步方法的锁对象，但是我们并没有直接看到在哪里加上了锁，在哪里释放了锁，为了更加清晰的表达如何加锁和释放锁，JDK5以后提供了一个新的锁对象Lock&lt;/p&gt;
-&lt;p&gt;Lock实现提供比使用synchronized方法和语句可以获得更广泛的锁定操作&lt;/p&gt;
-&lt;p&gt;Lock中提供了获得锁和释放锁的方法&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;void lock()             获得锁&lt;/li&gt;
-&lt;li&gt;void unlock()        释放锁&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Lock是接口不能直接实例化，可以采用它的实现类&lt;code&gt;ReentrantLock&lt;/code&gt;来实例化&lt;/p&gt;
-&lt;p&gt;ReentrantLock的构造方法&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ReentrantLock()  创建一个ReentrantLock的实例&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;&lt;strong&gt;注意&lt;/strong&gt;：一般释放锁unlock要放入&lt;strong&gt;finally&lt;/strong&gt;中。&lt;/h4&gt;
-&lt;p&gt;下面我们使用Lock来更新一下Ticket类&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Ticket&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;Runnable&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-
-    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-
-    &lt;span class="c1"&gt;//锁对象Lock&lt;/span&gt;
-    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Lock&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;ReentrantLock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-
-    &lt;span class="nd"&gt;@Override&lt;/span&gt;
-    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-        &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="c1"&gt;//开启Lock锁&lt;/span&gt;
-            &lt;span class="n"&gt;lock&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;lock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-            &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-                &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-                    &lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-                &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-                    &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-                    &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;-=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-                    &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;currentThread&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;正在卖票,还剩有&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;张&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-                &lt;span class="p"&gt;}&lt;/span&gt;
-            &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Exception&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-                &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;printStackTrace&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-            &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;finally&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-                &lt;span class="c1"&gt;//释放Lock锁&lt;/span&gt;
-                &lt;span class="n"&gt;lock&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;unlock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
-            &lt;span class="p"&gt;}&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt;
-    &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;死锁&lt;/h1&gt;
-&lt;p&gt;线程死锁是指由于两个或者多个线程互相持有对方所需要的资源，导致这些线程处于等待状态，无法前往执行。&lt;/p&gt;
-&lt;p&gt;建议：不要写锁的嵌套。&lt;/p&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/thread-safe-java/</guid><pubDate>Mon, 09 Mar 2020 12:10:00 +0806</pubDate></item><item><title>Java多线程的常见方法</title><link>/archives/thread-void-java/</link><description>&lt;h2&gt;三种多线程实现方式的优缺点&lt;/h2&gt;
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/thread-know-java/</guid><pubDate>Mon, 09 Mar 2020 12:10:00 +0806</pubDate></item><item><title>Java多线程的常见方法</title><link>/archives/thread-void-java/</link><description>&lt;h2&gt;三种多线程实现方式的优缺点&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;&lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -838,4 +572,197 @@ Note that the version and scope of artifacts which are incorporated from transit
 &lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;线程生命周期&lt;/h2&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="1049" data-height="381" src="https://cdn.xn2001.com/2020/01/1809456008.png#vwid=1049&amp;vhei=381" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/thread-void-java/</guid><pubDate>Mon, 09 Mar 2020 13:10:00 +0806</pubDate></item></channel></rss>
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/thread-void-java/</guid><pubDate>Mon, 09 Mar 2020 13:10:00 +0806</pubDate></item><item><title>Java多线程的安全问题</title><link>/archives/thread-safe-java/</link><description>&lt;h1&gt;线程的安全问题&lt;/h1&gt;
+&lt;h2&gt;案例&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;需求&lt;/strong&gt; ：某电影院目前正在上映国产大片，共有100张票，而他有3个窗口卖票，请设计一个程序模拟该电影院卖票&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思路&lt;/strong&gt; ：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;定义一个类Ticket实现Runnable接口，里面定义一个成员变量：
+&lt;code&gt;private int ticketCount = 100;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在Ticket类中重写run()方法实现卖票，步骤如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;判断票数如果大于0，就卖票，并告知哪个窗口购买&lt;/li&gt;
+&lt;li&gt;票数自动减一&lt;/li&gt;
+&lt;li&gt;卖光之后，线程停止&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;定义一个测试类TicketDemo，步骤如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建Ticket类的对象&lt;/li&gt;
+&lt;li&gt;创建三个Thread类的对象，把Ticket对象作为构造方法的参数，并给出对应的窗口名称&lt;/li&gt;
+&lt;li&gt;启动线程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;代码实现&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Ticket&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;Runnable&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Override&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticketCount&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+                &lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;-=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+                &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;currentThread&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;正在卖票,还剩有&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;张&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Demo&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;static&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;Ticket&lt;/span&gt; &lt;span class="n"&gt;ticket&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Ticket&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="n"&gt;Thread&lt;/span&gt; &lt;span class="n"&gt;t1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticket&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;一号窗口&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;Thread&lt;/span&gt; &lt;span class="n"&gt;t2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticket&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;二号窗口&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;Thread&lt;/span&gt; &lt;span class="n"&gt;t3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticket&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;三号窗口&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;start&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;start&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="n"&gt;t3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;start&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;卖票案例的思考&lt;/h2&gt;
+&lt;p&gt;看似这个案例没有什么问题,但是在实际生活中,售票时候出票是需要一定的时间的,所以在出售一张票的时候需要一点时间的延迟,接下来就修改卖票程序中的动作,每次出票时间为100毫秒,用sleep()方法实现。&lt;/p&gt;
+&lt;p&gt;此时出现了问题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;相同的票出现了多次&lt;/li&gt;
+&lt;li&gt;出现的负数的票&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为什么出现这个问题（这也是我们判断多线程程序是否会有数据安全问题的标准）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多线程操作共享数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果解决多线程安全问题？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基本思想：让程序没有安全问题的环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;实现方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;把多条语句操作共享数据的代码&lt;strong&gt;锁&lt;/strong&gt;起来，让任意时刻只能有一个先吃执行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;同步代码块&lt;/h2&gt;
+&lt;p&gt;锁多条语句操作共享数据，可以使用同步代码块实现&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;格式：&lt;/p&gt;
+&lt;p&gt;synchronized(任意对象){ 多条语句操作共享数据的代码 }&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;默认情况是打开的，只要有一个线程进去执行代码了，锁就会关闭。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;当线程执行完了之后，锁就会自动打开。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;同步的好处和弊端&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;好处：解决了多线程的数据安全问题&lt;/li&gt;
+&lt;li&gt;弊端：当线程很多时，因为每个线程都会去&lt;strong&gt;判断&lt;/strong&gt;同步上的锁，这是非常浪费资源的，无形中降低了程序的运行效率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面我们更新一下Ticket类。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Ticket&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;Runnable&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Object&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Override&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+
+            &lt;span class="c1"&gt;//锁对象,任意对象就可以.&lt;/span&gt;
+            &lt;span class="c1"&gt;//多个线程必须使用同一把锁&lt;/span&gt;
+            &lt;span class="kd"&gt;synchronized&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+                &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticketCount&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+                    &lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+                &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+                    &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                        &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+                    &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;InterruptedException&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                        &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;printStackTrace&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+                    &lt;span class="p"&gt;}&lt;/span&gt;
+                    &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;-=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+                    &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;currentThread&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;正在卖票,还剩有&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;张&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+                &lt;span class="p"&gt;}&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img data-width="546" data-height="352" src="https://cdn.xn2001.com/2020/02/05/20200205011342.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;此时的运行结果变得非常自然。&lt;/p&gt;
+&lt;h3&gt;synchronized的锁对象必须是唯一的&lt;/h3&gt;
+&lt;h2&gt;同步方法&lt;/h2&gt;
+&lt;p&gt;同步方法：就是把&lt;code&gt;synchronized&lt;/code&gt;关键字加到方法上。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;格式：&lt;/p&gt;
+&lt;p&gt;修饰符 synchronized 返回值类型 方法名(方法参数){ }&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;同步静态方法：就是把synchronized关键词加到静态方法上&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;格式：&lt;/p&gt;
+&lt;p&gt;修饰符 static synchronized 返回值类型 方法名(方法参数){ }&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;主要记住：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;同步方法到底锁对象是什么？ &lt;strong&gt;this&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;同步静态方法的锁对象是什么？ &lt;strong&gt;类名.class&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;同步代码块和同步方法的区别&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;同步代码块可以锁住指定代码，同步方法是锁住方法中所有代码。&lt;/li&gt;
+&lt;li&gt;同步代码块可以指定锁对象，同步方法不能&lt;strong&gt;指定&lt;/strong&gt;锁对象。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;★Lock锁&lt;/h2&gt;
+&lt;p&gt;虽然我们可以理解同步代码块和同步方法的锁对象，但是我们并没有直接看到在哪里加上了锁，在哪里释放了锁，为了更加清晰的表达如何加锁和释放锁，JDK5以后提供了一个新的锁对象Lock&lt;/p&gt;
+&lt;p&gt;Lock实现提供比使用synchronized方法和语句可以获得更广泛的锁定操作&lt;/p&gt;
+&lt;p&gt;Lock中提供了获得锁和释放锁的方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;void lock()             获得锁&lt;/li&gt;
+&lt;li&gt;void unlock()        释放锁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lock是接口不能直接实例化，可以采用它的实现类&lt;code&gt;ReentrantLock&lt;/code&gt;来实例化&lt;/p&gt;
+&lt;p&gt;ReentrantLock的构造方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ReentrantLock()  创建一个ReentrantLock的实例&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;注意&lt;/strong&gt;：一般释放锁unlock要放入&lt;strong&gt;finally&lt;/strong&gt;中。&lt;/h4&gt;
+&lt;p&gt;下面我们使用Lock来更新一下Ticket类&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Ticket&lt;/span&gt; &lt;span class="kd"&gt;implements&lt;/span&gt; &lt;span class="n"&gt;Runnable&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="c1"&gt;//锁对象Lock&lt;/span&gt;
+    &lt;span class="kd"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Lock&lt;/span&gt; &lt;span class="n"&gt;lock&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;ReentrantLock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@Override&lt;/span&gt;
+    &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="c1"&gt;//开启Lock锁&lt;/span&gt;
+            &lt;span class="n"&gt;lock&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;lock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+            &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                    &lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+                &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                    &lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+                    &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;-=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+                    &lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Thread&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;currentThread&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="na"&gt;getName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;正在卖票,还剩有&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ticketCount&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;张&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+                &lt;span class="p"&gt;}&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Exception&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;printStackTrace&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;finally&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="c1"&gt;//释放Lock锁&lt;/span&gt;
+                &lt;span class="n"&gt;lock&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;unlock&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;死锁&lt;/h1&gt;
+&lt;p&gt;线程死锁是指由于两个或者多个线程互相持有对方所需要的资源，导致这些线程处于等待状态，无法前往执行。&lt;/p&gt;
+&lt;p&gt;建议：不要写锁的嵌套。&lt;/p&gt;
+</description><author>jialna@qq.com (乐心湖)</author><guid isPermaLink="true">/archives/thread-safe-java/</guid><pubDate>Mon, 09 Mar 2020 15:10:00 +0806</pubDate></item></channel></rss>
