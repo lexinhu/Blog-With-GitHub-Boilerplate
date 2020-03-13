@@ -19,9 +19,10 @@ enable_jsdelivr = {
     "repo": "lexinhu/site-Wiki@gh-pages"
 }
 
+# ${static_prefix}logo.png
 # 站点设置
-site_name = "心湖维基"
-site_logo = "${static_prefix}logo.png"
+site_name = "心湖维基" 
+site_logo = "https://cdn.xn2001.com/img/head.jpg"
 site_build_date = "2019-12-18T16:51+08:00"
 author = "乐心湖"
 email = "jialna@qq.com"
