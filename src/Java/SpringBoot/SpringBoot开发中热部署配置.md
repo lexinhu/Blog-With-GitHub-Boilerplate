@@ -11,9 +11,8 @@ categories:
 tags: 
   - SpringBoot
   - 技术笔记
+  - 热部署
 ---
-
-
 
 ## 第一步：添加 devtools 依赖
 
