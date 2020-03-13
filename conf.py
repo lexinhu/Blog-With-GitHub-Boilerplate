@@ -37,7 +37,7 @@ external_links = [
     },
     {
         "name": "GitHub",
-        "url": "https://github.com/lexinhu/site-Wiki"
+        "url": "https://github.com/lexinhu/site-Wiki",
         "brief": "github托管"
     }
 ]
