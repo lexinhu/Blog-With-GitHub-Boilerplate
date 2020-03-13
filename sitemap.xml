@@ -12,6 +12,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+    <loc>/archives/log-springboot/</loc>
+    <lastmod>2020-03-14</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
+    <loc>/archives/banner-springboot/</loc>
+    <lastmod>2020-03-14</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+</url>
+
+<url>
     <loc>/archives/math-1/</loc>
     <lastmod>2020-03-13</lastmod>
     <changefreq>always</changefreq>
