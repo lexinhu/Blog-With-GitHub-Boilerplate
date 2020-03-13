@@ -11,7 +11,7 @@ categories:
 tags: 
   - SpringBoot
   - 技术笔记
-  — Banner
+  - Banner
 ---
 
 ## SpringBoot动态Banner
