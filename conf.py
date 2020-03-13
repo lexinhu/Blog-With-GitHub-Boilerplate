@@ -21,7 +21,7 @@ enable_jsdelivr = {
 
 # 站点设置
 site_name = "心湖维基"
-site_logo = "${static_prefix}logo.png"
+# site_logo = "${static_prefix}logo.png"
 site_build_date = "2019-12-18T16:51+08:00"
 author = "乐心湖"
 email = "jialna@qq.com"
@@ -31,9 +31,14 @@ key_words = ['乐心湖', '维基', '心湖维基', 'blog','技术']
 language = 'zh-CN'
 external_links = [
     {
-        "name": "乐心湖",
+        "name": "个人博客",
         "url": "https://www.xn2001.com",
         "brief": "乐心湖的主页。"
+    },
+    {
+        "name": "GitHub",
+        "url": "https://github.com/lexinhu/site-Wiki"
+        "brief": "github托管"
     }
 ]
 nav = [
