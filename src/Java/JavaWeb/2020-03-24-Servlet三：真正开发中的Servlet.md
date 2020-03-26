@@ -8,8 +8,8 @@ updated: 2020/03/24 23:43:16
 status: publish
 author: 心有所向
 categories: 
+  - Java
   - JavaWeb
-  - 技术笔记
 tags: 
   - Servlet
 ---
