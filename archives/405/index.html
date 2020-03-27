@@ -1,0 +1,531 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="乐心湖,维基,心湖维基,blog,技术" />
+    <meta name="generator" content="Maverick 1.1" />
+    <meta name="template" content="Kepler" />
+    <link rel="alternate" type="application/rss+xml" title="心湖维基 &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="心湖维基 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/kepler-8f1c36e1cd.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.10.0/dist/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/ebe1ba502ac0f41ceae18c3187889c07.json"
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            if(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)){
+                document.body.classList.add('safari')
+            }else{
+                document.body.classList.remove('safari')
+            }
+        });
+    </script>
+    
+<title>Java网络编程 - 心湖维基</title>
+<meta name="author" content="心有所向" />
+<meta name="description" content="概述" />
+<meta property="og:title" content="Java网络编程 - 心湖维基" />
+<meta property="og:description" content="概述" />
+<meta property="og:site_name" content="心湖维基" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/405/" />
+<meta property="og:image" content="None" />
+<meta property="article:published_time" content="2020-03-23T03:04:07-00.00" />
+<meta name="twitter:title" content="Java网络编程 - 心湖维基" />
+<meta name="twitter:description" content="概述" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="None" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+
+    </head>
+    
+    <body class="content">
+        <header>
+            <div class="container">
+                <section>
+                    <a href="/"><img src="https://cdn.xn2001.com/img/head.jpg">心湖维基</a>
+                </section>
+                <section>
+                    <nav>
+                        <ul>
+                            
+                                <li><a href="https://www.xn2001.com" target="_blank">个人博客</a></li>
+                            
+                                <li><a href="https://github.com/lexinhu/site-Wiki" target="_blank">GitHub</a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+    
+                <section>
+                    <a hidden class="toggle-toc" target="_self" href="javascript:void(0)" onclick="$(body).toggleClass('toc-open')"><i class="fa fa-align-right"></i></a>
+                    <a hidden class="toggle-navbar" target="_self" href="javascript:void(0)" onclick="$(body).toggleClass('navbar-open')"><i class="fa fa-indent"></i></a>
+                    <button class="search-form-input"><i class="fa fa-search"></i></button>
+                </section>
+            </div>
+        </header>
+
+        <main>
+            <div id="pjax-container" class="container">
+                <aside id="navbar" class="no-scrollbar">
+                    
+                    <section class="sidebar-nav">
+                        
+                            <div class="None" ><span><a href="/">首页</a></span></div>
+                        
+                            <div class="None" ><span><a href="/archives/">归档</a></span></div>
+                        
+                            <div class="None" ><span><a href="/about/">关于</a></span></div>
+                        
+                    </section>
+                    
+                    <section>
+                        
+    <div class="open "><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/JavaWeb/">JavaWeb</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/414/">学习Session</a></li><li class=""><a href="/archives/413/">JSP二：掌握JSP</a></li><li class=""><a href="/archives/412/">JSP一：理解JSP</a></li><li class=""><a href="/archives/411/">JavaWeb笔记指南</a></li><li class=""><a href="/archives/410/">Servlet三：真正开发中的Servlet</a></li><li class=""><a href="/archives/409/">Servlet二：掌握Servlet</a></li><li class=""><a href="/archives/408/">Servlet一：使用Servlet</a></li><li class=""><a href="/archives/407/">JavaWeb项目搭建</a></li><li class=""><a href="/archives/406/">Tomcat在idea中乱码</a></li><li class=""><a href="/archives/397/">JavaWeb常见的乱码问题解决方案总结</a></li><li class=""><a href="/archives/dependencyManagement-maven/">思-关于maven的dependencyManagement</a></li><li class=""><a href="/archives/tomcat-javaweb/">javaweb项目使用Tomcat（idea）</a></li><li class=""><a href="/archives/encoding-javaweb/">JavaWeb使用response的中文乱码问题</a></li></ul></div><div class="open "><span><a href="/category/Java基础/">Java基础</a><button class="toggle_sidebar fa"></button></span><ul><li class="current"><a href="/archives/405/">Java网络编程</a></li><li class=""><a href="/archives/thread-safe-java/">Java多线程的安全问题</a></li><li class=""><a href="/archives/thread-void-java/">Java多线程的常见方法</a></li><li class=""><a href="/archives/thread-know-java/">Java多线程的实现方式</a></li><li class=""><a href="/archives/360/">idea背景图片及简化插件</a></li></ul></div><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/druid-connect-springboot/">SpringBoot配置阿里Druid连接池</a></li><li class=""><a href="/archives/log-springboot/">SpringBoot日志功能</a></li><li class=""><a href="/archives/banner-springboot/">SpringBoot动态Banner</a></li><li class=""><a href="/archives/devtools-springboot/">SpringBoot开发中热部署配置</a></li></ul></div><div class=" "><span><a href="/category/SSM/">SSM</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/mvc-Java/">纯Java搭建SpringMVC项目</a></li><li class=""><a href="/archives/mvc-Default/">SpringMvc中静态资源被拦截</a></li></ul></div></ul></div><div class=" "><span><a href="/category/数学/">数学</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/线性代数/">线性代数</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/math-1/">线性代数粗暴解题</a></li></ul></div></ul></div><div class=" "><span><a href="/category/业余/">业余</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/Photoshop/">Photoshop</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/head-circular/">如何制作圆形头像或图片</a></li></ul></div></ul></div><div class=" "><span><a href="/category/软件/">软件</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/jetbrains-edu/">教育邮箱免费申请正版idea(包括全家桶)</a></li></ul></div><div class=" "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/wike-building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div>
+
+                    </section>
+                    <section hidden class="sidebar-external-link">
+                        
+                            <div class="external"><span><a href="https://www.xn2001.com">个人博客</a><button class="go-external"><i class="fa fa-external-link"></i></button></span></div>
+                        
+                            <div class="external"><span><a href="https://github.com/lexinhu/site-Wiki">GitHub</a><button class="go-external"><i class="fa fa-external-link"></i></button></span></div>
+                        
+                    </section>
+                    <section class="maverick">
+                        <div><span style="border: 1px solid #d4dadf;"><a href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Kepler</a></span></div>
+                    </section>
+                </aside>
+                <div id="content-wrapper">
+                    <div id="content">
+    <section>
+        <h1 class="post-title">Java网络编程</h1>
+        <p class="post-meta">
+            <time>March 23 2020</time>
+            <span class="tags">
+                
+                <span>
+                    <a href="/tag/网络编程/">#网络编程</a>
+                </span>
+                
+                <span>
+                    <a href="/tag/TCP/">#TCP</a>
+                </span>
+                
+                <span>
+                    <a href="/tag/UDP/">#UDP</a>
+                </span>
+                
+            </span>
+        </p>
+        <article class="yue"><h2>概述</h2>
+<p>概述：网络通信协议下，不同计算机上运行的程序，可以进行数据传输</p>
+<p>例如，A电脑中的飞秋，发送消息给B电脑中的飞秋，需要哪些条件才能发送嗯？</p>
+<p>IP地址</p>
+<ul>
+<li>设备在网络中的地址，是唯一的标识。</li>
+</ul>
+<p>端口</p>
+<ul>
+<li>应用程序在设备中唯一的标识。</li>
+</ul>
+<p>协议</p>
+<ul>
+<li>数据在网络中传输的规则，常见的协议有UDP协议和TCP协议。</li>
+</ul>
+<h2>IP</h2>
+<p>ip：全称为：互联网协议地址，也称IP地址，是分配给上网设备的数字标签，常见的IP分类为：ipv4和ipv6</p>
+<p><figure><img data-width="1180" data-height="837" src="https://cdn.xn2001.com/2020/03/22/20200322133313.png" alt="" /></figure></p>
+<ul>
+<li><p>IPv4： 是网际协议开发过程中的第四个修订版本，也是此协议第一个被广泛部署的版本。IPv4是互联网的核心，也是使用最广泛的网际协议版本，其后继版本为IPv6，直到2011年，IANA IPv4位址完全用尽时，IPv6仍处在部署的初期。<figure><img data-width="1222" data-height="648" src="https://cdn.xn2001.com/2020/03/22/20200322133635.png" alt="" /></figure></p>
+</li>
+<li><p>IPv6：由于IPv4最大的问题在于网络地址资源有限，严重制约了互联网的应用和发展。IPv6的使用，不仅能解决网络地址资源数量的问题，而且也解决了多种接入设备连入互联网的障碍 [1]  。
+互联网数字分配机构（IANA）在2016年已向国际互联网工程任务组（IETF）提出建议，要求新制定的国际互联网标准只支持IPv6，不再兼容IPv4。</p>
+</li>
+</ul>
+<blockquote><p>具体可以通过百度百科了解。</p>
+</blockquote>
+<p>常用命令：</p>
+<ul>
+<li>ipconfig：查看本机IP</li>
+<li>ping IP地址：检查网络是否连通</li>
+</ul>
+<p>我们ping一下博客地址，其中47.106.67.159就是我服务器电脑的ip了。可以检测当前电脑与服务器之间是否畅通，同时确定服务器的IP。</p>
+<p><figure><img data-width="1283" data-height="856" src="https://cdn.xn2001.com/2020/03/22/20200322131546.png" alt="" /></figure></p>
+<p>特殊IP地址：</p>
+<ul>
+<li>127.0.0.1：回送地址也称本地回环地址，可以代表本机的IP地址，一般是用来做测试使用。</li>
+</ul>
+<h2>InetAddress</h2>
+<p>为了方便我们对IP地址的获取和操作，java提供了一个类InetAddress供我们使用</p>
+<p>InetAddress：此类表示Internet协议（IP）地址</p>
+<p>具体查看JDK的官方API文档</p>
+<h2>端口</h2>
+<p>端口：要用程序在设备中的唯一标识</p>
+<p>端口号：用两个字节表示的数据，它的取值范围是0~65535，其中0~1023之间的端口号用于一些知名的网络服务或者应用。我们自己使用1024以上的端口号</p>
+<p>注意：一个端口号只能被一个应用程序使用。</p>
+<h2>协议</h2>
+<p>协议：计算机网络中，连接和通信的规则被称为网络通信协议</p>
+<h3>UDP协议</h3>
+<ul>
+<li>UDP是面向无连接通信协议。速度快，有大小限制一次最多发送64K，数据不安全，易丢失数据。</li>
+<li>不管你有没有建立连接，他都会发送出去。</li>
+<li>常用于：传递音频、数据、普通数据等</li>
+</ul>
+<h3>TCP协议</h3>
+<ul>
+<li>TCP协议是面向连接的通信协议</li>
+<li>速度慢，没有大小限制，数据安全</li>
+</ul>
+<h2>总结</h2>
+<p>网络编程：就是让两台计算机进行数据交互</p>
+<p>网络编程三要素</p>
+<ul>
+<li>IP：设备在网络中唯一的标识</li>
+<li>端口号：应用程序在设备中唯一的标识</li>
+<li>协议：数据在传输过程中遵循的规则</li>
+</ul>
+<h2>UDP通信程序</h2>
+<h3>UDP发送数据：</h3>
+<p>步骤:</p>
+<ul>
+<li>创建发送端的DatagramSocket对象</li>
+<li>创建数据，并把数据打包进箱子（DatagramPacket）</li>
+<li>调用DatagramSocket对象的方法发送数据</li>
+<li>释放资源</li>
+</ul>
+<p>代码示例。</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClientDemo</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">DatagramSocket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramSocket</span><span class="p">();</span>
+        <span class="c1">//设置要传输的数据，并转化为byte类型，不能直接穿字符串</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;你家孩子被录取了&quot;</span><span class="p">;</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="na">getBytes</span><span class="p">();</span>
+        <span class="c1">//创建主机且命名为localhost</span>
+        <span class="n">InetAddress</span> <span class="n">address</span> <span class="o">=</span> <span class="n">InetAddress</span><span class="p">.</span><span class="na">getByName</span><span class="p">(</span><span class="s">&quot;localhost&quot;</span><span class="p">);</span>
+        <span class="c1">//设置端口</span>
+        <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+        <span class="c1">//保存进箱子</span>
+        <span class="n">DatagramPacket</span> <span class="n">packet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramPacket</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="n">bytes</span><span class="p">.</span><span class="na">length</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span>
+
+        <span class="n">socket</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">packet</span><span class="p">);</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p><figure><img data-width="725" data-height="241" src="https://cdn.xn2001.com/2020/03/22/20200322153714.png" alt="" /></figure></p>
+<p>运行结果为空白，我们没有设置接收端，UDP协议只管发，收不收得到都不管。</p>
+<h3>UDP接收数据</h3>
+<p>步骤：</p>
+<ul>
+<li>创建接收端的DatagramSocket对象</li>
+<li>创建一个箱子，用于接收数据</li>
+<li>调用DatagramSocket的方法接收数据并将数据放进箱子中保存</li>
+<li>解析数据，在控制台显示</li>
+<li>释放资源</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ServeDemo</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="c1">//表示从1000端口接受数据</span>
+        <span class="n">DatagramSocket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramSocket</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+
+        <span class="c1">//给箱子设置一个byte数组进行接收</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">DatagramPacket</span> <span class="n">packet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramPacket</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="n">bytes</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">receive</span><span class="p">(</span><span class="n">packet</span><span class="p">);</span>
+        <span class="c1">//在控制台打印数据</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">));</span>
+
+        <span class="c1">//我们也可以通过getData()方法将箱子里的数据重新拿出,一般不需要</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span> <span class="o">=</span> <span class="n">packet</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
+
+        <span class="c1">//记得释放资源</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>我们运行起来，发现程序正在运行，但是没有打印出任何东西。</p>
+<p><figure><img data-width="681" data-height="377" src="https://cdn.xn2001.com/2020/03/22/20200322161925.png" alt="" /></figure></p>
+<p>这很正常，因为我们并没有发送数据给它呀，这时我们保持接收端不动，去运行前面已经写好的发送端，他们端口都是1000。</p>
+<p><figure><img data-width="597" data-height="356" src="https://cdn.xn2001.com/2020/03/22/20200322162049.png" alt="" /></figure></p>
+<p>我们看到效果已经出现了！</p>
+<ul>
+<li><p>如果你先运行了发送端，它就已经把数据发送出去了，你此时再运行接收端就没有效果了。</p>
+</li>
+<li><p>如果接收端启动之后，没有收到数据，那么它就会死等（阻塞）。也就是它会运行到示例代码中的第9行就等在了那里。</p>
+</li>
+<li><p>在接收数据的时候，需要调用一个getLength方法，表示接收到了多少字节。这里我们使用了1024个字节去接收数据，所以导致我们接收到数据后，后面带了很多空格，具体看下图。所以我们在打印输出中传入长度即可。</p>
+</li>
+</ul>
+<p><figure><img data-width="1121" data-height="310" src="https://cdn.xn2001.com/2020/03/22/20200322162707.png" alt="" /></figure></p>
+<div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">packet</span><span class="p">.</span><span class="na">getLength</span><span class="p">()));</span>
+</pre></div>
+<h2>UDP通信程序练习</h2>
+<p>需求：</p>
+<ul>
+<li>UDP发送数据：数据来自键盘录入，直到输入的数据是886，发送数据结束。</li>
+<li>UPD接收数据：因为接收端不知道发送端什么时候停止发送，所以我们采用死循环接收。</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Serve</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">DatagramSocket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramSocket</span><span class="p">(</span><span class="mi">996</span><span class="p">);</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">]</span><span class="p">;</span>
+            <span class="n">DatagramPacket</span> <span class="n">packet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramPacket</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="n">bytes</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+            <span class="n">socket</span><span class="p">.</span><span class="na">receive</span><span class="p">(</span><span class="n">packet</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">packet</span><span class="p">.</span><span class="na">getLength</span><span class="p">()));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Client</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">DatagramSocket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramSocket</span><span class="p">();</span>
+        <span class="n">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="s">&quot;886&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">s</span><span class="p">)){</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="na">getBytes</span><span class="p">();</span>
+            <span class="n">InetAddress</span> <span class="n">address</span> <span class="o">=</span> <span class="n">InetAddress</span><span class="p">.</span><span class="na">getByName</span><span class="p">(</span><span class="s">&quot;127.0.0.1&quot;</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">996</span><span class="p">;</span>
+            <span class="n">DatagramPacket</span> <span class="n">packet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramPacket</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span><span class="n">bytes</span><span class="p">.</span><span class="na">length</span><span class="p">,</span><span class="n">address</span><span class="p">,</span><span class="n">port</span><span class="p">);</span>
+            <span class="n">socket</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">packet</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h2>UDP三种通信方式</h2>
+<ul>
+<li>单播，一对一</li>
+<li>组播，一对多</li>
+<li>广播，一对所有</li>
+</ul>
+<h3>UDP通信组播代码实现</h3>
+<p>组播地址：224.0.0.0~239.255.255.255</p>
+<p>其中224.0.0.0~224.0.0.255为预留的组播地址</p>
+<p>组播的发送端跟单播类似，也就是跟我们已经演示过的代码类似。但是在单播中，我们是发给指定IP的电脑，在组播中，是发给组播地址。</p>
+<p>我们可以看到下面的代码中，我们开头创建了MulticastSocket对象并传入了端口，后面再加入组IP接收数据。这就是组播的接收端示例代码：</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Serve2</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">MulticastSocket</span> <span class="n">multicastSocket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MulticastSocket</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">DatagramPacket</span> <span class="n">packet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramPacket</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="n">bytes</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+
+        <span class="c1">//把当前计算机绑定一个组播地址，表示添加到这一组中</span>
+        <span class="c1">//注意，这里要跟发送端设置的IP一样</span>
+        <span class="n">multicastSocket</span><span class="p">.</span><span class="na">joinGroup</span><span class="p">(</span><span class="n">InetAddress</span><span class="p">.</span><span class="na">getByName</span><span class="p">(</span><span class="s">&quot;224.0.1.0&quot;</span><span class="p">));</span>
+        <span class="n">multicastSocket</span><span class="p">.</span><span class="na">receive</span><span class="p">(</span><span class="n">packet</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">packet</span><span class="p">.</span><span class="na">getLength</span><span class="p">()));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>发送端：</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Client2</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">DatagramSocket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramSocket</span><span class="p">();</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;我是乐心湖啊&quot;</span><span class="p">;</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="na">getBytes</span><span class="p">();</span>
+        <span class="c1">//设置IP</span>
+        <span class="n">InetAddress</span> <span class="n">address</span> <span class="o">=</span> <span class="n">InetAddress</span><span class="p">.</span><span class="na">getByName</span><span class="p">(</span><span class="s">&quot;224.0.1.0&quot;</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+        <span class="n">DatagramPacket</span> <span class="n">packet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramPacket</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="n">bytes</span><span class="p">.</span><span class="na">length</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">packet</span><span class="p">);</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
+</pre></div>
+<p>测试，只要你的小伙伴都设置了这个IP和端口（即使用了示例中的接收端），你运行发送端就可以发送 “我是乐心湖啊” 给他们了。</p>
+<h3>UDP通信广播代码实现</h3>
+<p>广播地址：255.255.255.255 （必须）</p>
+<p>接收端跟单播没有两样。</p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Serve3</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">DatagramSocket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramSocket</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">DatagramPacket</span> <span class="n">packet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramPacket</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="n">bytes</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">receive</span><span class="p">(</span><span class="n">packet</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">packet</span><span class="p">.</span><span class="na">getLength</span><span class="p">()));</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Client3</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">DatagramSocket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramSocket</span><span class="p">();</span>
+        <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;是广播哦&quot;</span><span class="p">;</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="na">getBytes</span><span class="p">();</span>
+        <span class="c1">//设置IP</span>
+        <span class="n">InetAddress</span> <span class="n">address</span> <span class="o">=</span> <span class="n">InetAddress</span><span class="p">.</span><span class="na">getByName</span><span class="p">(</span><span class="s">&quot;255.255.255.255&quot;</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+        <span class="n">DatagramPacket</span> <span class="n">packet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DatagramPacket</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="n">bytes</span><span class="p">.</span><span class="na">length</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">packet</span><span class="p">);</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h2>TCP通信程序</h2>
+<h3>原理：</h3>
+<ul>
+<li>TCP通信协议是一种可靠的网络协议，它在通信的两端各建立一个Socket对象。</li>
+<li><strong>通信之前必须要建立连接</strong></li>
+<li>通过Socket产生IO流来进行网络通信</li>
+</ul>
+<h3>TCP发送数据：</h3>
+<p>步骤：</p>
+<ol>
+<li>创建客户端的Socket对象与指定服务端连接 ， Socket(String host，int port)</li>
+<li>获取输出流，写数据  OutputStream getOutputStream()</li>
+<li>释放资源，void close()</li>
+</ol>
+<p>此时运行客户端必然报错，因为我们没有写服务端，而TCP协议<strong>通信之前必须要建立连接</strong></p>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Client4</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">Socket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Socket</span><span class="p">(</span><span class="s">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">996</span><span class="p">);</span>
+        <span class="n">OutputStream</span> <span class="n">outputStream</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="na">getOutputStream</span><span class="p">();</span>
+        <span class="n">outputStream</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="s">&quot;hello,leixnhu&quot;</span><span class="p">.</span><span class="na">getBytes</span><span class="p">());</span>
+        <span class="n">outputStream</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3>TCP接收数据</h3>
+<p>步骤：</p>
+<ol>
+<li>创建服务端的Socket对象(ServerSocket)   ServerSocket(int port)</li>
+<li>监听客户端连接，返回一个Socket对象 Socket.accept()</li>
+<li>获取输入流，读数据，并把数据显示在控制台上 InputSteam getInputStream()</li>
+<li>释放资源 void close()</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Serve4</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">ServerSocket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ServerSocket</span><span class="p">(</span><span class="mi">996</span><span class="p">);</span>
+        <span class="n">Socket</span> <span class="n">accept</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="na">accept</span><span class="p">();</span>
+        <span class="n">InputStream</span> <span class="n">inputStream</span> <span class="o">=</span> <span class="n">accept</span><span class="p">.</span><span class="na">getInputStream</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">((</span><span class="n">a</span> <span class="o">=</span> <span class="n">inputStream</span><span class="p">.</span><span class="na">read</span><span class="p">())</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span> <span class="n">a</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">inputStream</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+        <span class="n">socket</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3>注意：</h3>
+<ul>
+<li>accept方法是阻塞的，为了等待客户端连接</li>
+<li>客户端创建对象连接服务器，此时是通过三次握手协议保证跟服务器之间的连接。</li>
+<li>针对客户端来讲，是往外写的，所以是输出流</li>
+<li>针对服务器来讲，是往里读的，所以是输入流</li>
+<li>read方法也是阻塞的</li>
+<li>在关流的时候，还多了一个往服务器写结束标记的动作</li>
+<li>最后一步断开连接，通过四次挥手协议保证连接终止</li>
+</ul>
+</article>
+    </section>
+
+    
+    <section id="content-pager">
+        
+            <div class="next">
+                <a class="card" href="/archives/406/">
+                    <time>March 24 2020</time>
+                    <span>Tomcat在idea中乱码</span>
+                </a>
+            </div>
+        
+        
+            <div class="prev">
+                <a class="card" href="/archives/397/">
+                    <time>March 17 2020</time>
+                    <span>JavaWeb常见的乱码问题解决方案总结</span>
+                </a>
+            </div>
+        
+    </section>
+    
+
+    
+
+    <script>
+        document.body.classList.add('content');
+        document.body.classList.remove('archive');
+    </script>
+</div>
+                    <footer>
+                        <span>Copyright © 2020 乐心湖</span>
+                        
+    
+
+                        
+                    </footer>
+                </div>
+                
+<aside id="toc-container" class="no-scrollbar">
+    <span><i class="fa fa-align-right"></i> CONTENTS</span>
+    <div id="toc"></div>
+</aside>
+
+            </div>
+        </main>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tocbot@4.10.0/dist/tocbot.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/kepler-ef161b04d5.js"></script>
+        <script>
+            function ExSearchCall(item){
+                if (item && item.length) {
+                    $('.ins-close').click(); // 关闭搜索框
+                    $('input.ins-search-input').val(''); // 清空
+                    let url = item.attr('data-url'); // 获取目标页面 URL
+                    $.pjax({url: url, 
+                        container: '#pjax-container',
+                        fragment: '#pjax-container',
+                        timeout: 8000, }); // 发起一次 PJAX 请求
+                }
+            }
+        </script>
+
+        <!--Valine-->
+        
+
+        <!--ExSearch-->
+        <script src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+        
+        <!--katex-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/katex.min.js"></script>
+        <script>
+        mathOpts = {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ]
+        };
+        </script>
+        <script defer src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+        
+    </body>
+</html>

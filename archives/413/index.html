@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="乐心湖,维基,心湖维基,blog,技术" />
+    <meta name="generator" content="Maverick 1.1" />
+    <meta name="template" content="Kepler" />
+    <link rel="alternate" type="application/rss+xml" title="心湖维基 &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="心湖维基 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/kepler-8f1c36e1cd.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.10.0/dist/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/ebe1ba502ac0f41ceae18c3187889c07.json"
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            if(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)){
+                document.body.classList.add('safari')
+            }else{
+                document.body.classList.remove('safari')
+            }
+        });
+    </script>
+    
+<title>JSP二：掌握JSP - 心湖维基</title>
+<meta name="author" content="心有所向" />
+<meta name="description" content="在JSP中，request和response是非常重要的两个东西，请务必知道他们的常用方法。" />
+<meta property="og:title" content="JSP二：掌握JSP - 心湖维基" />
+<meta property="og:description" content="在JSP中，request和response是非常重要的两个东西，请务必知道他们的常用方法。" />
+<meta property="og:site_name" content="心湖维基" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/413/" />
+<meta property="og:image" content="None" />
+<meta property="article:published_time" content="2020-03-25T17:59:00-00.00" />
+<meta name="twitter:title" content="JSP二：掌握JSP - 心湖维基" />
+<meta name="twitter:description" content="在JSP中，request和response是非常重要的两个东西，请务必知道他们的常用方法。" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="None" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+
+    </head>
+    
+    <body class="content">
+        <header>
+            <div class="container">
+                <section>
+                    <a href="/"><img src="https://cdn.xn2001.com/img/head.jpg">心湖维基</a>
+                </section>
+                <section>
+                    <nav>
+                        <ul>
+                            
+                                <li><a href="https://www.xn2001.com" target="_blank">个人博客</a></li>
+                            
+                                <li><a href="https://github.com/lexinhu/site-Wiki" target="_blank">GitHub</a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+    
+                <section>
+                    <a hidden class="toggle-toc" target="_self" href="javascript:void(0)" onclick="$(body).toggleClass('toc-open')"><i class="fa fa-align-right"></i></a>
+                    <a hidden class="toggle-navbar" target="_self" href="javascript:void(0)" onclick="$(body).toggleClass('navbar-open')"><i class="fa fa-indent"></i></a>
+                    <button class="search-form-input"><i class="fa fa-search"></i></button>
+                </section>
+            </div>
+        </header>
+
+        <main>
+            <div id="pjax-container" class="container">
+                <aside id="navbar" class="no-scrollbar">
+                    
+                    <section class="sidebar-nav">
+                        
+                            <div class="None" ><span><a href="/">首页</a></span></div>
+                        
+                            <div class="None" ><span><a href="/archives/">归档</a></span></div>
+                        
+                            <div class="None" ><span><a href="/about/">关于</a></span></div>
+                        
+                    </section>
+                    
+                    <section>
+                        
+    <div class="open "><span><a href="/category/Java/">Java</a><button class="toggle_sidebar fa"></button></span><ul><div class="open "><span><a href="/category/JavaWeb/">JavaWeb</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/414/">学习Session</a></li><li class="current"><a href="/archives/413/">JSP二：掌握JSP</a></li><li class=""><a href="/archives/412/">JSP一：理解JSP</a></li><li class=""><a href="/archives/411/">JavaWeb笔记指南</a></li><li class=""><a href="/archives/410/">Servlet三：真正开发中的Servlet</a></li><li class=""><a href="/archives/409/">Servlet二：掌握Servlet</a></li><li class=""><a href="/archives/408/">Servlet一：使用Servlet</a></li><li class=""><a href="/archives/407/">JavaWeb项目搭建</a></li><li class=""><a href="/archives/406/">Tomcat在idea中乱码</a></li><li class=""><a href="/archives/397/">JavaWeb常见的乱码问题解决方案总结</a></li><li class=""><a href="/archives/dependencyManagement-maven/">思-关于maven的dependencyManagement</a></li><li class=""><a href="/archives/tomcat-javaweb/">javaweb项目使用Tomcat（idea）</a></li><li class=""><a href="/archives/encoding-javaweb/">JavaWeb使用response的中文乱码问题</a></li></ul></div><div class=" "><span><a href="/category/Java基础/">Java基础</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/405/">Java网络编程</a></li><li class=""><a href="/archives/thread-safe-java/">Java多线程的安全问题</a></li><li class=""><a href="/archives/thread-void-java/">Java多线程的常见方法</a></li><li class=""><a href="/archives/thread-know-java/">Java多线程的实现方式</a></li><li class=""><a href="/archives/360/">idea背景图片及简化插件</a></li></ul></div><div class=" "><span><a href="/category/SpringBoot/">SpringBoot</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/druid-connect-springboot/">SpringBoot配置阿里Druid连接池</a></li><li class=""><a href="/archives/log-springboot/">SpringBoot日志功能</a></li><li class=""><a href="/archives/banner-springboot/">SpringBoot动态Banner</a></li><li class=""><a href="/archives/devtools-springboot/">SpringBoot开发中热部署配置</a></li></ul></div><div class=" "><span><a href="/category/SSM/">SSM</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/mvc-Java/">纯Java搭建SpringMVC项目</a></li><li class=""><a href="/archives/mvc-Default/">SpringMvc中静态资源被拦截</a></li></ul></div></ul></div><div class=" "><span><a href="/category/数学/">数学</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/线性代数/">线性代数</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/math-1/">线性代数粗暴解题</a></li></ul></div></ul></div><div class=" "><span><a href="/category/业余/">业余</a><button class="toggle_sidebar fa"></button></span><ul><div class=" "><span><a href="/category/Photoshop/">Photoshop</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/head-circular/">如何制作圆形头像或图片</a></li></ul></div></ul></div><div class=" "><span><a href="/category/软件/">软件</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/jetbrains-edu/">教育邮箱免费申请正版idea(包括全家桶)</a></li></ul></div><div class=" "><span><a href="/category/建站/">建站</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/wike-building/">记-维基站的搭建</a></li></ul></div><div class=" "><span><a href="/category/默认分类/">默认分类</a><button class="toggle_sidebar fa"></button></span><ul><li class=""><a href="/archives/my-first-awesome-post/">我的第一篇文章</a></li><li class=""><a href="/archives/typography/">Hello World!</a></li></ul></div>
+
+                    </section>
+                    <section hidden class="sidebar-external-link">
+                        
+                            <div class="external"><span><a href="https://www.xn2001.com">个人博客</a><button class="go-external"><i class="fa fa-external-link"></i></button></span></div>
+                        
+                            <div class="external"><span><a href="https://github.com/lexinhu/site-Wiki">GitHub</a><button class="go-external"><i class="fa fa-external-link"></i></button></span></div>
+                        
+                    </section>
+                    <section class="maverick">
+                        <div><span style="border: 1px solid #d4dadf;"><a href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Kepler</a></span></div>
+                    </section>
+                </aside>
+                <div id="content-wrapper">
+                    <div id="content">
+    <section>
+        <h1 class="post-title">JSP二：掌握JSP</h1>
+        <p class="post-meta">
+            <time>March 25 2020</time>
+            <span class="tags">
+                
+                <span>
+                    <a href="/tag/jsp/">#jsp</a>
+                </span>
+                
+            </span>
+        </p>
+        <article class="yue"><blockquote><p>在JSP中，request和response是非常重要的两个东西，请务必知道他们的常用方法。</p>
+</blockquote>
+<h2>request 常用方法：</h2>
+<p>1、String getParameter(String key) 获取客户端传来的参数。</p>
+<p>示例： 我们获取id，name，age 多个参数是通过&amp;符号分开</p>
+<div class="highlight"><pre><span></span><span class="k">&lt;%</span>
+            <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">);</span>
+            <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+            <span class="n">String</span> <span class="n">age</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">);</span>
+        <span class="k">%&gt;</span>
+        id：<span class="k">&lt;%=</span><span class="n">id</span><span class="k">%&gt;</span>，name：<span class="k">&lt;%=</span><span class="n">name</span><span class="k">%&gt;</span>，age=<span class="k">&lt;%=</span><span class="n">age</span><span class="k">%&gt;</span>
+</pre></div>
+<p>访问地址<code>http://localhost:8080/new_javaweb_test_war_exploded/test2.jsp?id=985&amp;name=xn2001&amp;age=16</code></p>
+<p><figure><img data-width="1029" data-height="294" src="https://cdn.xn2001.com/2020/03/24/20200324224904.png" alt="" /></figure></p>
+<hr>
+<p>2、void setAttribute(String key,Object value) 通过键值对的形式保存数据。</p>
+<p>3、Object getAttribute(String key) 通过 key 取出 value。</p>
+<p>4、RequestDispatcher getRequestDispatcher(String path) 返回⼀个 RequestDispatcher 对象，该对象的 forward ⽅法⽤于请求转发。</p>
+<p>我们对前四个方法做一个小案例，首先我们建立几个jsp页面，分别叫hello1，hello2，hello3</p>
+<p>我们让hello1获取一个name参数，保存到key为name中，然后转发给hello2.jsp，hello2不做处理直接转发给hello3.jsp，相关代码如下</p>
+<p>hello1.jsp</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>我是Hello1<span class="nt">&lt;/h1&gt;</span>
+        <span class="k">&lt;%</span>
+            <span class="c1">//获取name值</span>
+            <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+            <span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="n">name</span><span class="p">);</span>
+        <span class="k">%&gt;</span>
+        <span class="k">&lt;%</span>
+            <span class="c1">// 请求分发跳转</span>
+            <span class="n">request</span><span class="p">.</span><span class="na">getRequestDispatcher</span><span class="p">(</span><span class="s">&quot;hello2.jsp&quot;</span><span class="p">).</span><span class="na">forward</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">response</span><span class="p">);</span>
+        <span class="k">%&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+</pre></div>
+<p>hello2.jsp</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>我是Hello2<span class="nt">&lt;/h1&gt;</span>
+        <span class="k">&lt;%</span>
+            <span class="n">request</span><span class="p">.</span><span class="na">getRequestDispatcher</span><span class="p">(</span><span class="s">&quot;hello3.jsp&quot;</span><span class="p">).</span><span class="na">forward</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">response</span><span class="p">);</span>
+        <span class="k">%&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+</pre></div>
+<p>hello3.jsp</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>我是Hello3<span class="nt">&lt;/h1&gt;</span>
+        <span class="k">&lt;%=</span><span class="n">request</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">)</span><span class="k">%&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+</pre></div>
+<p>我们启动项目，到浏览器中访问hello1.jsp，会发现其实访问的是hello3.jsp中的内容，但是地址栏不改变，name值也成功取出来。</p>
+<p><figure><img data-width="947" data-height="458" src="https://cdn.xn2001.com/2020/03/25/20200325002735.png" alt="" /></figure></p>
+<hr>
+<p>5、String[] getParameterValues() 获取客户端传来的多个同名参数。</p>
+<p>实例：</p>
+<p>我在test2.jsp中加入该方法的使用，获取多个name，保存为数组。</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
+        <span class="k">&lt;%</span>
+            <span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">);</span>
+            <span class="n">String</span><span class="o">[]</span> <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="na">getParameterValues</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+            <span class="n">String</span> <span class="n">age</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">);</span>
+        <span class="k">%&gt;</span>
+
+        id：<span class="k">&lt;%=</span><span class="n">id</span><span class="k">%&gt;</span>，name：<span class="k">&lt;%=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="k">%&gt;</span>，age=<span class="k">&lt;%=</span><span class="n">age</span><span class="k">%&gt;</span>
+
+    <span class="nt">&lt;/body&gt;</span>
+</pre></div>
+<p>访问地址<code>/test2.jsp?name=乐心湖&amp;name=心湖博客&amp;id=211&amp;age=16</code></p>
+<p><figure><img data-width="1019" data-height="294" src="https://cdn.xn2001.com/2020/03/25/20200325005137.png" alt="" /></figure></p>
+<p>6、void setCharacterEncoding(String charset) 指定每个请求的编码。中文乱码时需要设置，不乱码一般用不到。</p>
+<h2>HTTP 请求状态码</h2>
+<p>200：正常</p>
+<p>404：资源找不到</p>
+<p>400：请求类型不匹配</p>
+<p>500：Java 程序抛出异常</p>
+<h2>response 常用方法：</h2>
+<p>sendRedirect(String path)：重定向，页面之间的跳转。</p>
+<p>转发 getRequestDispatcher 和 重定向 sendRedirect 的区别：</p>
+<ul>
+<li><p>转发是将同⼀个请求传给下⼀个页面</p>
+</li>
+<li><p>重定向是创建⼀个新的请求传给下⼀个页面，之前的请求将结束⽣命周期。</p>
+</li>
+</ul>
+<h2>扩展</h2>
+<h3>面试常问：</h3>
+<p><strong>转发和重定向有什么区别</strong></p>
+<p>转发：同⼀个请求在服务器之间传递，地址栏不变，也叫服务器跳转。</p>
+<p>重定向：由客户端发送⼀次新的请求来访问跳转后的⽬标资源，地址栏改变，也叫客户端跳转。</p>
+<h3>实例：</h3>
+<p>如果两个页面之间需要通过 request 来传值，则必须使用转发，不能使用重定向。</p>
+<p>在用户登录功能里，如果⽤户名和密码正确，则跳转到首页（转发），并且展示用户名，否则重新回到登陆页面（重定向）。</p>
+<p>我们去写一套完整的登录系统，</p>
+<p>首先新建一个login.jsp，里面是一个表单，有用户名，密码，登录</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;check.jsp&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+            用户名：<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span><span class="nt">/&gt;&lt;br&gt;</span>
+            密码：<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">name=</span><span class="s">&quot;password&quot;</span><span class="nt">&gt;&lt;br&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;登录&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+</pre></div>
+<p>我们点击登录会提交到check.jsp，所以我们需要去写这个jsp，我们在里面加入验证用户名密码的功能，如果正确就转发给welcome.jsp，因为转发才可以传递request。失败就重定向到login.jsp</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
+        <span class="k">&lt;%</span>
+            <span class="n">String</span> <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;username&quot;</span><span class="p">);</span>
+            <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;password&quot;</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">username</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;admin&quot;</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="n">password</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;123456&quot;</span><span class="p">)){</span>
+                <span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="n">username</span><span class="p">);</span>
+                <span class="n">request</span><span class="p">.</span><span class="na">getRequestDispatcher</span><span class="p">(</span><span class="s">&quot;welcome.jsp&quot;</span><span class="p">).</span><span class="na">forward</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">response</span><span class="p">);</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="n">response</span><span class="p">.</span><span class="na">sendRedirect</span><span class="p">(</span><span class="s">&quot;login.jsp&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="k">%&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+</pre></div>
+<p>我们去写一个简单welcome.jsp</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
+        <span class="k">&lt;%</span>
+            <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="n">request</span><span class="p">.</span><span class="na">getAttribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+        <span class="k">%&gt;</span>
+
+        你好<span class="k">&lt;%=</span><span class="n">name</span><span class="k">%&gt;</span>,欢迎来到心湖演示。
+    <span class="nt">&lt;/body&gt;</span>
+</pre></div>
+<p>启动项目，访问login.jsp，进行测试。效果如下图。</p>
+<p><figure><img data-width="789" data-height="421" src="https://cdn.xn2001.com/2020/03/25/20200325174853.png" alt="" /></figure></p>
+<p><figure><img data-width="851" data-height="421" src="https://cdn.xn2001.com/2020/03/25/20200325174923.png" alt="" /></figure></p>
+</article>
+    </section>
+
+    
+    <section id="content-pager">
+        
+            <div class="next">
+                <a class="card" href="/archives/414/">
+                    <time>March 26 2020</time>
+                    <span>学习Session</span>
+                </a>
+            </div>
+        
+        
+            <div class="prev">
+                <a class="card" href="/archives/412/">
+                    <time>March 25 2020</time>
+                    <span>JSP一：理解JSP</span>
+                </a>
+            </div>
+        
+    </section>
+    
+
+    
+
+    <script>
+        document.body.classList.add('content');
+        document.body.classList.remove('archive');
+    </script>
+</div>
+                    <footer>
+                        <span>Copyright © 2020 乐心湖</span>
+                        
+    
+
+                        
+                    </footer>
+                </div>
+                
+<aside id="toc-container" class="no-scrollbar">
+    <span><i class="fa fa-align-right"></i> CONTENTS</span>
+    <div id="toc"></div>
+</aside>
+
+            </div>
+        </main>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tocbot@4.10.0/dist/tocbot.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/kepler-ef161b04d5.js"></script>
+        <script>
+            function ExSearchCall(item){
+                if (item && item.length) {
+                    $('.ins-close').click(); // 关闭搜索框
+                    $('input.ins-search-input').val(''); // 清空
+                    let url = item.attr('data-url'); // 获取目标页面 URL
+                    $.pjax({url: url, 
+                        container: '#pjax-container',
+                        fragment: '#pjax-container',
+                        timeout: 8000, }); // 发起一次 PJAX 请求
+                }
+            }
+        </script>
+
+        <!--Valine-->
+        
+
+        <!--ExSearch-->
+        <script src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+        
+        <!--katex-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/katex.min.js"></script>
+        <script>
+        mathOpts = {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ]
+        };
+        </script>
+        <script defer src="https://cdn.jsdelivr.net/gh/lexinhu/site-Wiki@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+        
+    </body>
+</html>
