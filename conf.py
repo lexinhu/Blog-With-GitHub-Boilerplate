@@ -80,4 +80,4 @@ head_addon = r'''
 
 footer_addon = ''
 
-body_addon = ''
+body_addon = 'Hosted By <a href="https://cloud.tencent.com/product/wh?from=12331" target="_blank">云开发</a>'
