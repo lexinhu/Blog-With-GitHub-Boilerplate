@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>心湖维基</title><updated>2020-03-27T06:14:27.597849+08:06</updated><author><name>乐心湖</name><email>jialna@qq.com</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>https://cdn.xn2001.com/img/head.jpg</logo><subtitle>愿此地一片净土,个人维基站</subtitle><entry><id>/archives/405/</id><title>Java网络编程</title><updated>2020-03-27T06:14:27.598191+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;概述&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>心湖维基</title><updated>2020-05-19T12:42:12.521120+08:06</updated><author><name>乐心湖</name><email>jialna@qq.com</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>https://cdn.xn2001.com/img/head.jpg</logo><subtitle>愿此地一片净土,个人维基站</subtitle><entry><id>/archives/405/</id><title>Java网络编程</title><updated>2020-05-19T12:42:12.521511+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;概述&lt;/h2&gt;
 &lt;p&gt;概述：网络通信协议下，不同计算机上运行的程序，可以进行数据传输&lt;/p&gt;
 &lt;p&gt;例如，A电脑中的飞秋，发送消息给B电脑中的飞秋，需要哪些条件才能发送嗯？&lt;/p&gt;
 &lt;p&gt;IP地址&lt;/p&gt;
@@ -304,14 +304,14 @@
 &lt;li&gt;在关流的时候，还多了一个往服务器写结束标记的动作&lt;/li&gt;
 &lt;li&gt;最后一步断开连接，通过四次挥手协议保证连接终止&lt;/li&gt;
 &lt;/ul&gt;
-</content><link href="/archives/405/" rel="alternate"/><published>2020-03-23T03:04:07+08:06</published></entry><entry><id>/archives/406/</id><title>Tomcat在idea中乱码</title><updated>2020-03-27T06:14:27.598166+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;p&gt;我们在idea中刚开始运行Tomcat时，会发现日志打印出来的是乱码的，这个问题理论上不需要去理会，我们一般都不去看，但是也有人会受不了，那么我们就去修改一下这个日志输出的编码即可&lt;/p&gt;
+</content><link href="/archives/405/" rel="alternate"/><published>2020-03-23T03:04:07+08:06</published></entry><entry><id>/archives/406/</id><title>Tomcat在idea中乱码</title><updated>2020-05-19T12:42:12.521482+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;p&gt;我们在idea中刚开始运行Tomcat时，会发现日志打印出来的是乱码的，这个问题理论上不需要去理会，我们一般都不去看，但是也有人会受不了，那么我们就去修改一下这个日志输出的编码即可&lt;/p&gt;
 &lt;p&gt;网络上的绝大部分教程都说改什么IDEA改什么虚拟机编码，这都是非常令人迷惑无语的行为。&lt;/p&gt;
 &lt;p&gt;我们去Tomcat目录下的conf中，修改logging.properties文件，在最底部加入下面的代码即可。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;# 日志编码&lt;/span&gt;
 &lt;span class="na"&gt;java.util.logging.ConsoleHandler.encoding&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;GBK&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="1495" data-height="631" src="https://cdn.xn2001.com/2020/03/24/20200324191215.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/406/" rel="alternate"/><published>2020-03-24T19:14:26+08:06</published></entry><entry><id>/archives/407/</id><title>JavaWeb项目搭建</title><updated>2020-03-27T06:14:27.598142+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;安装Tomcat&lt;/h2&gt;
+</content><link href="/archives/406/" rel="alternate"/><published>2020-03-24T19:14:26+08:06</published></entry><entry><id>/archives/407/</id><title>JavaWeb项目搭建</title><updated>2020-05-19T12:42:12.521454+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;安装Tomcat&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Web 应⽤服务器：Tomcat、Jboos、Weblogic、Jetty&lt;/p&gt;
 &lt;/li&gt;
@@ -337,7 +337,7 @@
 &lt;h3&gt;注意：&lt;/h3&gt;
 &lt;p&gt;项目的结构就是这样的，注意的是，我们需要访问的页面都应该放在web下面，而不是WEB-INF下，这是很多初学者的误区。src还是放我们的Java类&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="544" data-height="475" src="https://cdn.xn2001.com/2020/03/24/20200324115658.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/407/" rel="alternate"/><published>2020-03-24T23:10:00+08:06</published></entry><entry><id>/archives/408/</id><title>Servlet一：使用Servlet</title><updated>2020-03-27T06:14:27.598117+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h3&gt;什么是 Servlet？&lt;/h3&gt;
+</content><link href="/archives/407/" rel="alternate"/><published>2020-03-24T23:10:00+08:06</published></entry><entry><id>/archives/408/</id><title>Servlet一：使用Servlet</title><updated>2020-05-19T12:42:12.521426+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h3&gt;什么是 Servlet？&lt;/h3&gt;
 &lt;p&gt;Servlet 是 Java Web 开发的基⽯，与平台⽆关的服务器组件，它是运⾏在 Servlet 容器/Web 应⽤服务器/Tomcat，负责与客户端进⾏通信。
 主要功能：&lt;/p&gt;
 &lt;ul&gt;
@@ -430,7 +430,7 @@
 &lt;p&gt;Debug运行，发现浏览器中显示ID为Null，此时你在地址后面加入&lt;code&gt;?id=10086&lt;/code&gt;，就可以看到效果啦。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="835" data-height="333" src="https://cdn.xn2001.com/2020/03/24/20200324130814.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="895" data-height="325" src="https://cdn.xn2001.com/2020/03/24/20200324130915.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/408/" rel="alternate"/><published>2020-03-24T23:13:00+08:06</published></entry><entry><id>/archives/409/</id><title>Servlet二：掌握Servlet</title><updated>2020-03-27T06:14:27.598093+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;Servlet的生命周期&lt;/h2&gt;
+</content><link href="/archives/408/" rel="alternate"/><published>2020-03-24T23:13:00+08:06</published></entry><entry><id>/archives/409/</id><title>Servlet二：掌握Servlet</title><updated>2020-05-19T12:42:12.521397+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;Servlet的生命周期&lt;/h2&gt;
 &lt;p&gt;1、当浏览器第一次访问 Servlet 的时候，Tomcat 会查询当前 Servlet 的实例化对象是否存在，如果不存在，则通过反射机制动态创建对象，后执行第2步。如果已经存在，直接执⾏第 3 步。&lt;/p&gt;
 &lt;p&gt;2、调⽤ init ⽅法完成初始化操作。&lt;/p&gt;
 &lt;p&gt;3、调⽤ service ⽅法完成业务逻辑操作。&lt;/p&gt;
@@ -509,7 +509,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;获取到了整个项目的路径，一个小小的点也能证明它是全局对象。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="874" data-height="490" src="https://cdn.xn2001.com/2020/03/24/20200324171358.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/409/" rel="alternate"/><published>2020-03-24T23:15:00+08:06</published></entry><entry><id>/archives/410/</id><title>Servlet三：真正开发中的Servlet</title><updated>2020-03-27T06:14:27.598069+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;p&gt;在实际的开发中，我们几乎不需要使用到init和destory，我们只用到service，所以官方帮我们最后优化出了HttpServlet，我们开发项目时直接去继承即可。&lt;/p&gt;
+</content><link href="/archives/409/" rel="alternate"/><published>2020-03-24T23:15:00+08:06</published></entry><entry><id>/archives/410/</id><title>Servlet三：真正开发中的Servlet</title><updated>2020-05-19T12:42:12.521368+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;p&gt;在实际的开发中，我们几乎不需要使用到init和destory，我们只用到service，所以官方帮我们最后优化出了HttpServlet，我们开发项目时直接去继承即可。&lt;/p&gt;
 &lt;h2&gt;Servlet的层次结构&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Servlet ---&amp;gt; GenericServlet ---&amp;gt; HttpServlet&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;GenericServlet 实现 Servlet 接⼝，同时为它的⼦类屏蔽了不常用的方法，⼦类只需要重写 service ⽅法即可。&lt;/p&gt;
@@ -553,7 +553,7 @@
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="786" data-height="367" src="https://cdn.xn2001.com/2020/03/24/20200324173554.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/410/" rel="alternate"/><published>2020-03-24T23:17:00+08:06</published></entry><entry><id>/archives/411/</id><title>JavaWeb笔记指南</title><updated>2020-03-27T06:14:27.598027+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;1.开章&lt;/h2&gt;
+</content><link href="/archives/410/" rel="alternate"/><published>2020-03-24T23:17:00+08:06</published></entry><entry><id>/archives/411/</id><title>JavaWeb笔记指南</title><updated>2020-05-19T12:42:12.521339+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;1.开章&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.xn2001.com/archives/407.html"&gt;JavaWeb 项目搭建&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;2.Servlet&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.xn2001.com/archives/408.html"&gt;Servlet 一：使用 Servlet&lt;/a&gt;&lt;/p&gt;
@@ -567,7 +567,7 @@
 &lt;p&gt;&lt;a href="https://www.xn2001.com/archives/406.html"&gt;Tomcat 在 idea 中乱码&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.xn2001.com/archives/397.html"&gt;JavaWeb 常见的乱码问题解决方案总结&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.xn2001.com/archives/386.html"&gt;JavaWeb项目使用Tomcat（idea）&lt;/a&gt;&lt;/p&gt;
-</content><link href="/archives/411/" rel="alternate"/><published>2020-03-24T23:43:00+08:06</published></entry><entry><id>/archives/412/</id><title>JSP一：理解JSP</title><updated>2020-03-27T06:14:27.598001+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;了解JSP&lt;/h2&gt;
+</content><link href="/archives/411/" rel="alternate"/><published>2020-03-24T23:43:00+08:06</published></entry><entry><id>/archives/412/</id><title>JSP一：理解JSP</title><updated>2020-05-19T12:42:12.521308+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h2&gt;了解JSP&lt;/h2&gt;
 &lt;p&gt;JSP &lt;strong&gt;本质&lt;/strong&gt;上就是⼀个 &lt;strong&gt;Servlet&lt;/strong&gt;，JSP 主要负责与⽤户交互，将最终的界⾯呈现给⽤户。&lt;/p&gt;
 &lt;p&gt;在Java中，只有Servlet接口才可以于浏览器交互。&lt;/p&gt;
 &lt;p&gt;一个HTML+JS+CSS+Java 的混合⽂件。&lt;/p&gt;
@@ -634,7 +634,7 @@
 &lt;li&gt;&lt;p&gt;exception：表示 JSP 页面发⽣的异常，Exception。很少用到。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-</content><link href="/archives/412/" rel="alternate"/><published>2020-03-25T17:59:00+08:06</published></entry><entry><id>/archives/413/</id><title>JSP二：掌握JSP</title><updated>2020-03-27T06:14:27.597971+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;blockquote&gt;&lt;p&gt;在JSP中，request和response是非常重要的两个东西，请务必知道他们的常用方法。&lt;/p&gt;
+</content><link href="/archives/412/" rel="alternate"/><published>2020-03-25T17:59:00+08:06</published></entry><entry><id>/archives/413/</id><title>JSP二：掌握JSP</title><updated>2020-05-19T12:42:12.521274+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;blockquote&gt;&lt;p&gt;在JSP中，request和response是非常重要的两个东西，请务必知道他们的常用方法。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;request 常用方法：&lt;/h2&gt;
 &lt;p&gt;1、String getParameter(String key) 获取客户端传来的参数。&lt;/p&gt;
@@ -760,7 +760,7 @@
 &lt;p&gt;启动项目，访问login.jsp，进行测试。效果如下图。&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="789" data-height="421" src="https://cdn.xn2001.com/2020/03/25/20200325174853.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img data-width="851" data-height="421" src="https://cdn.xn2001.com/2020/03/25/20200325174923.png" alt="" /&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/413/" rel="alternate"/><published>2020-03-25T17:59:00+08:06</published></entry><entry><id>/archives/414/</id><title>学习Session</title><updated>2020-03-27T06:14:27.597916+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h1&gt;会话&lt;/h1&gt;
+</content><link href="/archives/413/" rel="alternate"/><published>2020-03-25T17:59:00+08:06</published></entry><entry><id>/archives/414/</id><title>学习Session</title><updated>2020-05-19T12:42:12.521194+00:00</updated><author><name>心有所向</name><email>jialna@qq.com</email><uri>https://www.xn2001.com</uri></author><content>&lt;h1&gt;会话&lt;/h1&gt;
 &lt;p&gt;也叫会话，由于服务器⽆法识别每⼀次 HTTP 请求的出处（也就是不知道来自于哪个终端），它只会接受到⼀个请求信号，所以就存在⼀个问题：万一浏览器将用户的响应发送给了其他的⼈，出现数据错误，所以这时候必须有⼀种技术来让服务器知道请求来自哪里，这就是会话技术。&lt;/p&gt;
 &lt;p&gt;会话：就是客户端和服务器之间发⽣的⼀系列连续的请求和响应的过程，打开浏览器操作到关闭浏览器的过程。&lt;/p&gt;
 &lt;p&gt;会话状态：指服务器和浏览器在会话过程中产生的状态信息，借助于会话状态，服务器能够把属于同⼀次会话的⼀系列请求和响应关联起来。&lt;/p&gt;
