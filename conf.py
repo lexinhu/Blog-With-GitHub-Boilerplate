@@ -78,6 +78,6 @@ head_addon = r'''
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
 '''
 
-footer_addon = 'Hosted By <a href="https://cloud.tencent.com/product/wh?from=12331" target="_blank">云开发</a>'
+footer_addon = ''
 
 body_addon = ''
